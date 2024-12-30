@@ -1,34 +1,33 @@
-import pytz
 from datetime import timedelta
 
-from django.http import JsonResponse
+import pytz
 from django.conf import settings
-from django.shortcuts import render
-from django.utils.timezone import now
-from django.utils.formats import date_format
-from django.utils.translation import gettext_lazy as _, pgettext
-from django.utils.html import escape
-from django.urls import reverse
-from django.db.models.functions import Coalesce, Greatest
 from django.contrib.contenttypes.models import ContentType
 from django.db.models import (
     Count, Exists, IntegerField, Max, Min, OuterRef, Q, Subquery,
 )
+from django.db.models.functions import Coalesce, Greatest
+from django.http import JsonResponse
+from django.shortcuts import render
+from django.urls import reverse
+from django.utils.formats import date_format
+from django.utils.html import escape
+from django.utils.timezone import now
+from django.utils.translation import gettext_lazy as _, pgettext
 
 from pretix.base.models import (
-    Item, ItemCategory, Order, OrderRefund,
-    Question, Quota, RequiredAction, SubEvent, Voucher,
+    Item, ItemCategory, Order, OrderRefund, Question, Quota, RequiredAction,
+    SubEvent, Voucher,
 )
+from pretix.base.models.orders import CancellationRequest
 from pretix.base.timeline import timeline_for_event
 from pretix.control.forms.event import CommentForm
+from pretix.control.logdisplay import OVERVIEW_BANLIST
 from pretix.control.signals import (
     event_dashboard_widgets, user_dashboard_widgets,
 )
 from pretix.helpers.daterange import daterange
 from pretix.helpers.plugin_enable import is_video_enabled
-
-from pretix.base.models.orders import CancellationRequest
-from pretix.control.logdisplay import OVERVIEW_BANLIST
 
 from .event import EventCreatedFor
 
