@@ -1,7 +1,3 @@
-.tabbed-form h4 {
-    margin-left: 10px;
-}
-
 .col-value {
     padding-left: 0px;
     vertical-align: bottom;
@@ -16,6 +12,8 @@
     vertical-align: bottom;
     margin-bottom: 0px;
     padding-top: 7px;
+    padding-left: 20px;
+    margin-right: 20px;
 }
 
 .disabled {
@@ -27,6 +25,8 @@
     width: 60px;
     margin-bottom: 0px;
     padding-top: 7px;
+    padding-left: 20px;
+    margin-right: 20px;
 }
 
 .setting-part {
