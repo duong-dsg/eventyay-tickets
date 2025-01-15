@@ -410,7 +410,7 @@ the languages available in your installation, you can enable a set of languages 
     [languages]
     enabled=en,de
 
-Some of the languages them are marked as "incubating", which means
+Some of the languages are marked as "incubating", which means
 they can usually only be selected in development mode. If you want to use them nevertheless, you
 can activate them like this::
 

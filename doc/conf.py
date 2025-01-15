@@ -28,6 +28,7 @@ import django
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pretix.testutils.settings")
 django.setup()
 
+
 try:
     import enchant  # noqa
 
