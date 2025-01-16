@@ -43,6 +43,8 @@ if "%1" == "help" (
 if "%1" == "clean" (
 	for /d %%i in (%BUILDDIR%\*) do rmdir /q /s %%i
 	del /q /s %BUILDDIR%\*
+	cd %BUILDDIR%
+	git worktree add -f html gh-pages
 	goto end
 )
 
