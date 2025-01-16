@@ -52,6 +52,7 @@ extensions = [
     'sphinxcontrib.images',
     'sphinxcontrib.jquery',
     'sphinxemoji.sphinxemoji',
+    "sphinx.ext.githubpages",
 ]
 if HAS_PYENCHANT:
     extensions.append('sphinxcontrib.spelling')
