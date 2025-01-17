@@ -1,5 +1,5 @@
 Social Login Setup
---------------------------
+==================
 
 To enable social login for providers, you first need to create an OAuth application on the provider's website.
 
