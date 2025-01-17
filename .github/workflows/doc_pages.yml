@@ -27,9 +27,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
+      - name: Install system packages
+        run: sudo apt update && sudo apt install gettext
+
       - name: Install dependencies
-        run: pip install -r requirements.txt
-        working-directory: doc
+        run: |
+          pip3 install -Ur --no-cache-dir doc/requirements.txt
+          pip install setuptools
 
       - name: Build documentation
         run: make html
