@@ -11,3 +11,5 @@ Developer documentation
    translation/index
    api/index
    structure
+   social_login
+   sso_with_talk
