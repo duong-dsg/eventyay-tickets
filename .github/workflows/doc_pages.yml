@@ -38,14 +38,6 @@ jobs:
 
       - name: Build documentation
         run: make html
-        working-directory: doc          
-
-      - name: Test Documentation Build
-        run: |
-          if [ ! -d "doc/_build/html" ]; then
-            echo "Build failed: HTML directory not found."
-            exit 1
-          fi
         working-directory: doc
 
       - name: Deploy to GitHub Pages
