@@ -32,8 +32,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip3 install -Ur --no-cache-dir doc/requirements.txt
+          pip3 install -Ur --no-cache-dir requirements.txt
           pip install setuptools
+        working-directory: doc   
 
       - name: Build documentation
         run: make html
