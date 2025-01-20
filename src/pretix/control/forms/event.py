@@ -1527,7 +1527,8 @@ class QuickSetupForm(I18nForm):
         )
         kwargs["locales"] = self.locales
         super().__init__(*args, **kwargs)
-        if not self.obj.settings.payment_stripe_connect_client_id:
+        plugins_active = self.obj.get_plugins()
+        if ('eventyay_stripe' not in plugins_active) or (not self.obj.settings.payment_stripe_connect_client_id):
             del self.fields["payment_stripe__enabled"]
         self.fields["payment_banktransfer_bank_details"].required = False
         for f in self.fields.values():
