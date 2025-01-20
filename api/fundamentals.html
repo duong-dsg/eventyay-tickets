@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Basic concepts &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Authentication" href="auth.html" />
-    <link rel="prev" title="REST API" href="index.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../index.html"/>
+        <link rel="up" title="REST API" href="index.html"/>
+        <link rel="next" title="Authentication" href="auth.html"/>
+        <link rel="prev" title="REST API" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../index.html">
           
-          <a href="../index.html">
-              <img src="../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -172,14 +192,14 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="basic-concepts">
-<h1>Basic concepts<a class="headerlink" href="#basic-concepts" title="Link to this heading">¶</a></h1>
+<h1>Basic concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this heading">¶</a></h1>
 <p>This page describes basic concepts and definition that you need to know to interact
 with pretix’ REST API, such as authentication, pagination and similar definitions.</p>
 <section id="authentication">
-<span id="rest-auth"></span><h2>Authentication<a class="headerlink" href="#authentication" title="Link to this heading">¶</a></h2>
+<span id="rest-auth"></span><h2>Authentication<a class="headerlink" href="#authentication" title="Permalink to this heading">¶</a></h2>
 <p>To access the API, you need to present valid authentication credentials. pretix currently
 supports the following authorization schemes:</p>
 <ul class="simple">
@@ -197,7 +217,7 @@ time without prior notice. If you use it, you need to comply with Django’s <a 
 </ul>
 </section>
 <section id="permissions">
-<h2>Permissions<a class="headerlink" href="#permissions" title="Link to this heading">¶</a></h2>
+<h2>Permissions<a class="headerlink" href="#permissions" title="Permalink to this heading">¶</a></h2>
 <p>The API follows dev team based permissions model. Each organizer can have several teams
 each with it’s own set of permissions. Each team can have any number of API keys attached.</p>
 <p>To access a given endpoint the team the API key belongs to needs to have the corresponding
@@ -214,7 +234,7 @@ permission for the organizer/event being accessed.</p>
 </ul>
 </section>
 <section id="compatibility">
-<h2>Compatibility<a class="headerlink" href="#compatibility" title="Link to this heading">¶</a></h2>
+<h2>Compatibility<a class="headerlink" href="#compatibility" title="Permalink to this heading">¶</a></h2>
 <p>We currently see pretix’ API as a beta-stage feature. We therefore do not give any guarantees
 for compatibility between feature releases of pretix (such as 1.5 and 1.6). However, as always,
 we try not to break things when we don’t need to. Any backwards-incompatible changes will be
@@ -236,15 +256,15 @@ that your clients can deal with them properly:</p>
 </ul>
 </section>
 <section id="pagination">
-<h2>Pagination<a class="headerlink" href="#pagination" title="Link to this heading">¶</a></h2>
+<h2>Pagination<a class="headerlink" href="#pagination" title="Permalink to this heading">¶</a></h2>
 <p>Most lists of objects returned by pretix’ API will be paginated. The response will take
 the form of:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;count&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">117</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;next&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://eventyay.com/api/v1/organizers/?page=2&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;previous&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;results&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="err">…</span><span class="p">],</span>
-<span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>{
+    &quot;count&quot;: 117,
+    &quot;next&quot;: &quot;https://eventyay.com/api/v1/organizers/?page=2&quot;,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: […],
+}
 </pre></div>
 </div>
 <p>As you can see, the response contains the total number of results in the field <code class="docutils literal notranslate"><span class="pre">count</span></code>.
@@ -255,20 +275,20 @@ respective page.</p>
 objects, every page contains 50 results.</p>
 </section>
 <section id="conditional-fetching">
-<h2>Conditional fetching<a class="headerlink" href="#conditional-fetching" title="Link to this heading">¶</a></h2>
+<h2>Conditional fetching<a class="headerlink" href="#conditional-fetching" title="Permalink to this heading">¶</a></h2>
 <p>If you pull object lists from pretix’ APIs regularly, we ask you to implement conditional fetching
 to avoid unnecessary data traffic. This is not supported on all resources and we currently implement
 two different mechanisms for different resources, which is necessary because we can only obtain best
 efficiency for resources that do not support deletion operations.</p>
 <section id="object-level-conditional-fetching">
-<h3>Object-level conditional fetching<a class="headerlink" href="#object-level-conditional-fetching" title="Link to this heading">¶</a></h3>
+<h3>Object-level conditional fetching<a class="headerlink" href="#object-level-conditional-fetching" title="Permalink to this heading">¶</a></h3>
 <p>The <a class="reference internal" href="resources/orders.html#rest-orders"><span class="std std-ref">Orders</span></a> resource list contains an HTTP header called <code class="docutils literal notranslate"><span class="pre">X-Page-Generated</span></code> containing the
 current time on the server in ISO 8601 format. On your next request, you can pass this header
 (as is, without any modifications necessary) as the <code class="docutils literal notranslate"><span class="pre">modified_since</span></code> query parameter and you will receive
 a list containing only objects that have changed in the time since your last request.</p>
 </section>
 <section id="list-level-conditional-fetching">
-<h3>List-level conditional fetching<a class="headerlink" href="#list-level-conditional-fetching" title="Link to this heading">¶</a></h3>
+<h3>List-level conditional fetching<a class="headerlink" href="#list-level-conditional-fetching" title="Permalink to this heading">¶</a></h3>
 <p>If modification checks are not possible with this granularity, you can instead check for the full list.
 In this case, the list of objects may contain a regular HTTP header <code class="docutils literal notranslate"><span class="pre">Last-Modified</span></code> with the date of the
 last modification to any item of that resource. You can then pass this date back in your next request in the
@@ -287,7 +307,7 @@ last modification to any item of that resource. You can then pass this date back
 </section>
 </section>
 <section id="errors">
-<h2>Errors<a class="headerlink" href="#errors" title="Link to this heading">¶</a></h2>
+<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this heading">¶</a></h2>
 <p>Error responses (of type 400-499) are returned in one of the following forms, depending on
 the type of error. General errors look like:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">405</span> <span class="ne">Method Not Allowed</span>
@@ -308,7 +328,7 @@ the type of error. General errors look like:</p>
 <p>If you see errors of type <code class="docutils literal notranslate"><span class="pre">429</span> <span class="pre">Too</span> <span class="pre">Many</span> <span class="pre">Requests</span></code>, you should read our documentation on <a class="reference internal" href="ratelimit.html#rest-ratelimit"><span class="std std-ref">Rate limiting</span></a>.</p>
 </section>
 <section id="data-types">
-<h2>Data types<a class="headerlink" href="#data-types" title="Link to this heading">¶</a></h2>
+<h2>Data types<a class="headerlink" href="#data-types" title="Permalink to this heading">¶</a></h2>
 <p>All structured API responses are returned in JSON format using standard JSON data types such
 as integers, floating point numbers, strings, lists, objects and booleans. Most fields can
 be <code class="docutils literal notranslate"><span class="pre">null</span></code> as well.</p>
@@ -375,7 +395,7 @@ specifiers in requests
 </tbody>
 </table>
 <section id="query-parameters">
-<h3>Query parameters<a class="headerlink" href="#query-parameters" title="Link to this heading">¶</a></h3>
+<h3>Query parameters<a class="headerlink" href="#query-parameters" title="Permalink to this heading">¶</a></h3>
 <p>Most list endpoints allow a filtering of the results using query parameters. In this case, booleans should be passed
 as the string values <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <p>If the <code class="docutils literal notranslate"><span class="pre">ordering</span></code> parameter is documented for a resource, you can use it to sort the result set by one of the allowed
@@ -383,7 +403,7 @@ fields. Prepend a <code class="docutils literal notranslate"><span class="pre">-
 </section>
 </section>
 <section id="idempotency">
-<h2>Idempotency<a class="headerlink" href="#idempotency" title="Link to this heading">¶</a></h2>
+<h2>Idempotency<a class="headerlink" href="#idempotency" title="Permalink to this heading">¶</a></h2>
 <p>Our API supports an idempotency mechanism to make sure you can safely retry operations without accidentally performing
 them twice. This is useful if an API call experiences interruptions in transit, e.g. due to a network failure, and you
 do not know if it completed successfully.</p>
@@ -407,7 +427,7 @@ response, you will receive a response with status code <code class="docutils lit
 <code class="docutils literal notranslate"><span class="pre">GET</span></code>, <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>, or <code class="docutils literal notranslate"><span class="pre">OPTIONS</span></code> request has no effect.</p>
 </section>
 <section id="file-upload">
-<h2>File upload<a class="headerlink" href="#file-upload" title="Link to this heading">¶</a></h2>
+<h2>File upload<a class="headerlink" href="#file-upload" title="Permalink to this heading">¶</a></h2>
 <p>In some places, the API supports working with files, for example when setting the picture of a product. In this case,
 you will first need to make a separate request to our file upload endpoint:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/v1/upload</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -495,11 +515,11 @@ be used using the same authorization method and user that was used to upload the
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

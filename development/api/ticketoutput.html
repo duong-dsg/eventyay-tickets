@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Writing a ticket output plugin &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Writing a payment provider plugin" href="payment.html" />
-    <link rel="prev" title="Writing an exporter plugin" href="exporter.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Plugin development" href="index.html"/>
+        <link rel="next" title="Writing a payment provider plugin" href="payment.html"/>
+        <link rel="prev" title="Writing an exporter plugin" href="exporter.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -100,8 +120,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../structure.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../social_login.html">Social Login Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sso_with_talk.html">Single Sign-On (SSO) Implementation with JWT and OAuth2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin documentation</a></li>
@@ -179,16 +197,16 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="writing-a-ticket-output-plugin">
-<h1>Writing a ticket output plugin<a class="headerlink" href="#writing-a-ticket-output-plugin" title="Link to this heading">¶</a></h1>
+<h1>Writing a ticket output plugin<a class="headerlink" href="#writing-a-ticket-output-plugin" title="Permalink to this heading">¶</a></h1>
 <p>A ticket output is a method to offer a ticket (an order) for the user to download.</p>
 <p>In this document, we will walk through the creation of a ticket output plugin. This
 is very similar to creating an export output.</p>
 <p>Please read <a class="reference internal" href="plugins.html#pluginsetup"><span class="std std-ref">Creating a plugin</span></a> first, if you haven’t already.</p>
 <section id="output-registration">
-<h2>Output registration<a class="headerlink" href="#output-registration" title="Link to this heading">¶</a></h2>
+<h2>Output registration<a class="headerlink" href="#output-registration" title="Permalink to this heading">¶</a></h2>
 <p>The ticket output API does not make a lot of usage from signals, however, it
 does use a signal to get a list of all available ticket outputs. Your plugin
 should listen for this signal and return the subclass of <code class="docutils literal notranslate"><span class="pre">pretix.base.ticketoutput.BaseTicketOutput</span></code>
@@ -206,21 +224,21 @@ that we’ll provide in this plugin:</p>
 </div>
 </section>
 <section id="the-output-class">
-<h2>The output class<a class="headerlink" href="#the-output-class" title="Link to this heading">¶</a></h2>
+<h2>The output class<a class="headerlink" href="#the-output-class" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pretix.base.ticketoutput.BaseTicketOutput">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pretix.base.ticketoutput.</span></span><span class="sig-name descname"><span class="pre">BaseTicketOutput</span></span><a class="headerlink" href="#pretix.base.ticketoutput.BaseTicketOutput" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pretix.base.ticketoutput.</span></span><span class="sig-name descname"><span class="pre">BaseTicketOutput</span></span><a class="headerlink" href="#pretix.base.ticketoutput.BaseTicketOutput" title="Permalink to this definition">¶</a></dt>
 <dd><p>The central object of each ticket output is the subclass of <code class="docutils literal notranslate"><span class="pre">BaseTicketOutput</span></code>.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.event">
-<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">event</span></span><a class="headerlink" href="#pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.event" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">event</span></span><a class="headerlink" href="#pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.event" title="Permalink to this definition">¶</a></dt>
 <dd><p>The default constructor sets this property to the event we are currently
 working for.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.settings">
-<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">settings</span></span><a class="headerlink" href="#pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.settings" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">settings</span></span><a class="headerlink" href="#pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.settings" title="Permalink to this definition">¶</a></dt>
 <dd><p>The default constructor sets this property to a <code class="docutils literal notranslate"><span class="pre">SettingsSandbox</span></code> object. You can
 use this object to store settings using its <code class="docutils literal notranslate"><span class="pre">get</span></code> and <code class="docutils literal notranslate"><span class="pre">set</span></code> methods. All settings
 you store are transparently prefixed, so you get your very own settings namespace.</p>
@@ -228,7 +246,7 @@ you store are transparently prefixed, so you get your very own settings namespac
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.identifier">
-<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">identifier</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.identifier" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">identifier</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.identifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>A short and unique identifier for this ticket output.
 This should only contain lowercase letters and in most
 cases will be the same as your package name.</p>
@@ -237,7 +255,7 @@ cases will be the same as your package name.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.verbose_name">
-<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">verbose_name</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.verbose_name" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">verbose_name</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.verbose_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>A human-readable name for this ticket output. This should be short but
 self-explanatory. Good examples include ‘PDF tickets’ and ‘Passbook’.</p>
 <p>This is an abstract attribute, you <strong>must</strong> override this!</p>
@@ -245,21 +263,21 @@ self-explanatory. Good examples include ‘PDF tickets’ and ‘Passbook’.</p
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.is_enabled">
-<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">is_enabled</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.is_enabled" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">is_enabled</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.is_enabled" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether or whether not this output is enabled.
 By default, this is determined by the value of the <code class="docutils literal notranslate"><span class="pre">_enabled</span></code> setting.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.multi_download_enabled">
-<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">multi_download_enabled</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.multi_download_enabled" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">multi_download_enabled</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.multi_download_enabled" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether or not the <code class="docutils literal notranslate"><span class="pre">generate_order</span></code> method may be called. Returns
 <code class="docutils literal notranslate"><span class="pre">True</span></code> by default.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.settings_form_fields">
-<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">settings_form_fields</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.settings_form_fields" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">settings_form_fields</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.settings_form_fields" title="Permalink to this definition">¶</a></dt>
 <dd><p>When the event’s administrator visits the event configuration
 page, this method is called to return the configuration fields available.</p>
 <p>It should therefore return a dictionary where the keys should be (unprefixed)
@@ -291,7 +309,7 @@ implementation.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.settings_content_render">
-<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">settings_content_render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.settings_content_render" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">settings_content_render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.settings_content_render" title="Permalink to this definition">¶</a></dt>
 <dd><p>When the event’s administrator visits the event configuration
 page, this method is called. It may return HTML containing additional information
 that is displayed below the form fields configured in <code class="docutils literal notranslate"><span class="pre">settings_form_fields</span></code>.</p>
@@ -299,7 +317,7 @@ that is displayed below the form fields configured in <code class="docutils lite
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.generate">
-<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../implementation/models.html#pretix.base.models.OrderPosition" title="pretix.base.models.orders.OrderPosition"><span class="pre">OrderPosition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.generate" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../implementation/models.html#pretix.base.models.OrderPosition" title="pretix.base.models.orders.OrderPosition"><span class="pre">OrderPosition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.generate" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method should generate the download file and return a tuple consisting of a
 filename, a file type and file content. The extension will be taken from the filename
 which is otherwise ignored.</p>
@@ -324,7 +342,7 @@ you should also set the <code class="docutils literal notranslate"><span class="
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.generate_order">
-<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">generate_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../implementation/models.html#pretix.base.models.Order" title="pretix.base.models.orders.Order"><span class="pre">Order</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.generate_order" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">generate_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../implementation/models.html#pretix.base.models.Order" title="pretix.base.models.orders.Order"><span class="pre">Order</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.generate_order" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method is the same as order() but should not generate one file per order position
 but instead one file for the full order.</p>
 <p>This method is optional to implement. If you don’t implement it, the default
@@ -341,38 +359,38 @@ appropriate filters for you.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.download_button_text">
-<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">download_button_text</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.download_button_text" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">download_button_text</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.download_button_text" title="Permalink to this definition">¶</a></dt>
 <dd><p>The text on the download button in the frontend.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.download_button_icon">
-<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">download_button_icon</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.download_button_icon" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">download_button_icon</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.download_button_icon" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Font Awesome icon on the download button in the frontend.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.multi_download_button_text">
-<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">multi_download_button_text</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.multi_download_button_text" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">multi_download_button_text</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.multi_download_button_text" title="Permalink to this definition">¶</a></dt>
 <dd><p>The text on the multi download button in the frontend.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.long_download_button_text">
-<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">long_download_button_text</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.long_download_button_text" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">long_download_button_text</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.long_download_button_text" title="Permalink to this definition">¶</a></dt>
 <dd><p>The text on the large download button in the frontend.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.preview_allowed">
-<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">preview_allowed</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.preview_allowed" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">preview_allowed</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.preview_allowed" title="Permalink to this definition">¶</a></dt>
 <dd><p>By default, the <code class="docutils literal notranslate"><span class="pre">generate()</span></code> method is called for generating a preview in the pretix backend.
 In case your plugin cannot generate previews for any reason, you can manually disable it here.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.javascript_required">
-<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">javascript_required</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.javascript_required" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseTicketOutput.</span></span><span class="sig-name descname"><span class="pre">javascript_required</span></span><a class="headerlink" href="#pretix.base.ticketoutput.pretix.base.ticketoutput.BaseTicketOutput.BaseTicketOutput.javascript_required" title="Permalink to this definition">¶</a></dt>
 <dd><p>If this property is set to true, the download-button for this ticket-type will not be displayed
 when the user’s browser has JavaScript disabled.</p>
 <p>Defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
@@ -434,11 +452,11 @@ when the user’s browser has JavaScript disabled.</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

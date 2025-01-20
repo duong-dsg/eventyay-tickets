@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Invoices &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Vouchers" href="vouchers.html" />
-    <link rel="prev" title="Orders" href="orders.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Resources and endpoints" href="index.html"/>
+        <link rel="next" title="Vouchers" href="vouchers.html"/>
+        <link rel="prev" title="Orders" href="orders.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -188,12 +208,12 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="invoices">
-<h1>Invoices<a class="headerlink" href="#invoices" title="Link to this heading">¶</a></h1>
+<h1>Invoices<a class="headerlink" href="#invoices" title="Permalink to this heading">¶</a></h1>
 <section id="resource-description">
-<h2>Resource description<a class="headerlink" href="#resource-description" title="Link to this heading">¶</a></h2>
+<h2>Resource description<a class="headerlink" href="#resource-description" title="Permalink to this heading">¶</a></h2>
 <p>The invoice resource contains the following public fields:</p>
 <table class="rest-resource-table docutils align-default">
 <thead>
@@ -420,10 +440,10 @@ date at which the currency rate was obtained.</p></td>
 </div>
 </section>
 <section id="endpoints">
-<h2>Endpoints<a class="headerlink" href="#endpoints" title="Link to this heading">¶</a></h2>
+<h2>Endpoints<a class="headerlink" href="#endpoints" title="Permalink to this heading">¶</a></h2>
 <dl class="http get">
 <dt class="sig sig-object http" id="get--api-v1-organizers-(organizer)-events-(event)-invoices-">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/events/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/invoices/</span></span><a class="headerlink" href="#get--api-v1-organizers-(organizer)-events-(event)-invoices-" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/events/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/invoices/</span></span><a class="headerlink" href="#get--api-v1-organizers-(organizer)-events-(event)-invoices-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of all invoices within a given event.</p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/organizers/bigevents/events/sampleconf/invoices/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -525,7 +545,7 @@ date at which the currency rate was obtained.</p></td>
 
 <dl class="http get">
 <dt class="sig sig-object http" id="get--api-v1-organizers-(organizer)-events-(event)-invoices-(number)-">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/events/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/invoices/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">number</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/</span></span><a class="headerlink" href="#get--api-v1-organizers-(organizer)-events-(event)-invoices-(number)-" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/events/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/invoices/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">number</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/</span></span><a class="headerlink" href="#get--api-v1-organizers-(organizer)-events-(event)-invoices-(number)-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns information on one invoice, identified by its invoice number.</p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/organizers/bigevents/events/sampleconf/invoices/SAMPLECONF-00001/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -609,7 +629,7 @@ date at which the currency rate was obtained.</p></td>
 
 <dl class="http get">
 <dt class="sig sig-object http" id="get--api-v1-organizers-(organizer)-events-(event)-invoices-(invoice_no)-download-">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/events/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/invoices/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">invoice_no</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/download/</span></span><a class="headerlink" href="#get--api-v1-organizers-(organizer)-events-(event)-invoices-(invoice_no)-download-" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/events/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/invoices/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">invoice_no</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/download/</span></span><a class="headerlink" href="#get--api-v1-organizers-(organizer)-events-(event)-invoices-(invoice_no)-download-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Download an invoice in PDF format.</p>
 <p>Note that in some cases the PDF file might not yet have been created. In that case, you will receive a status
 code <a class="reference external" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.10">409 Conflict</a> and you are expected to retry the request after a short period of waiting.</p>
@@ -649,7 +669,7 @@ seconds.</p></li>
 
 <dl class="http post">
 <dt class="sig sig-object http" id="post--api-v1-organizers-(organizer)-events-(event)-invoices-(invoice_no)-reissue-">
-<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/events/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/invoices/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">invoice_no</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/reissue/</span></span><a class="headerlink" href="#post--api-v1-organizers-(organizer)-events-(event)-invoices-(invoice_no)-reissue-" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/events/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/invoices/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">invoice_no</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/reissue/</span></span><a class="headerlink" href="#post--api-v1-organizers-(organizer)-events-(event)-invoices-(invoice_no)-reissue-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cancels the invoice and creates a new one.</p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/organizers/bigevents/events/sampleconf/invoices/00001/reissue/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -684,7 +704,7 @@ seconds.</p></li>
 
 <dl class="http post">
 <dt class="sig sig-object http" id="post--api-v1-organizers-(organizer)-events-(event)-invoices-(invoice_no)-regenerate-">
-<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/events/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/invoices/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">invoice_no</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/regenerate/</span></span><a class="headerlink" href="#post--api-v1-organizers-(organizer)-events-(event)-invoices-(invoice_no)-regenerate-" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/events/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/invoices/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">invoice_no</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/regenerate/</span></span><a class="headerlink" href="#post--api-v1-organizers-(organizer)-events-(event)-invoices-(invoice_no)-regenerate-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Re-generates the invoice from order data.</p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/organizers/bigevents/events/sampleconf/invoices/00001/regenerate/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -771,11 +791,11 @@ seconds.</p></li>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

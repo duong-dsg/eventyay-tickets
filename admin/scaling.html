@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Scaling guide &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Additional database indices" href="indexes.html" />
-    <link rel="prev" title="Backups and Monitoring" href="maintainance.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../index.html"/>
+        <link rel="up" title="Administrator documentation" href="index.html"/>
+        <link rel="next" title="Additional database indices" href="indexes.html"/>
+        <link rel="prev" title="Backups and Monitoring" href="maintainance.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../index.html">
           
-          <a href="../index.html">
-              <img src="../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -166,10 +186,10 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="scaling-guide">
-<span id="scaling"></span><h1>Scaling guide<a class="headerlink" href="#scaling-guide" title="Link to this heading">¶</a></h1>
+<span id="scaling"></span><h1>Scaling guide<a class="headerlink" href="#scaling-guide" title="Permalink to this heading">¶</a></h1>
 <p>Our <a class="reference internal" href="installation/index.html#installation"><span class="std std-ref">installation guide</span></a> only covers “small-scale” setups, by which we mostly mean
 setups that run on a <strong>single (virtual) machine</strong> and do not encounter large traffic peaks.</p>
 <p>We do not offer an installation guide for larger-scale setups of pretix, mostly because we believe that
@@ -187,7 +207,7 @@ tickets in a very short amount of time</strong>, we highly recommend reaching ou
 through. Just get in touch at <a class="reference external" href="mailto:sales&#37;&#52;&#48;eventyay&#46;com">sales<span>&#64;</span>eventyay<span>&#46;</span>com</a>!</p>
 </div>
 <section id="scaling-reasons">
-<h2>Scaling reasons<a class="headerlink" href="#scaling-reasons" title="Link to this heading">¶</a></h2>
+<h2>Scaling reasons<a class="headerlink" href="#scaling-reasons" title="Permalink to this heading">¶</a></h2>
 <p>There’s mainly two reasons to scale up a pretix installation beyond a single server:</p>
 <ul class="simple">
 <li><p><strong>Availability:</strong> Distributing pretix over multiple servers can allow you to survive failure of one or more single machines, leading to a higher uptime and reliability of your system.</p></li>
@@ -196,7 +216,7 @@ through. Just get in touch at <a class="reference external" href="mailto:sales&#
 <p>You are very unlikely to require scaling for other reasons, such as having too much data in your database.</p>
 </section>
 <section id="components">
-<h2>Components<a class="headerlink" href="#components" title="Link to this heading">¶</a></h2>
+<h2>Components<a class="headerlink" href="#components" title="Permalink to this heading">¶</a></h2>
 <p>A pretix installation usually consists of the following components which run performance-relevant processes:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">pretix-web</span></code> is the Django-based web application that serves all user interaction.</p></li>
@@ -219,7 +239,7 @@ ensure this either on an application level (such as using the TLS support in you
 database) or on a network level with a VPN solution.</p>
 </div>
 <section id="web-server">
-<h3>Web server<a class="headerlink" href="#web-server" title="Link to this heading">¶</a></h3>
+<h3>Web server<a class="headerlink" href="#web-server" title="Permalink to this heading">¶</a></h3>
 <p>Your web server is at the very front of your installation. It will need to absorb all of the traffic, and it should be able to
 at least show a decent error message, even when everything else fails. Luckily, web servers are really fast these days, so this
 can be achieved without too much work.</p>
@@ -241,7 +261,7 @@ errors, consider a queuing solution. We’re happy to provide you with such syst
 </div>
 </section>
 <section id="pretix-web">
-<h3>pretix-web<a class="headerlink" href="#pretix-web" title="Link to this heading">¶</a></h3>
+<h3>pretix-web<a class="headerlink" href="#pretix-web" title="Permalink to this heading">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">pretix-web</span></code> process does not carry any internal state can be easily started on as many machines as you like, and you can
 use the load balancing features of your frontend web server to redirect to all of them.</p>
 <p>You can adjust the number of processes in the <code class="docutils literal notranslate"><span class="pre">gunicorn</span></code> command line, and we recommend choosing roughly two times the number
@@ -249,7 +269,7 @@ of CPU cores available. Under load, the memory consumption of <code class="docut
 will increase a lot. Therefore, if you can add more or faster CPU cores, you will be able to serve more users.</p>
 </section>
 <section id="pretix-worker">
-<h3>pretix-worker<a class="headerlink" href="#pretix-worker" title="Link to this heading">¶</a></h3>
+<h3>pretix-worker<a class="headerlink" href="#pretix-worker" title="Permalink to this heading">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">pretix-worker</span></code> process performs all operations that are not directly executed in the request-response-cycle of <code class="docutils literal notranslate"><span class="pre">pretix-web</span></code>.
 Just like <code class="docutils literal notranslate"><span class="pre">pretix-web</span></code> you can easily start up as many instances as you want on different machines to share the work. As long as they
 all talk to the same redis server, they will all receive tasks from <code class="docutils literal notranslate"><span class="pre">pretix-web</span></code>, work on them and post their result back.
@@ -275,7 +295,7 @@ the following queues exist:</p>
 </ul>
 </section>
 <section id="media-files">
-<h3>Media files<a class="headerlink" href="#media-files" title="Link to this heading">¶</a></h3>
+<h3>Media files<a class="headerlink" href="#media-files" title="Permalink to this heading">¶</a></h3>
 <p>Both <code class="docutils literal notranslate"><span class="pre">pretix-web</span></code>, <code class="docutils literal notranslate"><span class="pre">pretix-worker</span></code> and in some cases your webserver need to work with
 media files. Media files are all files generated <em>at runtime</em> by the software. This can
 include files uploaded by the event organizers, such as the event logo, files uploaded by
@@ -295,7 +315,7 @@ on each of the other servers.</p>
 <p>At eventyay.com, we use a custom-built <a class="reference external" href="https://behind.pretix.eu/2018/03/20/high-available-cdn/">object storage cluster</a>.</p>
 </section>
 <section id="sql-database">
-<h3>SQL database<a class="headerlink" href="#sql-database" title="Link to this heading">¶</a></h3>
+<h3>SQL database<a class="headerlink" href="#sql-database" title="Permalink to this heading">¶</a></h3>
 <p>One of the most critical parts of the whole setup is the SQL database – and certainly the
 hardest to scale. Tuning relational databases is an art form, and while there’s lots of
 material on it on the internet, there’s not a single recipe that you can apply to every case.</p>
@@ -328,7 +348,7 @@ product list and event lists in the frontend, but we plan on expanding this in t
 it on the most powerful machine you have available.</p>
 </section>
 <section id="redis">
-<h3>redis<a class="headerlink" href="#redis" title="Link to this heading">¶</a></h3>
+<h3>redis<a class="headerlink" href="#redis" title="Permalink to this heading">¶</a></h3>
 <p>While redis is a very important part that glues together some of the components, it isn’t used
 heavily and can usually handle a fairly large pretix installation easily on a single modern
 CPU core.
@@ -337,7 +357,7 @@ Having some memory available is good in case of e.g. lots of tasks queuing up du
 </section>
 </section>
 <section id="the-limitations">
-<h2>The limitations<a class="headerlink" href="#the-limitations" title="Link to this heading">¶</a></h2>
+<h2>The limitations<a class="headerlink" href="#the-limitations" title="Permalink to this heading">¶</a></h2>
 <p>Up to a certain point, pretix scales really well. However, there are a few things that we consider
 even more important than scalability, and those are correctness and reliability. We want you to be
 able to trust that pretix will not sell more tickets than you intended or run into similar error
@@ -409,11 +429,11 @@ within minutes, please get in touch to discuss possible solutions. We’ll work 
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

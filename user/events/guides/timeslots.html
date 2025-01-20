@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Use case: Time slots &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Embeddable Widget" href="../widget.html" />
-    <link rel="prev" title="Product structure guide" href="../structureguide.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Product structure guide" href="../structureguide.html"/>
+        <link rel="next" title="Embeddable Widget" href="../widget.html"/>
+        <link rel="prev" title="Product structure guide" href="../structureguide.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../../index.html">
           
-          <a href="../../../index.html">
-              <img src="../../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -175,16 +195,16 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="use-case-time-slots">
-<span id="timeslots"></span><h1>Use case: Time slots<a class="headerlink" href="#use-case-time-slots" title="Link to this heading">¶</a></h1>
+<span id="timeslots"></span><h1>Use case: Time slots<a class="headerlink" href="#use-case-time-slots" title="Permalink to this heading">¶</a></h1>
 <p>A more advanced use case of pretix is using pretix for time-slot-based access to an area with a limited visitor
 capacity, such as a museum or other attraction. This guide will show you the quickest way to set up such an event
 with pretix.</p>
 <p>First of all, when creating your event, you need to select that your event represents an “event series”:</p>
 <a class="screenshot"
-               data-lightbox="group-7ff61e6a-5775-441e-aa47-6ad5fc4c6c6d"
+               data-lightbox="group-ea54924f-6f27-4795-8f5e-0c499b5bcd4a"
                href="../../../_images/create_step11.png"
                title=""
                data-title=""
@@ -197,17 +217,17 @@ with pretix.</p>
                 </a><p>You can click <a class="reference internal" href="../subevents.html#subevents"><span class="std std-ref">here</span></a> for a more general description of event series with pretix, but everything you
 need to know is in this chapter as well.</p>
 <section id="general-event-setup">
-<h2>General event setup<a class="headerlink" href="#general-event-setup" title="Link to this heading">¶</a></h2>
+<h2>General event setup<a class="headerlink" href="#general-event-setup" title="Permalink to this heading">¶</a></h2>
 <p>Before you go further, set up your products that you want to sell for each time slot, such as different types of entry.</p>
 </section>
 <section id="creating-slots">
-<h2>Creating slots<a class="headerlink" href="#creating-slots" title="Link to this heading">¶</a></h2>
+<h2>Creating slots<a class="headerlink" href="#creating-slots" title="Permalink to this heading">¶</a></h2>
 <p>To create the time slots, you need to create a number of “dates” in the event series. Select “Dates” in the navigation
 menu on the left side and click “Create many new dates”. Then, first enter the pattern of your opening days. In the
 example, the museum is open week Tuesday to Sunday. We recommend to create the slots for a few weeks at a time, but not
 e.g. for a full year, since it will be more complicated to change things later.</p>
 <a class="screenshot"
-               data-lightbox="group-795db84f-4446-40e0-a9da-c6ed7c31f68d"
+               data-lightbox="group-094e3111-36ea-4d8b-ad6c-c773de7ed96c"
                href="../../../_images/timeslots_create1.png"
                title=""
                data-title=""
@@ -220,7 +240,7 @@ e.g. for a full year, since it will be more complicated to change things later.<
                 </a><p>Then, scroll to the times section and create your time slots. You can do any interval you like. If you have different
 opening times on different week days, you will need to go through the creation process multiple times.</p>
 <a class="screenshot"
-               data-lightbox="group-1fde34df-9af2-4060-b62c-1c1726b1aea3"
+               data-lightbox="group-abc64741-d527-4c7d-9fc6-2b2f0442918b"
                href="../../../_images/timeslots_create_21.png"
                title=""
                data-title=""
@@ -233,7 +253,7 @@ opening times on different week days, you will need to go through the creation p
                 </a><p>Scroll further down and create one or multiple quotas that define how many people can book a ticket for that time slot.
 In this example, 50 people in total are allowed to enter within every slot:</p>
 <a class="screenshot"
-               data-lightbox="group-08442ad6-db4b-4800-bbfc-d381d8b09de0"
+               data-lightbox="group-1bf48590-8ee1-4bba-9f4c-65256323cf48"
                href="../../../_images/timeslots_create_31.png"
                title=""
                data-title=""
@@ -253,11 +273,11 @@ for a few minutes. Most likely, the slots will be created successfully even thou
 </div>
 </section>
 <section id="event-settings">
-<h2>Event settings<a class="headerlink" href="#event-settings" title="Link to this heading">¶</a></h2>
+<h2>Event settings<a class="headerlink" href="#event-settings" title="Permalink to this heading">¶</a></h2>
 <p>We recommend that you navigate to “Settings” &gt; “General” &gt; “Display” and set the settings “Default overview style”
 to “Week calendar”:</p>
 <a class="screenshot"
-               data-lightbox="group-337012a7-ebd8-4352-a985-24f13d12ab2f"
+               data-lightbox="group-3e9712f0-fb6d-4d71-9ad3-3110b6abf1fa"
                href="../../../_images/timeslots_settings_11.png"
                title=""
                data-title=""
@@ -269,7 +289,7 @@ to “Week calendar”:</p>
                      alt=""/>
                 </a><p>Now, your ticket shop should give users a nice weekly overview over all time slots and their availability:</p>
 <a class="screenshot"
-               data-lightbox="group-35478365-f0fc-4269-b360-2403f4586358"
+               data-lightbox="group-05222e32-c8e2-4f8e-9758-faa0872622a6"
                href="../../../_images/timeslots_presale1.png"
                title=""
                data-title=""
@@ -281,14 +301,14 @@ to “Week calendar”:</p>
                      alt=""/>
                 </a></section>
 <section id="check-in">
-<h2>Check-in<a class="headerlink" href="#check-in" title="Link to this heading">¶</a></h2>
+<h2>Check-in<a class="headerlink" href="#check-in" title="Permalink to this heading">¶</a></h2>
 <p>If you want to scan people at the entrance of your event and only admit them at their designated time, we recommend
 the following setup: Go to “Check-in” in the main navigation on the left and create a new check-in list. Give it a name
 and do <em>not</em> choose a specific data. We will use one check-in list for all dates. Then, go to the “Advanced” tab at
 the top and set up two restrictions to make sure people can only get in during the time slot they registered for.
 You can create the rules exactly like shown in the following screenshot:</p>
 <a class="screenshot"
-               data-lightbox="group-4af3aff8-150c-460c-8530-de855a1f9fba"
+               data-lightbox="group-a6f6d60a-170c-4cde-a2ba-5d44c2a8cade"
                href="../../../_images/timeslots_checkinlists1.png"
                title=""
                data-title=""
@@ -357,11 +377,11 @@ That’s it, you’re good to go!</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

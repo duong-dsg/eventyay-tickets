@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Product structure guide &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Use case: Time slots" href="guides/timeslots.html" />
-    <link rel="prev" title="Invoice settings" href="invoicing.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="User Guide" href="../index.html"/>
+        <link rel="next" title="Use case: Time slots" href="guides/timeslots.html"/>
+        <link rel="prev" title="Invoice settings" href="invoicing.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -190,16 +210,16 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="product-structure-guide">
-<h1>Product structure guide<a class="headerlink" href="#product-structure-guide" title="Link to this heading">¶</a></h1>
+<h1>Product structure guide<a class="headerlink" href="#product-structure-guide" title="Permalink to this heading">¶</a></h1>
 <p>Between products, categories, variations, add-ons, bundles, and quotas, pretix provides a wide range of features that allow you to set up your event in the way you want it.
 However, it is easy to get lost in the process or to get started with building your event right.
 Often times, there are multiple ways to do something that come with different advantages and disadvantages.
 This guide will walk you through a number of typical examples of pretix event structures and will explain how to set them up – feel free to just skip ahead to a section relevant for you.</p>
 <section id="terminology">
-<h2>Terminology<a class="headerlink" href="#terminology" title="Link to this heading">¶</a></h2>
+<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this heading">¶</a></h2>
 <dl class="simple">
 <dt>Products</dt><dd><p>A product is a basic entity that can be bought. You can think of it as a ticket type, but it can be more things than just a ticket, it can also be a piece of merchandise, a parking slot, etc.
 You might find some places where they are called “items” instead, but we’re trying to get rid of that.</p>
@@ -219,7 +239,7 @@ You might find some places where they are called “items” instead, but we’r
 </dl>
 </section>
 <section id="use-case-multiple-price-levels">
-<h2>Use case: Multiple price levels<a class="headerlink" href="#use-case-multiple-price-levels" title="Link to this heading">¶</a></h2>
+<h2>Use case: Multiple price levels<a class="headerlink" href="#use-case-multiple-price-levels" title="Permalink to this heading">¶</a></h2>
 <p>Imagine you’re running a concert with general admission that sells a total of 200 tickets for two prices:</p>
 <ul class="simple">
 <li><p>Regular: € 25.00</p></li>
@@ -230,7 +250,7 @@ You might find some places where they are called “items” instead, but we’r
 <p>If you want to limit the number of student tickets to 50 to ensure a certain minimum revenue, but do not want to limit the number of regular tickets artificially, we suggest you to create the same quota of 200 that is linked to both products, and then create a <strong>second quota</strong> of 50 that is only linked to the student ticket. This way, the system will reduce both quotas whenever a student ticket is sold and only the larger quota when a regular ticket is sold.</p>
 </section>
 <section id="use-case-early-bird-tiers-based-on-dates">
-<h2>Use case: Early-bird tiers based on dates<a class="headerlink" href="#use-case-early-bird-tiers-based-on-dates" title="Link to this heading">¶</a></h2>
+<h2>Use case: Early-bird tiers based on dates<a class="headerlink" href="#use-case-early-bird-tiers-based-on-dates" title="Permalink to this heading">¶</a></h2>
 <p>Let’s say you run a conference that has the following pricing scheme:</p>
 <ul class="simple">
 <li><p>12 to 6 months before the event: € 450</p></li>
@@ -241,7 +261,7 @@ You might find some places where they are called “items” instead, but we’r
 <p>Create three products (e.g. “super early bird”, “early bird”, “regular ticket”) with the respective prices and one shared quota of your total event capacity. Then, set the <strong>available from</strong> and <strong>available until</strong> configuration fields of the products to automatically turn them on and off based on the current date.</p>
 </section>
 <section id="use-case-early-bird-tiers-based-on-ticket-numbers">
-<h2>Use case: Early-bird tiers based on ticket numbers<a class="headerlink" href="#use-case-early-bird-tiers-based-on-ticket-numbers" title="Link to this heading">¶</a></h2>
+<h2>Use case: Early-bird tiers based on ticket numbers<a class="headerlink" href="#use-case-early-bird-tiers-based-on-ticket-numbers" title="Permalink to this heading">¶</a></h2>
 <p>Let’s say you run a conference with 400 tickets that has the following pricing scheme:</p>
 <ul class="simple">
 <li><p>First 100 tickets (“super early bird”): € 450</p></li>
@@ -282,7 +302,7 @@ the early bird tickets will become available again. This is not avoidable if we 
 from blocking all the cheap tickets without an actual sale happening.</p>
 </section>
 <section id="use-case-up-selling-of-ticket-extras">
-<h2>Use case: Up-selling of ticket extras<a class="headerlink" href="#use-case-up-selling-of-ticket-extras" title="Link to this heading">¶</a></h2>
+<h2>Use case: Up-selling of ticket extras<a class="headerlink" href="#use-case-up-selling-of-ticket-extras" title="Permalink to this heading">¶</a></h2>
 <p>Let’s assume you’re putting up a great music festival, and to save trouble with handling payments on-site, you want to sell parking spaces together with your ticket. By using our add-on feature, you can prompt all users to book the parking space (to make sure they see it) and ensure that only people with a ticket can book a parking space. You can set it up like this:</p>
 <ul class="simple">
 <li><p>Create a base product “Festival admission”</p></li>
@@ -299,14 +319,14 @@ from blocking all the cheap tickets without an actual sale happening.</p>
 </div>
 </section>
 <section id="use-case-conference-with-workshops">
-<h2>Use case: Conference with workshops<a class="headerlink" href="#use-case-conference-with-workshops" title="Link to this heading">¶</a></h2>
+<h2>Use case: Conference with workshops<a class="headerlink" href="#use-case-conference-with-workshops" title="Permalink to this heading">¶</a></h2>
 <p>When running a conference, you might also organize a number of workshops with smaller capacity. To be able to plan, it would be great to know which workshops an attendee plans to attend.</p>
 <section id="option-a-questions">
-<h3>Option A: Questions<a class="headerlink" href="#option-a-questions" title="Link to this heading">¶</a></h3>
+<h3>Option A: Questions<a class="headerlink" href="#option-a-questions" title="Permalink to this heading">¶</a></h3>
 <p>Your first and simplest option is to just create a multiple-choice question. This has the upside of making it easy for users to change their mind later on, but will not allow you to restrict the number of attendees signing up for a given workshop – or even charge extra for a given workshop.</p>
 </section>
 <section id="option-b-add-on-products-with-fixed-time-slots">
-<h3>Option B: Add-on products with fixed time slots<a class="headerlink" href="#option-b-add-on-products-with-fixed-time-slots" title="Link to this heading">¶</a></h3>
+<h3>Option B: Add-on products with fixed time slots<a class="headerlink" href="#option-b-add-on-products-with-fixed-time-slots" title="Permalink to this heading">¶</a></h3>
 <p>The usually better option is to go with add-on products. Let’s take for example the following conference schedule, in which the lecture can be attended by anyone, but the workshops only have space for 20 persons each:</p>
 <table class="docutils align-default">
 <thead>
@@ -354,7 +374,7 @@ from blocking all the cheap tickets without an actual sale happening.</p>
 </ul>
 </section>
 <section id="option-c-add-on-products-with-variable-time-slots">
-<h3>Option C: Add-on products with variable time slots<a class="headerlink" href="#option-c-add-on-products-with-variable-time-slots" title="Link to this heading">¶</a></h3>
+<h3>Option C: Add-on products with variable time slots<a class="headerlink" href="#option-c-add-on-products-with-variable-time-slots" title="Permalink to this heading">¶</a></h3>
 <p>The above option only works if your conference uses fixed time slots and every workshop uses exactly one time slot. If
 your schedule looks like this, it’s not going to work great:</p>
 <table class="docutils align-default">
@@ -399,7 +419,7 @@ please contact <a class="reference external" href="mailto:sales&#37;&#52;&#48;ev
 </section>
 </section>
 <section id="use-case-discounted-packages">
-<h2>Use case: Discounted packages<a class="headerlink" href="#use-case-discounted-packages" title="Link to this heading">¶</a></h2>
+<h2>Use case: Discounted packages<a class="headerlink" href="#use-case-discounted-packages" title="Permalink to this heading">¶</a></h2>
 <p>Imagine you run a trade show that opens on three consecutive days and you want to have the following pricing:</p>
 <ul class="simple">
 <li><p>Single day: € 10</p></li>
@@ -408,7 +428,7 @@ please contact <a class="reference external" href="mailto:sales&#37;&#52;&#48;ev
 </ul>
 <p>In this case, there are multiple different ways you could set this up with pretix.</p>
 <section id="option-a-combination-products">
-<h3>Option A: Combination products<a class="headerlink" href="#option-a-combination-products" title="Link to this heading">¶</a></h3>
+<h3>Option A: Combination products<a class="headerlink" href="#option-a-combination-products" title="Permalink to this heading">¶</a></h3>
 <p>With this option, you just set up all the different combinations someone could by as a separate product. In this case, you would need 7 products:</p>
 <ul class="simple">
 <li><p>Day 1 pass</p></li>
@@ -430,7 +450,7 @@ please contact <a class="reference external" href="mailto:sales&#37;&#52;&#48;ev
 <p>We recommend this setup for most setups in which the number of possible combinations does not exceed the number of parts (here: number of days) by much.</p>
 </section>
 <section id="option-b-add-ons-and-bundles">
-<h3>Option B: Add-ons and bundles<a class="headerlink" href="#option-b-add-ons-and-bundles" title="Link to this heading">¶</a></h3>
+<h3>Option B: Add-ons and bundles<a class="headerlink" href="#option-b-add-ons-and-bundles" title="Permalink to this heading">¶</a></h3>
 <p>We can combine the two features “product add-ons” and “product bundles” to set this up in a different way. Here, you would create the following five products:</p>
 <ul class="simple">
 <li><p>Day 1 pass in a category called “Day passes”</p></li>
@@ -471,38 +491,38 @@ please contact <a class="reference external" href="mailto:sales&#37;&#52;&#48;ev
 </section>
 </section>
 <section id="use-case-group-discounts">
-<h2>Use case: Group discounts<a class="headerlink" href="#use-case-group-discounts" title="Link to this heading">¶</a></h2>
+<h2>Use case: Group discounts<a class="headerlink" href="#use-case-group-discounts" title="Permalink to this heading">¶</a></h2>
 <p>Often times, you want to give discounts for whole groups attending your event. pretix can’t automatically discount based on volume, but there’s still some ways you can set up group tickets.</p>
 <section id="flexible-group-sizes">
-<h3>Flexible group sizes<a class="headerlink" href="#flexible-group-sizes" title="Link to this heading">¶</a></h3>
+<h3>Flexible group sizes<a class="headerlink" href="#flexible-group-sizes" title="Permalink to this heading">¶</a></h3>
 <p>If you want to give out discounted tickets to groups starting at a given size, but still billed per person, you can do so by creating a special <strong>Group ticket</strong> at the per-person price and set the <strong>Minimum amount per order</strong> option of the ticket to the minimal group size.</p>
 <p>For more complex use cases, you can also use add-on products that can be chosen multiple times.</p>
 <p>This way, your ticket can be bought an arbitrary number of times – but no less than the given minimal amount per order.</p>
 </section>
 <section id="fixed-group-sizes">
-<h3>Fixed group sizes<a class="headerlink" href="#fixed-group-sizes" title="Link to this heading">¶</a></h3>
+<h3>Fixed group sizes<a class="headerlink" href="#fixed-group-sizes" title="Permalink to this heading">¶</a></h3>
 <p>If you want to sell group tickets in fixed sizes, e.g. a table of eight at your gala dinner, you can use product bundles. Assuming you already set up a ticket for admission of single persons, you then set up a second product <strong>Table (8 persons)</strong> with a discounted full price. Then, head to the <strong>Bundled products</strong> tab of that product and add one bundle configuration to include the single admission product <strong>eight times</strong>. Next, create an unlimited quota mapped to the new product.</p>
 <p>This way, the purchase of a table will automatically create eight tickets, leading to a correct calculation of your total quota and, as expected, eight persons on your check-in list. You can even ask for the individual names of the persons during checkout.</p>
 </section>
 </section>
 <section id="use-case-restricted-audience">
-<h2>Use case: Restricted audience<a class="headerlink" href="#use-case-restricted-audience" title="Link to this heading">¶</a></h2>
+<h2>Use case: Restricted audience<a class="headerlink" href="#use-case-restricted-audience" title="Permalink to this heading">¶</a></h2>
 <p>Not all events are for everyone. Sometimes, there is a good reason to restrict access to your event or parts of your event only to a specific, invited group. There’s two ways to implement this with pretix:</p>
 <section id="option-a-required-voucher-codes">
-<h3>Option A: Required voucher codes<a class="headerlink" href="#option-a-required-voucher-codes" title="Link to this heading">¶</a></h3>
+<h3>Option A: Required voucher codes<a class="headerlink" href="#option-a-required-voucher-codes" title="Permalink to this heading">¶</a></h3>
 <p>If you check the option “<strong>This product can only be bought using a voucher</strong>” of one or multiple products, only people holding an applicable voucher code will be able to buy the product.</p>
 <p>You can then generate voucher codes for the respective product and send them out to the group of possible attendees. If the recipients should still be able to choose between different products, you can create an additional quota and map the voucher to that quota instead of the products themselves.</p>
 <p>There’s also the second option “<strong>This product will only be shown if a voucher matching the product is redeemed</strong>”. In this case, the existence of the product won’t even be shown before a voucher code is entered – useful for a VIP option in a shop where you also sell other products to the general public. Please note that this option does <strong>not</strong> work with vouchers assigned to a quota, only with vouchers assigned directly to the product.</p>
 <p>This option is appropriate if you know the group of people beforehand, e.g. members of a club, and you can mail them their access codes.</p>
 </section>
 <section id="option-b-order-approvals">
-<h3>Option B: Order approvals<a class="headerlink" href="#option-b-order-approvals" title="Link to this heading">¶</a></h3>
+<h3>Option B: Order approvals<a class="headerlink" href="#option-b-order-approvals" title="Permalink to this heading">¶</a></h3>
 <p>If you do not know your audience already, but still want to restrict it to a certain group, e.g. people with a given profession, you can check the “<strong>Buying this product requires approval</strong>” in the settings of your product. If a customer tries to buy such a product, they will be able to place their order but can not proceed to payment. Instead, you will be asked to approve or deny the order and only if you approve it, we will send a payment link to the customer.</p>
 <p>This requires the customer to interact with the ticket shop twice (once for the order, once for the payment) which adds a little more friction, but gives you full control over who attends the event.</p>
 </section>
 </section>
 <section id="use-case-mixed-taxation">
-<h2>Use case: Mixed taxation<a class="headerlink" href="#use-case-mixed-taxation" title="Link to this heading">¶</a></h2>
+<h2>Use case: Mixed taxation<a class="headerlink" href="#use-case-mixed-taxation" title="Permalink to this heading">¶</a></h2>
 <p>Let’s say you are a charitable organization in Germany and are allowed to charge a reduced tax rate of 7% for your educational event. However, your event includes a significant amount of food, you might need to charge a 19% tax rate on that portion. For example, your desired tax structure might then look like this:</p>
 <ul>
 <li><p>Conference ticket price: € 450 (incl. € 150 for food)</p>
@@ -525,7 +545,7 @@ please contact <a class="reference external" href="mailto:sales&#37;&#52;&#48;ev
 <p>You can find more use cases in these specialized guides:</p>
 </section>
 <section id="more-use-cases">
-<h2>More use cases<a class="headerlink" href="#more-use-cases" title="Link to this heading">¶</a></h2>
+<h2>More use cases<a class="headerlink" href="#more-use-cases" title="Permalink to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="guides/timeslots.html">Use case: Time slots</a></li>
@@ -585,11 +605,11 @@ please contact <a class="reference external" href="mailto:sales&#37;&#52;&#48;ev
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

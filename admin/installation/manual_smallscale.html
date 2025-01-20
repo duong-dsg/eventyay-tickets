@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Small-scale manual deployment &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Installing a development version" href="dev_version.html" />
-    <link rel="prev" title="Small-scale deployment with Docker" href="docker_smallscale.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Installation guide" href="index.html"/>
+        <link rel="next" title="Installing a development version" href="dev_version.html"/>
+        <link rel="prev" title="Small-scale deployment with Docker" href="docker_smallscale.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -176,10 +196,10 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="small-scale-manual-deployment">
-<h1>Small-scale manual deployment<a class="headerlink" href="#small-scale-manual-deployment" title="Link to this heading">¶</a></h1>
+<h1>Small-scale manual deployment<a class="headerlink" href="#small-scale-manual-deployment" title="Permalink to this heading">¶</a></h1>
 <p>This guide describes the installation of a small-scale installation of pretix from source. By small-scale, we mean
 that everything is being run on one host and you don’t expect thousands of participants trying to get a ticket within
 a few minutes. In this setup, you will have to perform a number of manual steps. If you prefer using a container
@@ -193,7 +213,7 @@ offers at <a class="reference external" href="https://eventyay.com/">eventyay.co
 <p>We tested this guide on the Linux distribution <strong>Debian 10.0</strong> but it should work very similar on other
 modern distributions, especially on all systemd-based ones.</p>
 <section id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h2>
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">¶</a></h2>
 <p>Please set up the following systems beforehand, we’ll not explain them here in detail (but see these links for external
 installation guides):</p>
 <ul class="simple">
@@ -218,7 +238,7 @@ installations except for evaluation purposes.</p>
 </div>
 </section>
 <section id="unix-user">
-<h2>Unix user<a class="headerlink" href="#unix-user" title="Link to this heading">¶</a></h2>
+<h2>Unix user<a class="headerlink" href="#unix-user" title="Permalink to this heading">¶</a></h2>
 <p>As we do not want to run pretix as root, we first create a new unprivileged user:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># adduser pretix --disabled-password --home /var/pretix
 </pre></div>
@@ -227,7 +247,7 @@ installations except for evaluation purposes.</p>
 <code class="docutils literal notranslate"><span class="pre">root</span></code> user (e.g. using <code class="docutils literal notranslate"><span class="pre">sudo</span></code>); all lines prepended with a <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol should be run by the unprivileged user.</p>
 </section>
 <section id="database">
-<h2>Database<a class="headerlink" href="#database" title="Link to this heading">¶</a></h2>
+<h2>Database<a class="headerlink" href="#database" title="Permalink to this heading">¶</a></h2>
 <p>Having the database server installed, we still need a database and a database user. We can create these with any kind
 of database managing tool or directly on our database’s shell. For PostgreSQL, we would do:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># sudo -u postgres createuser pretix
@@ -240,7 +260,7 @@ of database managing tool or directly on our database’s shell. For PostgreSQL,
 </div>
 </section>
 <section id="package-dependencies">
-<h2>Package dependencies<a class="headerlink" href="#package-dependencies" title="Link to this heading">¶</a></h2>
+<h2>Package dependencies<a class="headerlink" href="#package-dependencies" title="Permalink to this heading">¶</a></h2>
 <p>To build and run pretix, you will need the following debian packages:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># apt-get install git build-essential python-dev python3-venv python3 python3-pip \
                   python3-dev libxml2-dev libxslt1-dev libffi-dev zlib1g-dev libssl-dev \
@@ -249,7 +269,7 @@ of database managing tool or directly on our database’s shell. For PostgreSQL,
 </div>
 </section>
 <section id="config-file">
-<h2>Config file<a class="headerlink" href="#config-file" title="Link to this heading">¶</a></h2>
+<h2>Config file<a class="headerlink" href="#config-file" title="Permalink to this heading">¶</a></h2>
 <p>We now create a config directory and config file for pretix:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># mkdir /etc/pretix
 # touch /etc/pretix/pretix.cfg
@@ -297,7 +317,7 @@ broker=redis://127.0.0.1/2
 <p>See <a class="reference internal" href="../config.html#mail-settings"><span class="std std-ref">email configuration</span></a> to learn more about configuring mail features.</p>
 </section>
 <section id="install-pretix-from-pypi">
-<h2>Install pretix from PyPI<a class="headerlink" href="#install-pretix-from-pypi" title="Link to this heading">¶</a></h2>
+<h2>Install pretix from PyPI<a class="headerlink" href="#install-pretix-from-pypi" title="Permalink to this heading">¶</a></h2>
 <p>Now we will install pretix itself. The following steps are to be executed as the <code class="docutils literal notranslate"><span class="pre">pretix</span></code> user. Before we
 actually install pretix, we will create a virtual environment to isolate the python packages from your global
 python installation:</p>
@@ -323,7 +343,7 @@ command if you’re running MySQL:</p>
 </div>
 </section>
 <section id="start-pretix-as-a-service">
-<h2>Start pretix as a service<a class="headerlink" href="#start-pretix-as-a-service" title="Link to this heading">¶</a></h2>
+<h2>Start pretix as a service<a class="headerlink" href="#start-pretix-as-a-service" title="Permalink to this heading">¶</a></h2>
 <p>We recommend starting pretix using systemd to make sure it runs correctly after a reboot. Create a file
 named <code class="docutils literal notranslate"><span class="pre">/etc/systemd/system/pretix-web.service</span></code> with the following content:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[Unit]
@@ -372,7 +392,7 @@ WantedBy=multi-user.target
 </div>
 </section>
 <section id="cronjob">
-<h2>Cronjob<a class="headerlink" href="#cronjob" title="Link to this heading">¶</a></h2>
+<h2>Cronjob<a class="headerlink" href="#cronjob" title="Permalink to this heading">¶</a></h2>
 <p>You need to set up a cronjob that runs the management command <code class="docutils literal notranslate"><span class="pre">runperiodic</span></code>. The exact interval is not important
 but should be something between every minute and every hour. You could for example configure cron like this:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>15,45 * * * * export PATH=/var/pretix/venv/bin:$PATH &amp;&amp; cd /var/pretix &amp;&amp; python -m pretix runperiodic
@@ -381,7 +401,7 @@ but should be something between every minute and every hour. You could for examp
 <p>The cronjob should run as the <code class="docutils literal notranslate"><span class="pre">pretix</span></code> user (<code class="docutils literal notranslate"><span class="pre">crontab</span> <span class="pre">-e</span> <span class="pre">-u</span> <span class="pre">pretix</span></code>).</p>
 </section>
 <section id="ssl">
-<h2>SSL<a class="headerlink" href="#ssl" title="Link to this heading">¶</a></h2>
+<h2>SSL<a class="headerlink" href="#ssl" title="Permalink to this heading">¶</a></h2>
 <p>The following snippet is an example on how to configure a nginx proxy for pretix:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>server {
     listen 80 default_server;
@@ -439,14 +459,14 @@ above with your python version.</p>
 <p>We recommend reading about setting <a class="reference external" href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">strong encryption settings</a> for your web server.</p>
 </section>
 <section id="next-steps">
-<h2>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">¶</a></h2>
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">¶</a></h2>
 <p>Yay, you are done! You should now be able to reach pretix at <a class="reference external" href="https://pretix.yourdomain.com/control/">https://pretix.yourdomain.com/control/</a> and log in as
 <em>admin&#64;localhost</em> with a password of <em>admin</em>. Don’t forget to change that password! Create an organizer first, then
 create an event and start selling tickets!</p>
 <p>You should probably read <a class="reference internal" href="../maintainance.html#maintainance"><span class="std std-ref">Backups and Monitoring</span></a> next.</p>
 </section>
 <section id="updates">
-<h2>Updates<a class="headerlink" href="#updates" title="Link to this heading">¶</a></h2>
+<h2>Updates<a class="headerlink" href="#updates" title="Permalink to this heading">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>While we try hard not to break things, <strong>please perform a backup before every upgrade</strong>.</p>
@@ -463,7 +483,7 @@ create an event and start selling tickets!</p>
 </div>
 </section>
 <section id="install-a-plugin">
-<span id="manual-plugininstall"></span><h2>Install a plugin<a class="headerlink" href="#install-a-plugin" title="Link to this heading">¶</a></h2>
+<span id="manual-plugininstall"></span><h2>Install a plugin<a class="headerlink" href="#install-a-plugin" title="Permalink to this heading">¶</a></h2>
 <p>To install a plugin, just use <code class="docutils literal notranslate"><span class="pre">pip</span></code>! Depending on the plugin, you should probably apply database migrations and
 rebuild the static files afterwards. Replace <code class="docutils literal notranslate"><span class="pre">pretix-passbook</span></code> with the plugin of your choice in the following
 example:</p>
@@ -528,11 +548,11 @@ example:</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

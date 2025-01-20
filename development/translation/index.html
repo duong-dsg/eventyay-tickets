@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Translating pretix &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Plugin development" href="../api/index.html" />
-    <link rel="prev" title="Logging and notifications" href="../implementation/logging.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Developer documentation" href="../index.html"/>
+        <link rel="next" title="Plugin development" href="../api/index.html"/>
+        <link rel="prev" title="Logging and notifications" href="../implementation/logging.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -84,8 +104,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api/index.html">Plugin development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../structure.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../social_login.html">Social Login Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sso_with_talk.html">Single Sign-On (SSO) Implementation with JWT and OAuth2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin documentation</a></li>
@@ -161,10 +179,10 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="translating-pretix">
-<h1>Translating pretix<a class="headerlink" href="#translating-pretix" title="Link to this heading">¶</a></h1>
+<h1>Translating pretix<a class="headerlink" href="#translating-pretix" title="Permalink to this heading">¶</a></h1>
 <p>pretix has been designed for multi-language capabilities from its start. Organizers can enter their event information
 in multiple languages at the same time. However, the software interface of pretix also needs to be translated for
 this to be useful.</p>
@@ -172,7 +190,7 @@ this to be useful.</p>
 to achieve this goal. To make translating pretix easy not only for software developers, we set up a translation
 platform at <a class="reference external" href="https://translate.eventyay.com">translate.eventyay.com</a>.</p>
 <section id="official-and-inofficial-languages">
-<h2>Official and inofficial languages<a class="headerlink" href="#official-and-inofficial-languages" title="Link to this heading">¶</a></h2>
+<h2>Official and inofficial languages<a class="headerlink" href="#official-and-inofficial-languages" title="Permalink to this heading">¶</a></h2>
 <p>In the pretix project, there are three types of languages:</p>
 <dl class="simple">
 <dt>Official languages</dt><dd><p>are translated and maintained by the core team behind pretix or as part of long-term partnerships. We are
@@ -189,11 +207,10 @@ production installations and are only available in development mode for testing.
 <p>Please contact <a class="reference external" href="mailto:translate&#37;&#52;&#48;eventyay&#46;com">translate<span>&#64;</span>eventyay<span>&#46;</span>com</a> if you think an incubated language should be promoted to an inofficial one or if
 you are interested in a partnership to make your language official.</p>
 <p>The current translation status of various languages is:</p>
-<a class="reference external image-reference" href="https://translate.eventyay.com/engage/pretix/?utm_source=widget"><img alt="https://translate.eventyay.com/widgets/pretix/-/multi-blue.svg" src="https://translate.eventyay.com/widgets/pretix/-/multi-blue.svg" />
-</a>
+<a class="reference external image-reference" href="https://translate.eventyay.com/engage/pretix/?utm_source=widget"><img alt="https://translate.eventyay.com/widgets/pretix/-/multi-blue.svg" src="https://translate.eventyay.com/widgets/pretix/-/multi-blue.svg" /></a>
 </section>
 <section id="using-our-translation-platform">
-<h2>Using our translation platform<a class="headerlink" href="#using-our-translation-platform" title="Link to this heading">¶</a></h2>
+<h2>Using our translation platform<a class="headerlink" href="#using-our-translation-platform" title="Permalink to this heading">¶</a></h2>
 <p>If you visit <a class="reference external" href="https://translate.eventyay.com">translate.eventyay.com</a> for the first time, it admittedly looks pretty bare.</p>
 <img alt="../../_images/weblate1.png" class="screenshot" src="../../_images/weblate1.png" />
 <p>It gets better if you create an account, which you will need to contribute translations. Click on “Register” in the
@@ -275,11 +292,11 @@ scroll down, there is also a “Comments” section to discuss any questions wit
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

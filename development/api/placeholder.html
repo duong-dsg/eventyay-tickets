@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Writing an e-mail placeholder plugin &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Writing an invoice renderer plugin" href="invoice.html" />
-    <link rel="prev" title="Writing an HTML e-mail renderer plugin" href="email.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Plugin development" href="index.html"/>
+        <link rel="next" title="Writing an invoice renderer plugin" href="invoice.html"/>
+        <link rel="prev" title="Writing an HTML e-mail renderer plugin" href="email.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -102,8 +122,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../structure.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../social_login.html">Social Login Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sso_with_talk.html">Single Sign-On (SSO) Implementation with JWT and OAuth2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin documentation</a></li>
@@ -181,14 +199,14 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="writing-an-e-mail-placeholder-plugin">
-<h1>Writing an e-mail placeholder plugin<a class="headerlink" href="#writing-an-e-mail-placeholder-plugin" title="Link to this heading">¶</a></h1>
+<h1>Writing an e-mail placeholder plugin<a class="headerlink" href="#writing-an-e-mail-placeholder-plugin" title="Permalink to this heading">¶</a></h1>
 <p>An email placeholder is a dynamic value that pretix users can use in their email templates.</p>
 <p>Please read <a class="reference internal" href="plugins.html#pluginsetup"><span class="std std-ref">Creating a plugin</span></a> first, if you haven’t already.</p>
 <section id="placeholder-registration">
-<h2>Placeholder registration<a class="headerlink" href="#placeholder-registration" title="Link to this heading">¶</a></h2>
+<h2>Placeholder registration<a class="headerlink" href="#placeholder-registration" title="Permalink to this heading">¶</a></h2>
 <p>The placeholder API does not make a lot of usage from signals, however, it
 does use a signal to get a list of all available email placeholders. Your plugin
 should listen for this signal and return an instance of a subclass of <code class="docutils literal notranslate"><span class="pre">pretix.base.email.BaseMailTextPlaceholder</span></code>:</p>
@@ -205,7 +223,7 @@ should listen for this signal and return an instance of a subclass of <code clas
 </div>
 </section>
 <section id="context-mechanism">
-<h2>Context mechanism<a class="headerlink" href="#context-mechanism" title="Link to this heading">¶</a></h2>
+<h2>Context mechanism<a class="headerlink" href="#context-mechanism" title="Permalink to this heading">¶</a></h2>
 <p>Emails are sent in different “contexts” within pretix. For example, many emails are sent in the
 the context of an order, but some are not, such as the notification of a waiting list voucher.</p>
 <p>Not all placeholders make sense in every email, and placeholders usually depend some parameters
@@ -223,20 +241,20 @@ met. Currently, placeholders can depend on the following context parameters:</p>
 <p>There are a few more that are only to be used internally but not by plugins.</p>
 </section>
 <section id="the-placeholder-class">
-<h2>The placeholder class<a class="headerlink" href="#the-placeholder-class" title="Link to this heading">¶</a></h2>
+<h2>The placeholder class<a class="headerlink" href="#the-placeholder-class" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pretix.base.email.BaseMailTextPlaceholder">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pretix.base.email.</span></span><span class="sig-name descname"><span class="pre">BaseMailTextPlaceholder</span></span><a class="headerlink" href="#pretix.base.email.BaseMailTextPlaceholder" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pretix.base.email.</span></span><span class="sig-name descname"><span class="pre">BaseMailTextPlaceholder</span></span><a class="headerlink" href="#pretix.base.email.BaseMailTextPlaceholder" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.email.pretix.base.email.BaseMailTextPlaceholder.BaseMailTextPlaceholder.identifier">
-<span class="sig-prename descclassname"><span class="pre">BaseMailTextPlaceholder.</span></span><span class="sig-name descname"><span class="pre">identifier</span></span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseMailTextPlaceholder.BaseMailTextPlaceholder.identifier" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseMailTextPlaceholder.</span></span><span class="sig-name descname"><span class="pre">identifier</span></span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseMailTextPlaceholder.BaseMailTextPlaceholder.identifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>This should return the identifier of this placeholder in the email.</p>
 <p>This is an abstract attribute, you <strong>must</strong> override this!</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.email.pretix.base.email.BaseMailTextPlaceholder.BaseMailTextPlaceholder.required_context">
-<span class="sig-prename descclassname"><span class="pre">BaseMailTextPlaceholder.</span></span><span class="sig-name descname"><span class="pre">required_context</span></span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseMailTextPlaceholder.BaseMailTextPlaceholder.required_context" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseMailTextPlaceholder.</span></span><span class="sig-name descname"><span class="pre">required_context</span></span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseMailTextPlaceholder.BaseMailTextPlaceholder.required_context" title="Permalink to this definition">¶</a></dt>
 <dd><p>This property should return a list of all attribute names that need to be
 contained in the base context so that this placeholder is available. By default,
 it returns a list containing the string “event”.</p>
@@ -245,7 +263,7 @@ it returns a list containing the string “event”.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pretix.base.email.pretix.base.email.BaseMailTextPlaceholder.BaseMailTextPlaceholder.render">
-<span class="sig-prename descclassname"><span class="pre">BaseMailTextPlaceholder.</span></span><span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseMailTextPlaceholder.BaseMailTextPlaceholder.render" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseMailTextPlaceholder.</span></span><span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseMailTextPlaceholder.BaseMailTextPlaceholder.render" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method is called to generate the actual text that is being
 used in the email. You will be passed a context dictionary with the
 base context attributes specified in <code class="docutils literal notranslate"><span class="pre">required_context</span></code>. You are
@@ -255,7 +273,7 @@ expected to return a plain-text string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pretix.base.email.pretix.base.email.BaseMailTextPlaceholder.BaseMailTextPlaceholder.render_sample">
-<span class="sig-prename descclassname"><span class="pre">BaseMailTextPlaceholder.</span></span><span class="sig-name descname"><span class="pre">render_sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseMailTextPlaceholder.BaseMailTextPlaceholder.render_sample" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseMailTextPlaceholder.</span></span><span class="sig-name descname"><span class="pre">render_sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseMailTextPlaceholder.BaseMailTextPlaceholder.render_sample" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method is called to generate a text to be used in email previews.
 This may only depend on the event.</p>
 <p>This is an abstract method, you <strong>must</strong> implement this!</p>
@@ -265,7 +283,7 @@ This may only depend on the event.</p>
 
 </section>
 <section id="helper-class-for-simple-placeholders">
-<h2>Helper class for simple placeholders<a class="headerlink" href="#helper-class-for-simple-placeholders" title="Link to this heading">¶</a></h2>
+<h2>Helper class for simple placeholders<a class="headerlink" href="#helper-class-for-simple-placeholders" title="Permalink to this heading">¶</a></h2>
 <p>pretix ships with a helper class that makes it easy to provide placeholders based on simple
 functions:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">placeholder</span> <span class="o">=</span> <span class="n">SimpleFunctionalMailTextPlaceholder</span><span class="p">(</span>
@@ -327,11 +345,11 @@ functions:</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

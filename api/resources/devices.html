@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Devices &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Webhooks" href="webhooks.html" />
-    <link rel="prev" title="Teams" href="teams.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Resources and endpoints" href="index.html"/>
+        <link rel="next" title="Webhooks" href="webhooks.html"/>
+        <link rel="prev" title="Teams" href="teams.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -188,13 +208,13 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="devices">
-<span id="rest-devices"></span><h1>Devices<a class="headerlink" href="#devices" title="Link to this heading">¶</a></h1>
+<span id="rest-devices"></span><h1>Devices<a class="headerlink" href="#devices" title="Permalink to this heading">¶</a></h1>
 <p>See also <a class="reference internal" href="../deviceauth.html#rest-deviceauth"><span class="std std-ref">Device authentication</span></a>.</p>
 <section id="device-resource">
-<h2>Device resource<a class="headerlink" href="#device-resource" title="Link to this heading">¶</a></h2>
+<h2>Device resource<a class="headerlink" href="#device-resource" title="Permalink to this heading">¶</a></h2>
 <p>The device resource contains the following public fields:</p>
 <table class="rest-resource-table docutils align-default">
 <thead>
@@ -264,10 +284,10 @@
 </table>
 </section>
 <section id="device-endpoints">
-<h2>Device endpoints<a class="headerlink" href="#device-endpoints" title="Link to this heading">¶</a></h2>
+<h2>Device endpoints<a class="headerlink" href="#device-endpoints" title="Permalink to this heading">¶</a></h2>
 <dl class="http get">
 <dt class="sig sig-object http" id="get--api-v1-organizers-(organizer)-devices-">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/devices/</span></span><a class="headerlink" href="#get--api-v1-organizers-(organizer)-devices-" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/devices/</span></span><a class="headerlink" href="#get--api-v1-organizers-(organizer)-devices-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of all devices within a given organizer.</p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/organizers/bigevents/devices/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -330,7 +350,7 @@
 
 <dl class="http get">
 <dt class="sig sig-object http" id="get--api-v1-organizers-(organizer)-devices-(device_id)-">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/devices/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">device_id</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/</span></span><a class="headerlink" href="#get--api-v1-organizers-(organizer)-devices-(device_id)-" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/devices/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">device_id</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/</span></span><a class="headerlink" href="#get--api-v1-organizers-(organizer)-devices-(device_id)-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns information on one device, identified by its ID.</p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/organizers/bigevents/devices/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -382,7 +402,7 @@
 
 <dl class="http post">
 <dt class="sig sig-object http" id="post--api-v1-organizers-(organizer)-devices-">
-<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/devices/</span></span><a class="headerlink" href="#post--api-v1-organizers-(organizer)-devices-" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/devices/</span></span><a class="headerlink" href="#post--api-v1-organizers-(organizer)-devices-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new device</p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/api/v1/organizers/bigevents/devices/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -439,7 +459,7 @@
 
 <dl class="http patch">
 <dt class="sig sig-object http" id="patch--api-v1-organizers-(organizer)-devices-(device_id)-">
-<span class="sig-name descname"><span class="pre">PATCH</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/devices/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">device_id</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/</span></span><a class="headerlink" href="#patch--api-v1-organizers-(organizer)-devices-(device_id)-" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">PATCH</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/devices/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">device_id</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/</span></span><a class="headerlink" href="#patch--api-v1-organizers-(organizer)-devices-(device_id)-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update a device.</p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">PATCH</span> <span class="nn">/api/v1/organizers/bigevents/devices/1/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -454,15 +474,15 @@
 </pre></div>
 </div>
 <p><strong>Example response</strong>:</p>
-<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
-<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span>HTTP/1.1 200 OK
+Vary: Accept
+Content-Type: application/json
 
-<span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Foo&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="err">...</span>
-<span class="p">}</span>
+{
+  &quot;id&quot;: 1,
+  &quot;name&quot;: &quot;Foo&quot;,
+  ...
+}
 </pre></div>
 </div>
 <dl class="field-list simple">
@@ -537,11 +557,11 @@
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

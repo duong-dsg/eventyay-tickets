@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Using a custom domain &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Creating an event" href="../events/create.html" />
-    <link rel="prev" title="Teams" href="teams.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Organizer accounts and teams" href="index.html"/>
+        <link rel="next" title="Creating an event" href="../events/create.html"/>
+        <link rel="prev" title="Teams" href="teams.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -168,10 +188,10 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="using-a-custom-domain">
-<span id="custom-domain"></span><h1>Using a custom domain<a class="headerlink" href="#using-a-custom-domain" title="Link to this heading">¶</a></h1>
+<span id="custom-domain"></span><h1>Using a custom domain<a class="headerlink" href="#using-a-custom-domain" title="Permalink to this heading">¶</a></h1>
 <p>By default, event shops built with pretix are accessible at <code class="docutils literal notranslate"><span class="pre">https://&lt;domain&gt;/&lt;organizer&gt;/&lt;event&gt;/</span></code>, where
 <code class="docutils literal notranslate"><span class="pre">&lt;domain&gt;</span></code> is <code class="docutils literal notranslate"><span class="pre">eventyay.com</span></code> if you are using our hosted service and <code class="docutils literal notranslate"><span class="pre">&lt;organizer&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;event&gt;</span></code> are the short
 form versions of your organizer account name and event name, respectively.</p>
@@ -179,7 +199,7 @@ form versions of your organizer account name and event name, respectively.</p>
 and your website is <code class="docutils literal notranslate"><span class="pre">awesomepartycorp.com</span></code>, you might want to sell your tickets at <code class="docutils literal notranslate"><span class="pre">tickets.awesomepartycorp.com</span></code>
 and with pretix, you can do this. On this page, you find out the necessary steps to take.</p>
 <section id="with-the-eventyay-com-hosted-service">
-<h2>With the eventyay.com hosted service<a class="headerlink" href="#with-the-eventyay-com-hosted-service" title="Link to this heading">¶</a></h2>
+<h2>With the eventyay.com hosted service<a class="headerlink" href="#with-the-eventyay-com-hosted-service" title="Permalink to this heading">¶</a></h2>
 <p>Go to “Organizers” in the backend and select your organizer account. Then, go to “Settings” and “Custom Domain”.</p>
 <p>This page will show you instructions on how to set up your own domain. Basically, it works like this:</p>
 <p>Go to the website of the provider you registered your domain name with. Look for the “DNS” settings page in their
@@ -194,13 +214,13 @@ anyways, you should get a pretix-themed error page with the headline “Unknown 
 <p>Now, tell us about your domain on the “Custom Domain” page to get started.</p>
 </section>
 <section id="with-a-custom-pretix-installation">
-<h2>With a custom pretix installation<a class="headerlink" href="#with-a-custom-pretix-installation" title="Link to this heading">¶</a></h2>
+<h2>With a custom pretix installation<a class="headerlink" href="#with-a-custom-pretix-installation" title="Permalink to this heading">¶</a></h2>
 <p>If you installed pretix on a server yourself, you can also use separate domains for separate organizers.
 First of all, configure your webserver or reverse proxy to pass requests to the new domain to pretix as well.
 Then, go to the organizer account in pretix and click the “Edit” button. Enter the new domain in the “Custom Domain”
 field, then you’re done!</p>
 <a class="screenshot"
-               data-lightbox="group-3c974849-dd3d-4af4-b73a-18dc84257e75"
+               data-lightbox="group-cc90445a-c671-4510-9727-359c8de1b559"
                href="../../_images/edit_sysadmin1.png"
                title=""
                data-title=""
@@ -265,11 +285,11 @@ field, then you’re done!</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

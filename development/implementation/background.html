@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Background tasks &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Sending Email" href="email.html" />
-    <link rel="prev" title="Settings storage" href="settings.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Implementation and Utilities" href="index.html"/>
+        <link rel="next" title="Sending Email" href="email.html"/>
+        <link rel="prev" title="Settings storage" href="settings.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -94,8 +114,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../translation/index.html">Translating pretix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/index.html">Plugin development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../structure.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../social_login.html">Social Login Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sso_with_talk.html">Single Sign-On (SSO) Implementation with JWT and OAuth2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin documentation</a></li>
@@ -173,10 +191,10 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="background-tasks">
-<h1>Background tasks<a class="headerlink" href="#background-tasks" title="Link to this heading">¶</a></h1>
+<h1>Background tasks<a class="headerlink" href="#background-tasks" title="Permalink to this heading">¶</a></h1>
 <p>pretix provides the ability to run all longer-running tasks like generating ticket files or sending emails
 in a background thread instead of the web server process. We use the well-established <a class="reference external" href="http://www.celeryproject.org/">Celery</a> project to
 implement this. However, as celery requires running a task queue like RabbitMQ and a result storage such as
@@ -184,7 +202,7 @@ Redis to work efficiently, we don’t like to <em>depend</em> on celery being av
 of pretix more straightforward. For this reason, the “background” in “background task” is always optional. If
 no celery broker is configured, celery will be configured to run tasks synchronously.</p>
 <section id="implementing-a-task">
-<h2>Implementing a task<a class="headerlink" href="#implementing-a-task" title="Link to this heading">¶</a></h2>
+<h2>Implementing a task<a class="headerlink" href="#implementing-a-task" title="Permalink to this heading">¶</a></h2>
 <p>A common pattern for implementing asynchronous tasks can be seen a lot in <code class="docutils literal notranslate"><span class="pre">pretix.base.services</span></code>
 and looks like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pretix.celery_app</span><span class="w"> </span><span class="kn">import</span> <span class="n">app</span>
@@ -202,7 +220,7 @@ and looks like this:</p>
 </div>
 </section>
 <section id="tasks-in-the-request-response-flow">
-<h2>Tasks in the request-response flow<a class="headerlink" href="#tasks-in-the-request-response-flow" title="Link to this heading">¶</a></h2>
+<h2>Tasks in the request-response flow<a class="headerlink" href="#tasks-in-the-request-response-flow" title="Permalink to this heading">¶</a></h2>
 <p>If your user needs to wait for the response of the asynchronous task, there are helpers available in <code class="docutils literal notranslate"><span class="pre">pretix.presale</span></code>
 that will probably move to <code class="docutils literal notranslate"><span class="pre">pretix.base</span></code> at some point. They consist of the view mixin <code class="docutils literal notranslate"><span class="pre">AsyncAction</span></code> that allows
 you to easily write a view that kicks off and waits for an asynchronous task. <code class="docutils literal notranslate"><span class="pre">AsyncAction</span></code> will determine whether
@@ -253,11 +271,11 @@ A usage example taken directly from the code is:</p>
 </div>
 <p>On the client side, this can be used by simply adding a <code class="docutils literal notranslate"><span class="pre">data-asynctask</span></code> attribute to an HTML form. This will enable
 AJAX sending of the form and display a loading indicator:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">data-asynctask</span>
-      <span class="na">action</span><span class="o">=</span><span class="s">&quot;{% eventurl request.event &quot;</span><span class="na">presale:event</span><span class="err">.</span><span class="na">order</span><span class="err">.</span><span class="na">cancel</span><span class="err">.</span><span class="na">do</span><span class="err">&quot;</span> <span class="err">…</span> <span class="err">%}&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>&lt;form method=&quot;post&quot; data-asynctask
+      action=&quot;{% eventurl request.event &quot;presale:event.order.cancel.do&quot; … %}&quot;&gt;
     {% csrf_token %}
     ...
-<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+&lt;/form&gt;
 </pre></div>
 </div>
 </section>
@@ -314,11 +332,11 @@ AJAX sending of the form and display a loading indicator:</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

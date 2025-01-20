@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Concepts and Terminology &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Development setup" href="setup.html" />
-    <link rel="prev" title="Developer documentation" href="index.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../index.html"/>
+        <link rel="up" title="Developer documentation" href="index.html"/>
+        <link rel="next" title="Development setup" href="setup.html"/>
+        <link rel="prev" title="Developer documentation" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../index.html">
           
-          <a href="../index.html">
-              <img src="../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -88,8 +108,6 @@
 <li class="toctree-l2"><a class="reference internal" href="translation/index.html">Translating pretix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/index.html">Plugin development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structure.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="social_login.html">Social Login Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sso_with_talk.html">Single Sign-On (SSO) Implementation with JWT and OAuth2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">Plugin documentation</a></li>
@@ -165,12 +183,12 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="concepts-and-terminology">
-<h1>Concepts and Terminology<a class="headerlink" href="#concepts-and-terminology" title="Link to this heading">¶</a></h1>
+<h1>Concepts and Terminology<a class="headerlink" href="#concepts-and-terminology" title="Permalink to this heading">¶</a></h1>
 <section id="the-components">
-<h2>The components<a class="headerlink" href="#the-components" title="Link to this heading">¶</a></h2>
+<h2>The components<a class="headerlink" href="#the-components" title="Permalink to this heading">¶</a></h2>
 <p>The project pretix is split into several components. The main components are:</p>
 <dl class="simple">
 <dt><strong>base</strong></dt><dd><p>This is the foundation below all other components. It is primarily
@@ -191,14 +209,14 @@ end user. Also called “frontend” in parts of this documentation.</p>
 </dl>
 </section>
 <section id="users-and-events">
-<h2>Users and events<a class="headerlink" href="#users-and-events" title="Link to this heading">¶</a></h2>
+<h2>Users and events<a class="headerlink" href="#users-and-events" title="Permalink to this heading">¶</a></h2>
 <p>pretix is all about <strong>events</strong>, which are defined as something happening somewhere.
 Every event is managed by the <strong>organizer</strong>, an abstract entity running the event.</p>
 <p>pretix has a concept of <strong>users</strong> that is used for all people who have to log in to the
 control panel to manage one or more events. No user is required to place an order.</p>
 </section>
 <section id="items-and-variations">
-<h2>Items and variations<a class="headerlink" href="#items-and-variations" title="Link to this heading">¶</a></h2>
+<h2>Items and variations<a class="headerlink" href="#items-and-variations" title="Permalink to this heading">¶</a></h2>
 <p>The purpose of pretix is to sell products, e.g. tickets or merchandise for an event. Internally,
 those products are called <strong>items</strong>. An item can have multiple <strong>variations</strong>. For example,
 the item ‘T-Shirt’ could have the <strong>variations</strong> ‘S’, ‘M’ and ‘L’.</p>
@@ -207,7 +225,7 @@ additional information which can be entered by the user. Examples of possible qu
 include ‘name’ or ‘age’.</p>
 </section>
 <section id="quotas">
-<h2>Quotas<a class="headerlink" href="#quotas" title="Link to this heading">¶</a></h2>
+<h2>Quotas<a class="headerlink" href="#quotas" title="Permalink to this heading">¶</a></h2>
 <p>Every item needs to belong to one or more <strong>quotas</strong>. The quota contains the information on how many
 times an item can be sold. A quota can have a limited amount of tickets (e.g. if you have a room that
 fits a defined maximum number of persons) or it can be unlimited. In the former case, the quota can be
@@ -229,12 +247,12 @@ paid for, the quota will be freed to allow new persons to buy a ticket. However,
 for the expired order, it will be accepted – unless the quota has sold out in the meantime.</p>
 </section>
 <section id="vouchers">
-<h2>Vouchers<a class="headerlink" href="#vouchers" title="Link to this heading">¶</a></h2>
+<h2>Vouchers<a class="headerlink" href="#vouchers" title="Permalink to this heading">¶</a></h2>
 <p>A voucher is an object that can be used to grant a single user something special, e.g. a reduced price for a
 product or reserved quota space.</p>
 </section>
 <section id="orders">
-<h2>Orders<a class="headerlink" href="#orders" title="Link to this heading">¶</a></h2>
+<h2>Orders<a class="headerlink" href="#orders" title="Permalink to this heading">¶</a></h2>
 <p>If a customer completes the checkout process, an <strong>Order</strong> will be created containing all the entered information.
 An order can be in one of currently six states that are listed in the diagram below:</p>
 <img alt="../_images/order_states.png" src="../_images/order_states.png" />
@@ -300,11 +318,11 @@ represented differently:</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

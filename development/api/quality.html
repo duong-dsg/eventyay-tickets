@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Plugin quality checklist &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Directory structure" href="../structure.html" />
-    <link rel="prev" title="General APIs" href="general.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Plugin development" href="index.html"/>
+        <link rel="next" title="Directory structure" href="../structure.html"/>
+        <link rel="prev" title="General APIs" href="general.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -106,8 +126,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../structure.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../social_login.html">Social Login Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sso_with_talk.html">Single Sign-On (SSO) Implementation with JWT and OAuth2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin documentation</a></li>
@@ -185,15 +203,15 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="plugin-quality-checklist">
-<span id="pluginquality"></span><h1>Plugin quality checklist<a class="headerlink" href="#plugin-quality-checklist" title="Link to this heading">¶</a></h1>
+<span id="pluginquality"></span><h1>Plugin quality checklist<a class="headerlink" href="#plugin-quality-checklist" title="Permalink to this heading">¶</a></h1>
 <p>If you want to write a high-quality pretix plugin, this is a list of things you should check before
 you publish it. This is also a list of things that we check, if we consider installing an externally
 developed plugin on our hosted infrastructure.</p>
 <section id="a-meta">
-<h2>A. Meta<a class="headerlink" href="#a-meta" title="Link to this heading">¶</a></h2>
+<h2>A. Meta<a class="headerlink" href="#a-meta" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>The plugin is clearly licensed under an appropriate license.</p></li>
 <li><p>The plugin has an unambiguous name, description, and author metadata.</p></li>
@@ -205,7 +223,7 @@ stable version of pretix.</p></li>
 </ol>
 </section>
 <section id="b-isolation">
-<h2>B. Isolation<a class="headerlink" href="#b-isolation" title="Link to this heading">¶</a></h2>
+<h2>B. Isolation<a class="headerlink" href="#b-isolation" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>If any signal receivers use the <a class="reference external" href="https://docs.djangoproject.com/en/2.0/topics/signals/#django.dispatch.Signal.connect">dispatch_uid</a> feature, the UIDs are prefixed by the plugin’s name and do not
 clash with other plugins.</p></li>
@@ -219,7 +237,7 @@ core.</p></li>
 </ol>
 </section>
 <section id="c-security">
-<h2>C. Security<a class="headerlink" href="#c-security" title="Link to this heading">¶</a></h2>
+<h2>C. Security<a class="headerlink" href="#c-security" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>All important actions are logged to the <a class="reference internal" href="../implementation/logging.html#logging"><span class="std std-ref">shared log storage</span></a> and a signal receiver is registered to
 provide a human-readable representation of the log entry.</p></li>
@@ -238,7 +256,7 @@ signature or are not being trusted and all data is fetched from an API instead.<
 </div></blockquote>
 </section>
 <section id="d-privacy">
-<h2>D. Privacy<a class="headerlink" href="#d-privacy" title="Link to this heading">¶</a></h2>
+<h2>D. Privacy<a class="headerlink" href="#d-privacy" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>No personal data is stored that is not required for the plugin’s functionality.</p></li>
 <li><p>For any personal data that is saved to the database, an appropriate <a class="reference internal" href="shredder.html#shredder"><span class="std std-ref">data shredder</span></a> is provided
@@ -246,7 +264,7 @@ that offers the data for download and then removes it from the database (includi
 </ol>
 </section>
 <section id="e-internationalization">
-<h2>E. Internationalization<a class="headerlink" href="#e-internationalization" title="Link to this heading">¶</a></h2>
+<h2>E. Internationalization<a class="headerlink" href="#e-internationalization" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>All user-facing strings in templates, Python code, and templates are wrapped in <a class="reference external" href="https://docs.djangoproject.com/en/2.0/topics/i18n/translation/">gettext calls</a>.</p></li>
 <li><p>No languages, time zones, date formats, or time formats are hardcoded.</p></li>
@@ -255,7 +273,7 @@ you use the <code class="docutils literal notranslate"><span class="pre">setup.p
 </ol>
 </section>
 <section id="f-functionality">
-<h2>F. Functionality<a class="headerlink" href="#f-functionality" title="Link to this heading">¶</a></h2>
+<h2>F. Functionality<a class="headerlink" href="#f-functionality" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>If the plugin adds any database models or relationships from the settings storage to database models, it registers
 a receiver to the <a class="reference internal" href="general.html#pretix.base.signals.event_copy_data" title="pretix.base.signals.event_copy_data"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pretix.base.signals.event_copy_data</span></code></a> or <a class="reference internal" href="general.html#pretix.base.signals.item_copy_data" title="pretix.base.signals.item_copy_data"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pretix.base.signals.item_copy_data</span></code></a>
@@ -273,7 +291,7 @@ signals.</p></li>
 </ol>
 </section>
 <section id="g-code-quality">
-<h2>G. Code quality<a class="headerlink" href="#g-code-quality" title="Link to this heading">¶</a></h2>
+<h2>G. Code quality<a class="headerlink" href="#g-code-quality" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://www.google.de/search?q=isort&amp;oq=isort&amp;aqs=chrome..69i57j0j69i59j69i60l2j69i59.599j0j4&amp;sourceid=chrome&amp;ie=UTF-8">isort</a> and <a class="reference external" href="http://flake8.pycqa.org/en/latest/">flake8</a> are used to ensure consistent code styling.</p></li>
 <li><p>Unit tests are provided for important pieces of business logic.</p></li>
@@ -283,7 +301,7 @@ signals.</p></li>
 </ol>
 </section>
 <section id="h-specific-to-eventyay-com">
-<h2>H. Specific to eventyay.com<a class="headerlink" href="#h-specific-to-eventyay-com" title="Link to this heading">¶</a></h2>
+<h2>H. Specific to eventyay.com<a class="headerlink" href="#h-specific-to-eventyay-com" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>eventyay.com integrates the data stored by this plugin with its data report features.</p></li>
 <li><p>eventyay.com integrates this plugin in its generated privacy statements, if necessary.</p></li>
@@ -342,11 +360,11 @@ signals.</p></li>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

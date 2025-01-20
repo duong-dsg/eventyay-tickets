@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Creating an external checkout process &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Developer documentation" href="../../development/index.html" />
-    <link rel="prev" title="Understanding the life cycle of orders" href="order_lifecycle.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="API Usage Guides" href="index.html"/>
+        <link rel="next" title="Developer documentation" href="../../development/index.html"/>
+        <link rel="prev" title="Understanding the life cycle of orders" href="order_lifecycle.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -166,10 +186,10 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="creating-an-external-checkout-process">
-<h1>Creating an external checkout process<a class="headerlink" href="#creating-an-external-checkout-process" title="Link to this heading">¶</a></h1>
+<h1>Creating an external checkout process<a class="headerlink" href="#creating-an-external-checkout-process" title="Permalink to this heading">¶</a></h1>
 <p>Occasionally, we get asked whether it is possible to just use pretix’ powerful backend as a ticketing engine but use
 a fully-customized checkout process that only communicates via the API. This is possible, but with a few limitations.
 If you go down this route, you will miss out on many of pretix features and safeguards, as well as the added flexibility
@@ -177,7 +197,7 @@ by most of pretix’ plugins. We strongly recommend to talk this through with us
 <p>However, this is really useful if you need to tightly integrate pretix into existing web applications that e.g. control
 the pricing of your products in a way that cannot be mapped to pretix’ product structures.</p>
 <section id="creating-orders">
-<h2>Creating orders<a class="headerlink" href="#creating-orders" title="Link to this heading">¶</a></h2>
+<h2>Creating orders<a class="headerlink" href="#creating-orders" title="Permalink to this heading">¶</a></h2>
 <p>After letting your user select the products to  buy in your application, you should create a new order object inside
 pretix. Below, you can see an example of such an order, but most fields are optional and there are some more features
 supported. Read <a class="reference internal" href="../resources/orders.html#rest-orders-create"><span class="std std-ref">Creating orders</span></a> to learn more about this endpoint.</p>
@@ -235,7 +255,7 @@ the user. If you don’t want to do that yourself, it will also contain the URL 
 attribute. If you pass the <code class="docutils literal notranslate"><span class="pre">&quot;send_mail&quot;:</span> <span class="pre">true</span></code> option, pretix will also send order confirmations for you.</p>
 </section>
 <section id="handling-payments-yourself">
-<h2>Handling payments yourself<a class="headerlink" href="#handling-payments-yourself" title="Link to this heading">¶</a></h2>
+<h2>Handling payments yourself<a class="headerlink" href="#handling-payments-yourself" title="Permalink to this heading">¶</a></h2>
 <p>If you want to handle payments in your application, you can either just create the orders with status “paid” or you can
 create them in “pending” state (the default) and later confirm the payment. We strongly advise to use the payment
 provider <code class="docutils literal notranslate"><span class="pre">&quot;manual&quot;</span></code> in this case to avoid interference with payment code with pretix.</p>
@@ -244,7 +264,7 @@ lot of pretix functionality, such as automatic refunds. Therefore, it is also po
 payment process even in this case:</p>
 </section>
 <section id="using-pretix-payment-providers">
-<h2>Using pretix payment providers<a class="headerlink" href="#using-pretix-payment-providers" title="Link to this heading">¶</a></h2>
+<h2>Using pretix payment providers<a class="headerlink" href="#using-pretix-payment-providers" title="Permalink to this heading">¶</a></h2>
 <p>If you passed a <code class="docutils literal notranslate"><span class="pre">payment_provider</span></code> during order creation above, pretix will have created a payment object with state
 <code class="docutils literal notranslate"><span class="pre">created</span></code> that you can see in the returned order object. This payment object will have an attribute <code class="docutils literal notranslate"><span class="pre">payment_url</span></code>
 that you can use to let the user pay. For example, you could link or redirect to this page.</p>
@@ -275,7 +295,7 @@ would end up with the following URL:</p>
 <p>Of course, you can also use the <code class="docutils literal notranslate"><span class="pre">iframe</span></code> and <code class="docutils literal notranslate"><span class="pre">return_url</span></code> parameters here.</p>
 </section>
 <section id="optional-cart-reservations">
-<h2>Optional: Cart reservations<a class="headerlink" href="#optional-cart-reservations" title="Link to this heading">¶</a></h2>
+<h2>Optional: Cart reservations<a class="headerlink" href="#optional-cart-reservations" title="Permalink to this heading">¶</a></h2>
 <p>Creating orders is an atomic operation: The order is either created as a whole or not at all. However, pretix’
 built-in checkout automatically reserves tickets in a user’s cart for a configurable amount of time to ensure users
 will actually get their tickets once they started entering all their details. If you want a similar behavior in your
@@ -339,11 +359,11 @@ support vouchers or automatic price calculation. If you require these features, 
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

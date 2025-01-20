@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>General APIs &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Plugin quality checklist" href="quality.html" />
-    <link rel="prev" title="Pluggable authentication backends" href="auth.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Plugin development" href="index.html"/>
+        <link rel="next" title="Plugin quality checklist" href="quality.html"/>
+        <link rel="prev" title="Pluggable authentication backends" href="auth.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -102,8 +122,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../structure.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../social_login.html">Social Login Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sso_with_talk.html">Single Sign-On (SSO) Implementation with JWT and OAuth2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin documentation</a></li>
@@ -181,17 +199,17 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="general-apis">
-<h1>General APIs<a class="headerlink" href="#general-apis" title="Link to this heading">¶</a></h1>
+<h1>General APIs<a class="headerlink" href="#general-apis" title="Permalink to this heading">¶</a></h1>
 <p>This page lists some general signals and hooks which do not belong to a
 specific type of plugin but might come in handy for various plugins.</p>
 <section id="module-pretix.base.signals">
-<span id="core"></span><h2>Core<a class="headerlink" href="#module-pretix.base.signals" title="Link to this heading">¶</a></h2>
+<span id="core"></span><h2>Core<a class="headerlink" href="#module-pretix.base.signals" title="Permalink to this heading">¶</a></h2>
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.email_filter">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">email_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.email_filter" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">email_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.email_filter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">message</span></code>, <code class="docutils literal notranslate"><span class="pre">order</span></code>, <code class="docutils literal notranslate"><span class="pre">user</span></code></p>
 <p>This signal allows you to implement a middleware-style filter on all outgoing emails. You are expected to
 return a (possibly modified) copy of the message object passed to you.</p>
@@ -205,7 +223,7 @@ well, otherwise it will be <code class="docutils literal notranslate"><span clas
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.event_copy_data">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">event_copy_data</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.event_copy_data" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">event_copy_data</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.event_copy_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: “other”, <code class="docutils literal notranslate"><span class="pre">tax_map</span></code>, <code class="docutils literal notranslate"><span class="pre">category_map</span></code>, <code class="docutils literal notranslate"><span class="pre">item_map</span></code>, <code class="docutils literal notranslate"><span class="pre">question_map</span></code>, <code class="docutils literal notranslate"><span class="pre">variation_map</span></code>, <code class="docutils literal notranslate"><span class="pre">checkin_list_map</span></code></p>
 <p>This signal is sent out when a new event is created as a clone of an existing event, i.e.
 the settings from the older event are copied to the newer one. You can listen to this
@@ -221,7 +239,7 @@ in the new event of the respective types.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.event_live_issues">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">event_live_issues</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.event_live_issues" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">event_live_issues</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.event_live_issues" title="Permalink to this definition">¶</a></dt>
 <dd><p>This signal is sent out to determine whether an event can be taken live. If you want to
 prevent the event from going live, return a string that will be displayed to the user
 as the error message. If you don’t, your receiver should return <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
@@ -230,7 +248,7 @@ as the error message. If you don’t, your receiver should return <code class="d
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.global_email_filter">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">global_email_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.GlobalSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.global_email_filter" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">global_email_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.GlobalSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.global_email_filter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">message</span></code>, <code class="docutils literal notranslate"><span class="pre">order</span></code>, <code class="docutils literal notranslate"><span class="pre">user</span></code>, <code class="docutils literal notranslate"><span class="pre">customer</span></code>, <code class="docutils literal notranslate"><span class="pre">organizer</span></code></p>
 <p>This signal allows you to implement a middleware-style filter on all outgoing emails. You are expected to
 return a (possibly modified) copy of the message object passed to you.</p>
@@ -244,7 +262,7 @@ well, otherwise it will be <code class="docutils literal notranslate"><span clas
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.item_copy_data">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">item_copy_data</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.item_copy_data" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">item_copy_data</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.item_copy_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">source</span></code>, <code class="docutils literal notranslate"><span class="pre">target</span></code></p>
 <p>This signal is sent out when a new product is created as a clone of an existing product, i.e.
 the settings from the older product are copied to the newer one. You can listen to this
@@ -255,7 +273,7 @@ copy to, the <code class="docutils literal notranslate"><span class="pre">source
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.periodic_task">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">periodic_task</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.periodic_task" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">periodic_task</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.periodic_task" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is a regular django signal (no pretix event signal) that we send out every
 time the periodic task cronjob runs. This interval is not sharply defined, it can
 be everything between a minute and a day. The actions you perform should be
@@ -265,7 +283,7 @@ than expected.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.quota_availability">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">quota_availability</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.quota_availability" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">quota_availability</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.quota_availability" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">quota</span></code>, <code class="docutils literal notranslate"><span class="pre">result</span></code>, <code class="docutils literal notranslate"><span class="pre">count_waitinglist</span></code></p>
 <p>This signal allows you to modify the availability of a quota. You are passed the <code class="docutils literal notranslate"><span class="pre">quota</span></code> and an
 <code class="docutils literal notranslate"><span class="pre">availability</span></code> result calculated by pretix code or other plugins. <code class="docutils literal notranslate"><span class="pre">availability</span></code> is a tuple
@@ -280,14 +298,14 @@ quotas might be used for display (not for actual order processing).</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.register_global_settings">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">register_global_settings</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.register_global_settings" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">register_global_settings</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.register_global_settings" title="Permalink to this definition">¶</a></dt>
 <dd><p>All plugins that are installed may send fields for the global settings form, as
 an OrderedDict of (setting name, form field).</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.register_notification_types">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">register_notification_types</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.register_notification_types" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">register_notification_types</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.register_notification_types" title="Permalink to this definition">¶</a></dt>
 <dd><p>This signal is sent out to get all known notification types. Receivers should return an
 instance of a subclass of pretix.base.notifications.NotificationType or a list of such
 instances.</p>
@@ -298,7 +316,7 @@ notification settings!</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.register_sales_channels">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">register_sales_channels</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.register_sales_channels" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">register_sales_channels</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.register_sales_channels" title="Permalink to this definition">¶</a></dt>
 <dd><p>This signal is sent out to get all known sales channels types. Receivers should return an
 instance of a subclass of <code class="docutils literal notranslate"><span class="pre">pretix.base.channels.SalesChannel</span></code> or a list of such
 instances.</p>
@@ -306,18 +324,18 @@ instances.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.register_ticket_secret_generators">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">register_ticket_secret_generators</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.register_ticket_secret_generators" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">register_ticket_secret_generators</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.register_ticket_secret_generators" title="Permalink to this definition">¶</a></dt>
 <dd><p>This signal is sent out to get all known ticket secret generators. Receivers should return a
 subclass of <code class="docutils literal notranslate"><span class="pre">pretix.base.secrets.BaseTicketSecretGenerator</span></code> or a list of these</p>
 <p>As with all event-plugin signals, the <code class="docutils literal notranslate"><span class="pre">sender</span></code> keyword argument will contain the event.</p>
 </dd></dl>
 
 <section id="order-events">
-<h3>Order events<a class="headerlink" href="#order-events" title="Link to this heading">¶</a></h3>
+<h3>Order events<a class="headerlink" href="#order-events" title="Permalink to this heading">¶</a></h3>
 <p>There are multiple signals that will be sent out in the ordering cycle:</p>
-<dl class="py data" id="module-0">
+<span class="target" id="module-0"></span><dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.allow_ticket_download">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">allow_ticket_download</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.allow_ticket_download" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">allow_ticket_download</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.allow_ticket_download" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">order</span></code></p>
 <p>This signal is sent out to check if tickets for an order can be downloaded. If any receiver returns false,
 a download will not be offered.</p>
@@ -326,7 +344,7 @@ a download will not be offered.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.invoice_line_text">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">invoice_line_text</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.invoice_line_text" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">invoice_line_text</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.invoice_line_text" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">position</span></code></p>
 <p>This signal is sent out when an invoice is built for an order. You can return additional text that
 should be shown on the invoice for the given <code class="docutils literal notranslate"><span class="pre">position</span></code>.</p>
@@ -334,7 +352,7 @@ should be shown on the invoice for the given <code class="docutils literal notra
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.order_approved">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_approved</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_approved" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_approved</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_approved" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">order</span></code></p>
 <p>This signal is sent out every time an order is being approved. The order object is given
 as the first argument.</p>
@@ -343,7 +361,7 @@ as the first argument.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.order_canceled">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_canceled</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_canceled" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_canceled</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_canceled" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">order</span></code></p>
 <p>This signal is sent out every time an order is canceled. The order object is given
 as the first argument.</p>
@@ -352,7 +370,7 @@ as the first argument.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.order_changed">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_changed</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_changed" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_changed</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_changed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">order</span></code></p>
 <p>This signal is sent out every time an order’s content is changed. The order object is given
 as the first argument.</p>
@@ -361,7 +379,7 @@ as the first argument.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.order_denied">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_denied</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_denied" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_denied</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_denied" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">order</span></code></p>
 <p>This signal is sent out every time an order is being denied. The order object is given
 as the first argument.</p>
@@ -370,7 +388,7 @@ as the first argument.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.order_expired">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_expired</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_expired" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_expired</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_expired" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">order</span></code></p>
 <p>This signal is sent out every time an order is marked as expired. The order object is given
 as the first argument.</p>
@@ -379,7 +397,7 @@ as the first argument.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.order_fee_calculation">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_fee_calculation</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_fee_calculation" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_fee_calculation</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_fee_calculation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">positions</span></code>, <code class="docutils literal notranslate"><span class="pre">invoice_address</span></code>, <code class="docutils literal notranslate"><span class="pre">meta_info</span></code>, <code class="docutils literal notranslate"><span class="pre">total</span></code>, <code class="docutils literal notranslate"><span class="pre">gift_cards</span></code></p>
 <p>This signals allows you to add fees to an order while it is being created. You are expected to
 return a list of <code class="docutils literal notranslate"><span class="pre">OrderFee</span></code> objects that are not yet saved to the database
@@ -394,7 +412,7 @@ the gift cards in use.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.order_fee_type_name">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_fee_type_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_fee_type_name" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_fee_type_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_fee_type_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code>, <code class="docutils literal notranslate"><span class="pre">fee</span></code></p>
 <p>This signals allows you to return a human-readable description for a fee type based on the <code class="docutils literal notranslate"><span class="pre">fee_type</span></code>
 and <code class="docutils literal notranslate"><span class="pre">internal_type</span></code> attributes of the <code class="docutils literal notranslate"><span class="pre">OrderFee</span></code> model that you get as keyword arguments. You are
@@ -404,7 +422,7 @@ expected to return a string or None, if you don’t know about this fee.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.order_gracefully_delete">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_gracefully_delete</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_gracefully_delete" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_gracefully_delete</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_gracefully_delete" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">order</span></code></p>
 <p>This signal is sent out every time a test-mode order is being deleted. The order object
 is given as the first argument.</p>
@@ -416,7 +434,7 @@ the deletion of the order.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.order_modified">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_modified</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_modified" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_modified</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_modified" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">order</span></code></p>
 <p>This signal is sent out every time an order’s information is modified. The order object is given
 as the first argument.</p>
@@ -425,7 +443,7 @@ as the first argument.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.order_paid">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_paid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_paid" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_paid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_paid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">order</span></code></p>
 <p>This signal is sent out every time an order is paid. The order object is given
 as the first argument. This signal is <em>not</em> sent out if an order is marked as paid
@@ -435,7 +453,7 @@ because an already-paid order has been split.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.order_placed">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_placed</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_placed" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_placed</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_placed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">order</span></code></p>
 <p>This signal is sent out every time an order is placed. The order object is given
 as the first argument. This signal is <em>not</em> sent out if an order is created through
@@ -446,7 +464,7 @@ to this signal.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.order_reactivated">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_reactivated</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_reactivated" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_reactivated</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_reactivated" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">order</span></code></p>
 <p>This signal is sent out every time a canceled order is reactivated. The order object is given
 as the first argument.</p>
@@ -455,7 +473,7 @@ as the first argument.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.order_split">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_split</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_split" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">order_split</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.order_split" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">original</span></code>, <code class="docutils literal notranslate"><span class="pre">split_order</span></code></p>
 <p>This signal is sent out when an order is split into two orders and allows you to copy related models
 to the new order. You will be passed the old order as <code class="docutils literal notranslate"><span class="pre">original</span></code> and the new order as <code class="docutils literal notranslate"><span class="pre">split_order</span></code>.</p>
@@ -463,7 +481,7 @@ to the new order. You will be passed the old order as <code class="docutils lite
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.validate_cart">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">validate_cart</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.validate_cart" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">validate_cart</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.validate_cart" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">positions</span></code></p>
 <p>This signal is sent out before the user starts checkout. It includes an iterable
 with the current CartPosition objects.
@@ -474,7 +492,7 @@ appropriate exception message.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.validate_cart_addons">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">validate_cart_addons</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.validate_cart_addons" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">validate_cart_addons</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.validate_cart_addons" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">addons</span></code>, <code class="docutils literal notranslate"><span class="pre">base_position</span></code>, <code class="docutils literal notranslate"><span class="pre">iao</span></code></p>
 <dl class="simple">
 <dt>This signal is sent when a user tries to select a combination of addons. In contrast to</dt><dd><p><code class="docutils literal notranslate"><span class="pre">validate_cart</span></code>, this is executed before the cart is actually modified. You are passed</p>
@@ -490,7 +508,7 @@ appropriate exception message.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.validate_order">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">validate_order</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.validate_order" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">validate_order</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.validate_order" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">payment_provider</span></code>, <code class="docutils literal notranslate"><span class="pre">positions</span></code>, <code class="docutils literal notranslate"><span class="pre">email</span></code>, <code class="docutils literal notranslate"><span class="pre">locale</span></code>, <code class="docutils literal notranslate"><span class="pre">invoice_address</span></code>,
 <code class="docutils literal notranslate"><span class="pre">meta_info</span></code>, <code class="docutils literal notranslate"><span class="pre">customer</span></code></p>
 <p>This signal is sent out when the user tries to confirm the order, before we actually create
@@ -502,10 +520,10 @@ the order. We strongly discourage making changes to the order here.</p>
 
 </section>
 <section id="module-1">
-<span id="check-ins"></span><h3>Check-ins<a class="headerlink" href="#module-1" title="Link to this heading">¶</a></h3>
+<span id="check-ins"></span><h3>Check-ins<a class="headerlink" href="#module-1" title="Permalink to this heading">¶</a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.checkin_created">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">checkin_created</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.checkin_created" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">checkin_created</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.checkin_created" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">checkin</span></code></p>
 <p>This signal is sent out every time a check-in is created (i.e. an order position is marked as
 checked in). It is not send if the position was already checked in and is force-checked-in a second time.
@@ -516,10 +534,10 @@ The check-in object is given as the first argument</p>
 </section>
 </section>
 <section id="module-pretix.presale.signals">
-<span id="frontend"></span><h2>Frontend<a class="headerlink" href="#module-pretix.presale.signals" title="Link to this heading">¶</a></h2>
+<span id="frontend"></span><h2>Frontend<a class="headerlink" href="#module-pretix.presale.signals" title="Permalink to this heading">¶</a></h2>
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.checkout_all_optional">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">checkout_all_optional</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.checkout_all_optional" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">checkout_all_optional</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.checkout_all_optional" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: ‘request’</p>
 <p>If any receiver of this signal returns <code class="docutils literal notranslate"><span class="pre">True</span></code>, all input fields during checkout (contact data,
 invoice address, confirmations) will be optional, except for questions. Use with care!</p>
@@ -529,7 +547,7 @@ argument will contain the request object.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.checkout_confirm_messages">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">checkout_confirm_messages</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.checkout_confirm_messages" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">checkout_confirm_messages</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.checkout_confirm_messages" title="Permalink to this definition">¶</a></dt>
 <dd><p>This signal is sent out to retrieve short messages that need to be acknowledged by the user before the
 order can be completed. This is typically used for something like “accept the terms and conditions”.
 Receivers are expected to return a dictionary where the keys are globally unique identifiers for the
@@ -539,7 +557,7 @@ message and the values can be arbitrary HTML.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.checkout_confirm_page_content">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">checkout_confirm_page_content</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.checkout_confirm_page_content" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">checkout_confirm_page_content</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.checkout_confirm_page_content" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: ‘request’</p>
 <p>This signals allows you to add HTML content to the confirmation page that is presented at the
 end of the checkout process, just before the order is being created.</p>
@@ -549,7 +567,7 @@ argument will contain the request object.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.checkout_flow_steps">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">checkout_flow_steps</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.checkout_flow_steps" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">checkout_flow_steps</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.checkout_flow_steps" title="Permalink to this definition">¶</a></dt>
 <dd><p>This signal is sent out to retrieve pages for the checkout flow. Receivers are expected to return
 a subclass of <code class="docutils literal notranslate"><span class="pre">pretix.presale.checkoutflow.BaseCheckoutFlowStep</span></code>.</p>
 <p>As with all plugin signals, the <code class="docutils literal notranslate"><span class="pre">sender</span></code> keyword argument will contain the event.</p>
@@ -557,7 +575,7 @@ a subclass of <code class="docutils literal notranslate"><span class="pre">preti
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.contact_form_fields">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">contact_form_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.contact_form_fields" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">contact_form_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.contact_form_fields" title="Permalink to this definition">¶</a></dt>
 <dd><p>This signals allows you to add form fields to the contact form that is presented during checkout
 and by default only asks for the email address. You are supposed to return a dictionary of
 form fields with globally unique keys. The validated form results will be saved into the
@@ -568,7 +586,7 @@ argument will contain the request object.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.contact_form_fields_overrides">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">contact_form_fields_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.contact_form_fields_overrides" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">contact_form_fields_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.contact_form_fields_overrides" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code>, <code class="docutils literal notranslate"><span class="pre">order</span></code></p>
 <p>This signal allows you to override fields of the contact form that is presented during checkout
 and by default only asks for the email address. It is also being used for the invoice address
@@ -582,7 +600,7 @@ process and contains an order if the customer is trying to change an existing or
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.fee_calculation_for_cart">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">fee_calculation_for_cart</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.fee_calculation_for_cart" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">fee_calculation_for_cart</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.fee_calculation_for_cart" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: ‘request’, ‘invoice_address’, ‘total’, ‘positions’</p>
 <p>This signals allows you to add fees to a cart. You are expected to return a list of <code class="docutils literal notranslate"><span class="pre">OrderFee</span></code>
 objects that are not yet saved to the database (because there is no order yet).</p>
@@ -595,7 +613,7 @@ The <code class="docutils literal notranslate"><span class="pre">positions</span
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.footer_link">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">footer_link</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.footer_link" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">footer_link</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.footer_link" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>The signal <code class="docutils literal notranslate"><span class="pre">pretix.presale.signals.footer_link</span></code> allows you to add links to the footer of an event page. You
 are expected to return a dictionary containing the keys <code class="docutils literal notranslate"><span class="pre">label</span></code> and <code class="docutils literal notranslate"><span class="pre">url</span></code>.</p>
@@ -604,7 +622,7 @@ are expected to return a dictionary containing the keys <code class="docutils li
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.front_page_bottom">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">front_page_bottom</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.front_page_bottom" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">front_page_bottom</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.front_page_bottom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code>, <code class="docutils literal notranslate"><span class="pre">subevent</span></code></p>
 <p>This signal is sent out to display additional information on the frontpage below the list
 of products.</p>
@@ -614,7 +632,7 @@ receivers are expected to return HTML.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.front_page_bottom_widget">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">front_page_bottom_widget</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.front_page_bottom_widget" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">front_page_bottom_widget</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.front_page_bottom_widget" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code>, <code class="docutils literal notranslate"><span class="pre">subevent</span></code></p>
 <p>This signal is sent out to display additional information on the frontpage below the list
 of products if the front page is shown in the widget.</p>
@@ -624,7 +642,7 @@ receivers are expected to return HTML.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.front_page_top">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">front_page_top</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.front_page_top" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">front_page_top</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.front_page_top" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code>, <code class="docutils literal notranslate"><span class="pre">subevent</span></code></p>
 <p>This signal is sent out to display additional information on the frontpage above the list
 of products and but below a custom frontpage text.</p>
@@ -634,7 +652,7 @@ receivers are expected to return HTML.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.global_footer_link">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">global_footer_link</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.global_footer_link" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">global_footer_link</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.global_footer_link" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>The signal <code class="docutils literal notranslate"><span class="pre">pretix.presale.signals.global_footer_link</span></code> allows you to add links to the footer of any page. You
 are expected to return a dictionary containing the keys <code class="docutils literal notranslate"><span class="pre">label</span></code> and <code class="docutils literal notranslate"><span class="pre">url</span></code>.</p>
@@ -642,7 +660,7 @@ are expected to return a dictionary containing the keys <code class="docutils li
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.global_html_footer">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">global_html_footer</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.global_html_footer" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">global_html_footer</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.global_html_footer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal allows you to put code before the end of the HTML <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code> tag
 of every page in the frontend. You will get the request as the keyword argument
@@ -652,7 +670,7 @@ of every page in the frontend. You will get the request as the keyword argument
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.global_html_head">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">global_html_head</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.global_html_head" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">global_html_head</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.global_html_head" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal allows you to put code inside the HTML <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> tag
 of every page in the frontend. You will get the request as the keyword argument
@@ -662,7 +680,7 @@ of every page in the frontend. You will get the request as the keyword argument
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.global_html_page_header">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">global_html_page_header</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.global_html_page_header" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">global_html_page_header</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.global_html_page_header" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal allows you to put code right in the beginning of the HTML <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code> tag
 of every page in the frontend. You will get the request as the keyword argument
@@ -672,7 +690,7 @@ of every page in the frontend. You will get the request as the keyword argument
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.html_footer">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">html_footer</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.html_footer" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">html_footer</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.html_footer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal allows you to put code before the end of the HTML <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code> tag
 of every page in the frontend. You will get the request as the keyword argument
@@ -682,7 +700,7 @@ of every page in the frontend. You will get the request as the keyword argument
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.html_head">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">html_head</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.html_head" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">html_head</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.html_head" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal allows you to put code inside the HTML <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> tag
 of every page in the frontend. You will get the request as the keyword argument
@@ -692,7 +710,7 @@ of every page in the frontend. You will get the request as the keyword argument
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.html_page_header">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">html_page_header</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.html_page_header" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">html_page_header</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.html_page_header" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal allows you to put code right in the beginning of the HTML <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code> tag
 of every page in the frontend. You will get the request as the keyword argument
@@ -702,7 +720,7 @@ of every page in the frontend. You will get the request as the keyword argument
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.item_description">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">item_description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.item_description" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">item_description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.item_description" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">item</span></code>, <code class="docutils literal notranslate"><span class="pre">variation</span></code></p>
 <p>This signal is sent out when the description of an item or variation is rendered and allows you to append
 additional text to the description. You are passed the <code class="docutils literal notranslate"><span class="pre">item</span></code> and <code class="docutils literal notranslate"><span class="pre">variation</span></code> and expected to return
@@ -711,7 +729,7 @@ HTML.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.position_info">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">position_info</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.position_info" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">position_info</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.position_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">order</span></code>, <code class="docutils literal notranslate"><span class="pre">position</span></code>, <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal is sent out to display additional information on the position detail page</p>
 <p>As with all plugin signals, the <code class="docutils literal notranslate"><span class="pre">sender</span></code> keyword argument will contain the event.</p>
@@ -719,7 +737,7 @@ HTML.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.position_info_top">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">position_info_top</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.position_info_top" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">position_info_top</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.position_info_top" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">order</span></code>, <code class="docutils literal notranslate"><span class="pre">position</span></code>, <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal is sent out to display additional information on top of the position detail page</p>
 <p>As with all plugin signals, the <code class="docutils literal notranslate"><span class="pre">sender</span></code> keyword argument will contain the event.</p>
@@ -727,7 +745,7 @@ HTML.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.question_form_fields">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">question_form_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.question_form_fields" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">question_form_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.question_form_fields" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">position</span></code></p>
 <p>This signals allows you to add form fields to the questions form that is presented during checkout
 and by default asks for the questions configured in the backend. You are supposed to return a dictionary
@@ -741,7 +759,7 @@ later.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.question_form_fields_overrides">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">question_form_fields_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.question_form_fields_overrides" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">question_form_fields_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.question_form_fields_overrides" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">position</span></code>, <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal allows you to override fields of the questions form that is presented during checkout
 and by default only asks for the questions configured in the backend. You are supposed to return a
@@ -756,7 +774,7 @@ argument will contain the request object.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.render_seating_plan">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">render_seating_plan</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.render_seating_plan" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">render_seating_plan</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.render_seating_plan" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code>, <code class="docutils literal notranslate"><span class="pre">subevent</span></code>, <code class="docutils literal notranslate"><span class="pre">voucher</span></code></p>
 <p>This signal is sent out to render a seating plan, if one is configured for the specific event.
 You will be passed the <code class="docutils literal notranslate"><span class="pre">request</span></code> as a keyword argument. If applicable, a <code class="docutils literal notranslate"><span class="pre">subevent</span></code> or
@@ -767,7 +785,7 @@ receivers are expected to return HTML.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.sass_postamble">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">sass_postamble</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.sass_postamble" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">sass_postamble</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.sass_postamble" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">filename</span></code></p>
 <p>This signal allows you to put SASS code at the end of the event-specific
 stylesheet. Keep in mind that this will only be called/rebuilt when the user changes
@@ -779,7 +797,7 @@ all of pretix’ SASS code.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.sass_preamble">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">sass_preamble</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.sass_preamble" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">sass_preamble</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.sass_preamble" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">filename</span></code></p>
 <p>This signal allows you to put SASS code at the beginning of the event-specific
 stylesheet. Keep in mind that this will only be called/rebuilt when the user changes
@@ -790,9 +808,9 @@ code.</p>
 <p>As with all plugin signals, the <code class="docutils literal notranslate"><span class="pre">sender</span></code> keyword argument will contain the event.</p>
 </dd></dl>
 
-<dl class="py data" id="module-2">
+<span class="target" id="module-2"></span><dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.order_info">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">order_info</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.order_info" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">order_info</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.order_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">order</span></code>, <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal is sent out to display additional information on the order detail page</p>
 <p>As with all plugin signals, the <code class="docutils literal notranslate"><span class="pre">sender</span></code> keyword argument will contain the event.</p>
@@ -800,7 +818,7 @@ code.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.order_info_top">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">order_info_top</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.order_info_top" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">order_info_top</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.order_info_top" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">order</span></code>, <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal is sent out to display additional information on top of the order detail page</p>
 <p>As with all plugin signals, the <code class="docutils literal notranslate"><span class="pre">sender</span></code> keyword argument will contain the event.</p>
@@ -808,7 +826,7 @@ code.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.order_meta_from_request">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">order_meta_from_request</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.order_meta_from_request" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">order_meta_from_request</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.order_meta_from_request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal is sent before an order is created through the pretixpresale frontend. It allows you
 to return a dictionary that will be merged in the meta_info attribute of the order.
@@ -817,10 +835,10 @@ You will receive the request triggering the order creation as the <code class="d
 </dd></dl>
 
 <section id="module-3">
-<span id="request-flow"></span><h3>Request flow<a class="headerlink" href="#module-3" title="Link to this heading">¶</a></h3>
+<span id="request-flow"></span><h3>Request flow<a class="headerlink" href="#module-3" title="Permalink to this heading">¶</a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.process_request">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">process_request</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.process_request" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">process_request</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.process_request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal is sent out whenever a request is made to a event presale page. Most of the
 time, this will be called from the middleware layer (except on plugin-provided pages
@@ -834,7 +852,7 @@ easy to cause serious performance problems.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.process_response">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">process_response</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.process_response" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">process_response</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.process_response" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code>, <code class="docutils literal notranslate"><span class="pre">response</span></code></p>
 <p>This signal is sent out whenever a response is sent from a event presale page. Most of
 the time, this will be called from the middleware layer (except on plugin-provided pages
@@ -849,10 +867,10 @@ easy to cause serious performance problems.</p>
 
 </section>
 <section id="module-4">
-<span id="vouchers"></span><h3>Vouchers<a class="headerlink" href="#module-4" title="Link to this heading">¶</a></h3>
+<span id="vouchers"></span><h3>Vouchers<a class="headerlink" href="#module-4" title="Permalink to this heading">¶</a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.presale.signals.voucher_redeem_info">
-<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">voucher_redeem_info</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.voucher_redeem_info" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.presale.signals.</span></span><span class="sig-name descname"><span class="pre">voucher_redeem_info</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.presale.signals.voucher_redeem_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">voucher</span></code></p>
 <p>This signal is sent out to display additional information on the “redeem a voucher” page</p>
 <p>As with all plugin signals, the <code class="docutils literal notranslate"><span class="pre">sender</span></code> keyword argument will contain the event.</p>
@@ -861,10 +879,10 @@ easy to cause serious performance problems.</p>
 </section>
 </section>
 <section id="module-pretix.control.signals">
-<span id="backend"></span><h2>Backend<a class="headerlink" href="#module-pretix.control.signals" title="Link to this heading">¶</a></h2>
+<span id="backend"></span><h2>Backend<a class="headerlink" href="#module-pretix.control.signals" title="Permalink to this heading">¶</a></h2>
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.event_settings_widget">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">event_settings_widget</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.event_settings_widget" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">event_settings_widget</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.event_settings_widget" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: ‘request’</p>
 <p>This signal is sent out to include template snippets on the settings page of an event
 that allows generating a pretix Widget code.</p>
@@ -874,7 +892,7 @@ A second keyword argument <code class="docutils literal notranslate"><span class
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.html_head">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">html_head</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.html_head" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">html_head</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.html_head" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal allows you to put code inside the HTML <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> tag
 of every page in the backend. You will get the request as the keyword argument
@@ -884,7 +902,7 @@ of every page in the backend. You will get the request as the keyword argument
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.html_page_start">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">html_page_start</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.html_page_start" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">html_page_start</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.html_page_start" title="Permalink to this definition">¶</a></dt>
 <dd><p>This signal allows you to put code in the beginning of the main page for every
 page in the backend. You are expected to return HTML.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">sender</span></code> keyword argument will contain the request.</p>
@@ -892,7 +910,7 @@ page in the backend. You are expected to return HTML.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.item_formsets">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">item_formsets</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.item_formsets" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">item_formsets</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.item_formsets" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: ‘request’, ‘item’</p>
 <p>This signal allows you to return additional formsets that should be rendered on the product
 modification page. You are passed <code class="docutils literal notranslate"><span class="pre">request</span></code> and <code class="docutils literal notranslate"><span class="pre">item</span></code> arguments and are expected to return
@@ -908,7 +926,7 @@ will be passed a <code class="docutils literal notranslate"><span class="pre">fo
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.nav_event">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">nav_event</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.nav_event" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">nav_event</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.nav_event" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal allows you to add additional views to the admin panel
 navigation. You will get the request as a keyword argument <code class="docutils literal notranslate"><span class="pre">request</span></code>.
@@ -930,7 +948,7 @@ in pretix.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.nav_event_settings">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">nav_event_settings</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.nav_event_settings" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">nav_event_settings</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.nav_event_settings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: ‘request’</p>
 <p>This signal is sent out to include tab links on the settings page of an event.
 Receivers are expected to return a list of dictionaries. The dictionaries
@@ -946,7 +964,7 @@ A second keyword argument <code class="docutils literal notranslate"><span class
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.nav_global">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">nav_global</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.nav_global" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">nav_global</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.nav_global" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal allows you to add additional views to the navigation bar when no event is
 selected. You will get the request as a keyword argument <code class="docutils literal notranslate"><span class="pre">request</span></code>.
@@ -968,7 +986,7 @@ and you may get the signal regardless of whether your plugin is active.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.nav_organizer">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">nav_organizer</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.nav_organizer" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">nav_organizer</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.nav_organizer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: ‘organizer’, ‘request’</p>
 <p>This signal is sent out to include tab links on the detail page of an organizer.
 Receivers are expected to return a list of dictionaries. The dictionaries
@@ -989,7 +1007,7 @@ the keyword arguments <code class="docutils literal notranslate"><span class="pr
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.nav_topbar">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">nav_topbar</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.nav_topbar" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">nav_topbar</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.nav_topbar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal allows you to add additional views to the top navigation bar.
 You will get the request as a keyword argument <code class="docutils literal notranslate"><span class="pre">request</span></code>.
@@ -1006,14 +1024,14 @@ and you may get the signal regardless of whether your plugin is active.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.oauth_application_registered">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">oauth_application_registered</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.oauth_application_registered" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">oauth_application_registered</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.oauth_application_registered" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">user</span></code>, <code class="docutils literal notranslate"><span class="pre">application</span></code></p>
 <p>This signal will be called whenever a user registers a new OAuth application.</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.order_info">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">order_info</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.order_info" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">order_info</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.order_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">order</span></code>, <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal is sent out to display additional information on the order detail page</p>
 <p>As with all plugin signals, the <code class="docutils literal notranslate"><span class="pre">sender</span></code> keyword argument will contain the event.
@@ -1022,7 +1040,7 @@ Additionally, the argument <code class="docutils literal notranslate"><span clas
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.order_position_buttons">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">order_position_buttons</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.order_position_buttons" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">order_position_buttons</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.order_position_buttons" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">order</span></code>, <code class="docutils literal notranslate"><span class="pre">position</span></code>, <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>This signal is sent out to display additional buttons for a single position of an order.</p>
 <p>As with all plugin signals, the <code class="docutils literal notranslate"><span class="pre">sender</span></code> keyword argument will contain the event.
@@ -1031,7 +1049,7 @@ Additionally, the argument <code class="docutils literal notranslate"><span clas
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.order_search_filter_q">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">order_search_filter_q</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.order_search_filter_q" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">order_search_filter_q</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.order_search_filter_q" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">query</span></code></p>
 <p>This signal will be called whenever a free-text order search is performed. You are expected to return one
 Q object that will be OR-ed with existing search queries. As order search exists on a global level as well,
@@ -1042,7 +1060,7 @@ event if the search is performed within an event, and <code class="docutils lite
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.order_search_forms">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">order_search_forms</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.order_search_forms" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">order_search_forms</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.order_search_forms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: ‘request’</p>
 <p>This signal allows you to return additional forms that should be rendered in the advanced order search.
 You are passed <code class="docutils literal notranslate"><span class="pre">request</span></code> argument and are expected to return an instance of a form class that you bind
@@ -1056,7 +1074,7 @@ method on your form that returns a list of strings describing the currently acti
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.quota_detail_html">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">quota_detail_html</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.quota_detail_html" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">quota_detail_html</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.quota_detail_html" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: ‘quota’</p>
 <p>This signal allows you to append HTML to a Quota’s detail view. You receive the
 quota as argument in the <code class="docutils literal notranslate"><span class="pre">quota</span></code> keyword argument.</p>
@@ -1065,7 +1083,7 @@ quota as argument in the <code class="docutils literal notranslate"><span class=
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.subevent_forms">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">subevent_forms</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.subevent_forms" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">subevent_forms</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.subevent_forms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: ‘request’, ‘subevent’, ‘copy_from’</p>
 <p>This signal allows you to return additional forms that should be rendered on the subevent creation
 or modification page. You are passed <code class="docutils literal notranslate"><span class="pre">request</span></code> and <code class="docutils literal notranslate"><span class="pre">subevent</span></code> arguments and are expected to return
@@ -1078,9 +1096,9 @@ creation, <code class="docutils literal notranslate"><span class="pre">copy_from
 <p>As with all plugin signals, the <code class="docutils literal notranslate"><span class="pre">sender</span></code> keyword argument will contain the event.</p>
 </dd></dl>
 
-<dl class="py data" id="module-5">
+<span class="target" id="module-5"></span><dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.logentry_display">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">logentry_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.logentry_display" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">logentry_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.logentry_display" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">logentry</span></code></p>
 <p>To display an instance of the <code class="docutils literal notranslate"><span class="pre">LogEntry</span></code> model to a human user,
 <code class="docutils literal notranslate"><span class="pre">pretix.base.signals.logentry_display</span></code> will be sent out with a <code class="docutils literal notranslate"><span class="pre">logentry</span></code> argument.</p>
@@ -1091,7 +1109,7 @@ to the user. The receivers are expected to return plain text.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.logentry_object_link">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">logentry_object_link</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.logentry_object_link" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">logentry_object_link</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.logentry_object_link" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">logentry</span></code></p>
 <p>To display the relationship of an instance of the <code class="docutils literal notranslate"><span class="pre">LogEntry</span></code> model to another model
 to a human user, <code class="docutils literal notranslate"><span class="pre">pretix.base.signals.logentry_object_link</span></code> will be sent out with a
@@ -1118,7 +1136,7 @@ As with all event-plugin signals, the <code class="docutils literal notranslate"
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.requiredaction_display">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">requiredaction_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.requiredaction_display" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">requiredaction_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.requiredaction_display" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">action</span></code>, <code class="docutils literal notranslate"><span class="pre">request</span></code></p>
 <p>To display an instance of the <code class="docutils literal notranslate"><span class="pre">RequiredAction</span></code> model to a human user,
 <code class="docutils literal notranslate"><span class="pre">pretix.base.signals.requiredaction_display</span></code> will be sent out with a <code class="docutils literal notranslate"><span class="pre">action</span></code> argument.
@@ -1130,7 +1148,7 @@ to the user. The receivers are expected to return HTML code.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.timeline_events">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">timeline_events</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.timeline_events" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">timeline_events</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.timeline_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>This signal is sent out to collect events for the time line shown on event dashboards. You are passed
 a <code class="docutils literal notranslate"><span class="pre">subevent</span></code> argument which might be none and you are expected to return a list of instances of
 <code class="docutils literal notranslate"><span class="pre">pretix.base.timeline.TimelineEvent</span></code>, which is a <code class="docutils literal notranslate"><span class="pre">namedtuple</span></code> with the fields <code class="docutils literal notranslate"><span class="pre">event</span></code>, <code class="docutils literal notranslate"><span class="pre">subevent</span></code>,
@@ -1138,10 +1156,10 @@ a <code class="docutils literal notranslate"><span class="pre">subevent</span></
 </dd></dl>
 
 <section id="id1">
-<h3>Vouchers<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
-<dl class="py data" id="module-6">
+<h3>Vouchers<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<span class="target" id="module-6"></span><dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.item_forms">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">item_forms</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.item_forms" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">item_forms</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.item_forms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: ‘request’, ‘item’</p>
 <p>This signal allows you to return additional forms that should be rendered on the product
 modification page. You are passed <code class="docutils literal notranslate"><span class="pre">request</span></code> and <code class="docutils literal notranslate"><span class="pre">item</span></code> arguments and are expected to return
@@ -1153,7 +1171,7 @@ styles. It is advisable to set a prefix for your form to avoid clashes with othe
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.voucher_form_class">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">voucher_form_class</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.voucher_form_class" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">voucher_form_class</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.voucher_form_class" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">cls</span></code></p>
 <p>This signal allows you to replace the form class that is used for modifying vouchers.
 You will receive the default form class (or the class set by a previous plugin) in the
@@ -1167,7 +1185,7 @@ for every batch persisted to the database.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.voucher_form_html">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">voucher_form_html</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.voucher_form_html" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">voucher_form_html</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.voucher_form_html" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: ‘form’</p>
 <p>This signal allows you to add additional HTML to the form that is used for modifying vouchers.
 You receive the form object in the <code class="docutils literal notranslate"><span class="pre">form</span></code> keyword argument.</p>
@@ -1176,7 +1194,7 @@ You receive the form object in the <code class="docutils literal notranslate"><s
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.voucher_form_validation">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">voucher_form_validation</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.voucher_form_validation" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">voucher_form_validation</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.voucher_form_validation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: ‘form’</p>
 <p>This signal allows you to add additional validation to the form that is used for
 creating and modifying vouchers. You will receive the form instance in the <code class="docutils literal notranslate"><span class="pre">form</span></code>
@@ -1186,10 +1204,10 @@ argument and the current data state in the <code class="docutils literal notrans
 
 </section>
 <section id="module-7">
-<span id="dashboards"></span><h3>Dashboards<a class="headerlink" href="#module-7" title="Link to this heading">¶</a></h3>
+<span id="dashboards"></span><h3>Dashboards<a class="headerlink" href="#module-7" title="Permalink to this heading">¶</a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.event_dashboard_top">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">event_dashboard_top</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.event_dashboard_top" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">event_dashboard_top</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.event_dashboard_top" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: ‘request’</p>
 <p>This signal is sent out to include custom HTML in the top part of the the event dashboard.
 Receivers should return HTML.</p>
@@ -1199,7 +1217,7 @@ An additional keyword argument <code class="docutils literal notranslate"><span 
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.event_dashboard_widgets">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">event_dashboard_widgets</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.event_dashboard_widgets" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">event_dashboard_widgets</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.event_dashboard_widgets" title="Permalink to this definition">¶</a></dt>
 <dd><p>This signal is sent out to include widgets in the event dashboard. Receivers
 should return a list of dictionaries, where each dictionary can have the keys:</p>
 <ul class="simple">
@@ -1215,7 +1233,7 @@ An additional keyword argument <code class="docutils literal notranslate"><span 
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.control.signals.user_dashboard_widgets">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">user_dashboard_widgets</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.user_dashboard_widgets" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.signals.</span></span><span class="sig-name descname"><span class="pre">user_dashboard_widgets</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.dispatch.dispatcher.Signal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.control.signals.user_dashboard_widgets" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: ‘user’</p>
 <p>This signal is sent out to include widgets in the personal user dashboard. Receivers
 should return a list of dictionaries, where each dictionary can have the keys:</p>
@@ -1231,10 +1249,10 @@ should return a list of dictionaries, where each dictionary can have the keys:</
 
 </section>
 <section id="module-8">
-<span id="ticket-designs"></span><h3>Ticket designs<a class="headerlink" href="#module-8" title="Link to this heading">¶</a></h3>
+<span id="ticket-designs"></span><h3>Ticket designs<a class="headerlink" href="#module-8" title="Permalink to this heading">¶</a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.layout_image_variables">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">layout_image_variables</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.layout_image_variables" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">layout_image_variables</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.layout_image_variables" title="Permalink to this definition">¶</a></dt>
 <dd><p>This signal is sent out to collect variables that can be used to display dynamic images in ticket-related PDF layouts.
 Receivers are expected to return a dictionary with globally unique identifiers as keys and more
 dictionaries as values that contain keys like in the following example:</p>
@@ -1257,7 +1275,7 @@ If no image is available, <code class="docutils literal notranslate"><span class
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.layout_text_variables">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">layout_text_variables</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.layout_text_variables" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">layout_text_variables</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.layout_text_variables" title="Permalink to this definition">¶</a></dt>
 <dd><p>This signal is sent out to collect variables that can be used to display text in ticket-related PDF layouts.
 Receivers are expected to return a dictionary with globally unique identifiers as keys and more
 dictionaries as values that contain keys like in the following example:</p>
@@ -1274,9 +1292,9 @@ dictionaries as values that contain keys like in the following example:</p>
 also be a subevent, if applicable.</p>
 </dd></dl>
 
-<dl class="py data" id="module-pretix.plugins.ticketoutputpdf.signals">
+<span class="target" id="module-pretix.plugins.ticketoutputpdf.signals"></span><dl class="py data">
 <dt class="sig sig-object py" id="pretix.plugins.ticketoutputpdf.signals.override_layout">
-<span class="sig-prename descclassname"><span class="pre">pretix.plugins.ticketoutputpdf.signals.</span></span><span class="sig-name descname"><span class="pre">override_layout</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.plugins.ticketoutputpdf.signals.override_layout" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.plugins.ticketoutputpdf.signals.</span></span><span class="sig-name descname"><span class="pre">override_layout</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.plugins.ticketoutputpdf.signals.override_layout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">layout</span></code>, <code class="docutils literal notranslate"><span class="pre">orderposition</span></code>
 This signal allows you to forcefully override the ticket layout that is being used to create the ticket PDF. Use with
 care, as this will render any specifically by the organizer selected templates useless.</p>
@@ -1290,10 +1308,10 @@ which you have been passed.</p>
 </section>
 </section>
 <section id="module-9">
-<span id="api"></span><h2>API<a class="headerlink" href="#module-9" title="Link to this heading">¶</a></h2>
+<span id="api"></span><h2>API<a class="headerlink" href="#module-9" title="Permalink to this heading">¶</a></h2>
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.api_event_settings_fields">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">api_event_settings_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.api_event_settings_fields" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">api_event_settings_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.api_event_settings_fields" title="Permalink to this definition">¶</a></dt>
 <dd><p>This signal is sent out to collect serializable settings fields for the API. You are expected to
 return a dictionary mapping names of attributes in the settings store to DRF serializer field instances.</p>
 <p>As with all event-plugin signals, the <code class="docutils literal notranslate"><span class="pre">sender</span></code> keyword argument will contain the event.</p>
@@ -1301,7 +1319,7 @@ return a dictionary mapping names of attributes in the settings store to DRF ser
 
 <dl class="py data">
 <dt class="sig sig-object py" id="pretix.base.signals.validate_event_settings">
-<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">validate_event_settings</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.validate_event_settings" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.base.signals.</span></span><span class="sig-name descname"><span class="pre">validate_event_settings</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;pretix.base.signals.EventPluginSignal</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pretix.base.signals.validate_event_settings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arguments: <code class="docutils literal notranslate"><span class="pre">settings_dict</span></code></p>
 <p>This signal is sent out if the user performs an update of event settings through the API or web interface.
 You are passed a <code class="docutils literal notranslate"><span class="pre">settings_dict</span></code> dictionary with the new state of the event settings object and are expected
@@ -1366,11 +1384,11 @@ serializer field instead.</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

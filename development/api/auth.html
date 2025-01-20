@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Pluggable authentication backends &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="General APIs" href="general.html" />
-    <link rel="prev" title="Creating custom views" href="customview.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Plugin development" href="index.html"/>
+        <link rel="next" title="General APIs" href="general.html"/>
+        <link rel="prev" title="Creating custom views" href="customview.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -100,8 +120,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../structure.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../social_login.html">Social Login Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sso_with_talk.html">Single Sign-On (SSO) Implementation with JWT and OAuth2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin documentation</a></li>
@@ -179,10 +197,10 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="pluggable-authentication-backends">
-<h1>Pluggable authentication backends<a class="headerlink" href="#pluggable-authentication-backends" title="Link to this heading">¶</a></h1>
+<h1>Pluggable authentication backends<a class="headerlink" href="#pluggable-authentication-backends" title="Permalink to this heading">¶</a></h1>
 <p>Plugins can supply additional authentication backends. This is mainly useful in self-hosted installations
 and allows you to use company-wide login mechanisms such as LDAP or OAuth for accessing pretix’ backend.</p>
 <p>Every authentication backend contains an implementation of the interface defined in <code class="docutils literal notranslate"><span class="pre">pretix.base.auth.BaseAuthBackend</span></code>
@@ -208,14 +226,14 @@ few rules you need to follow:</p>
 already registered to a user who signs in through a different backend, you <strong>SHOULD</strong> refuse the login.</p></li>
 </ul>
 <section id="the-backend-interface">
-<h2>The backend interface<a class="headerlink" href="#the-backend-interface" title="Link to this heading">¶</a></h2>
+<h2>The backend interface<a class="headerlink" href="#the-backend-interface" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pretix.base.auth.BaseAuthBackend">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pretix.base.auth.</span></span><span class="sig-name descname"><span class="pre">BaseAuthBackend</span></span><a class="headerlink" href="#pretix.base.auth.BaseAuthBackend" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pretix.base.auth.</span></span><span class="sig-name descname"><span class="pre">BaseAuthBackend</span></span><a class="headerlink" href="#pretix.base.auth.BaseAuthBackend" title="Permalink to this definition">¶</a></dt>
 <dd><p>The central object of each backend is the subclass of <code class="docutils literal notranslate"><span class="pre">BaseAuthBackend</span></code>.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.identifier">
-<span class="sig-prename descclassname"><span class="pre">BaseAuthBackend.</span></span><span class="sig-name descname"><span class="pre">identifier</span></span><a class="headerlink" href="#pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.identifier" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseAuthBackend.</span></span><span class="sig-name descname"><span class="pre">identifier</span></span><a class="headerlink" href="#pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.identifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>A short and unique identifier for this authentication backend.
 This should only contain lowercase letters and in most cases will
 be the same as your package name.</p>
@@ -224,27 +242,27 @@ be the same as your package name.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.verbose_name">
-<span class="sig-prename descclassname"><span class="pre">BaseAuthBackend.</span></span><span class="sig-name descname"><span class="pre">verbose_name</span></span><a class="headerlink" href="#pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.verbose_name" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseAuthBackend.</span></span><span class="sig-name descname"><span class="pre">verbose_name</span></span><a class="headerlink" href="#pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.verbose_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>A human-readable name of this authentication backend.</p>
 <p>This is an abstract attribute, you <strong>must</strong> override this!</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.login_form_fields">
-<span class="sig-prename descclassname"><span class="pre">BaseAuthBackend.</span></span><span class="sig-name descname"><span class="pre">login_form_fields</span></span><a class="headerlink" href="#pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.login_form_fields" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseAuthBackend.</span></span><span class="sig-name descname"><span class="pre">login_form_fields</span></span><a class="headerlink" href="#pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.login_form_fields" title="Permalink to this definition">¶</a></dt>
 <dd><p>This property may return form fields that the user needs to fill in to log in.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.visible">
-<span class="sig-prename descclassname"><span class="pre">BaseAuthBackend.</span></span><span class="sig-name descname"><span class="pre">visible</span></span><a class="headerlink" href="#pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.visible" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseAuthBackend.</span></span><span class="sig-name descname"><span class="pre">visible</span></span><a class="headerlink" href="#pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.visible" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether or not this backend can be selected by users actively. Set this to <code class="docutils literal notranslate"><span class="pre">False</span></code>
 if you only implement <code class="docutils literal notranslate"><span class="pre">request_authenticate</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.form_authenticate">
-<span class="sig-prename descclassname"><span class="pre">BaseAuthBackend.</span></span><span class="sig-name descname"><span class="pre">form_authenticate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">form_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.form_authenticate" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseAuthBackend.</span></span><span class="sig-name descname"><span class="pre">form_authenticate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">form_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.form_authenticate" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method will be called after the user filled in the login form. <code class="docutils literal notranslate"><span class="pre">request</span></code> will contain
 the current request and <code class="docutils literal notranslate"><span class="pre">form_data</span></code> the input for the form fields defined in <code class="docutils literal notranslate"><span class="pre">login_form_fields</span></code>.
 You are expected to either return a <code class="docutils literal notranslate"><span class="pre">User</span></code> object (if login was successful) or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
@@ -252,7 +270,7 @@ You are expected to either return a <code class="docutils literal notranslate"><
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.request_authenticate">
-<span class="sig-prename descclassname"><span class="pre">BaseAuthBackend.</span></span><span class="sig-name descname"><span class="pre">request_authenticate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.request_authenticate" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseAuthBackend.</span></span><span class="sig-name descname"><span class="pre">request_authenticate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.request_authenticate" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method will be called when the user opens the login form. If the user already has a valid session
 according to your login mechanism, for example a cookie set by a different system or HTTP header set by a
 reverse proxy, you can directly return a <code class="docutils literal notranslate"><span class="pre">User</span></code> object that will be logged in.</p>
@@ -262,7 +280,7 @@ You are expected to either return a <code class="docutils literal notranslate"><
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.authentication_url">
-<span class="sig-prename descclassname"><span class="pre">BaseAuthBackend.</span></span><span class="sig-name descname"><span class="pre">authentication_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.authentication_url" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseAuthBackend.</span></span><span class="sig-name descname"><span class="pre">authentication_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pretix.base.auth.pretix.base.auth.BaseAuthBackend.BaseAuthBackend.authentication_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method will be called to populate the URL for your authentication method’s tab on the login page.
 For example, if your method works through OAuth, you could return the URL of the OAuth authorization URL the
 user needs to visit.</p>
@@ -274,14 +292,14 @@ user needs to visit.</p>
 
 </section>
 <section id="logging-users-in">
-<h2>Logging users in<a class="headerlink" href="#logging-users-in" title="Link to this heading">¶</a></h2>
+<h2>Logging users in<a class="headerlink" href="#logging-users-in" title="Permalink to this heading">¶</a></h2>
 <p>If you return a user from <code class="docutils literal notranslate"><span class="pre">form_authenticate</span></code> or <code class="docutils literal notranslate"><span class="pre">request_authenticate</span></code>, the system will handle everything else
 for you correctly. However, if you use a redirection method and build a custom view to verify the login, we strongly
 recommend that you use the following utility method to correctly set session values and enforce two-factor
 authentication (if activated):</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pretix.control.views.auth.process_login">
-<span class="sig-prename descclassname"><span class="pre">pretix.control.views.auth.</span></span><span class="sig-name descname"><span class="pre">process_login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_logged_in</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pretix.control.views.auth.process_login" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pretix.control.views.auth.</span></span><span class="sig-name descname"><span class="pre">process_login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_logged_in</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pretix.control.views.auth.process_login" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method allows you to return a response to a successful log-in. This will set all session values correctly
 and redirect to either the URL specified in the <code class="docutils literal notranslate"><span class="pre">next</span></code> parameter, or the 2FA login screen, or the dashboard.</p>
 <dl class="field-list simple">
@@ -345,11 +363,11 @@ and redirect to either the URL specified in the <code class="docutils literal no
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

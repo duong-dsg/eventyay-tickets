@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Settings storage &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Background tasks" href="background.html" />
-    <link rel="prev" title="Internationalization" href="i18n.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Implementation and Utilities" href="index.html"/>
+        <link rel="next" title="Background tasks" href="background.html"/>
+        <link rel="prev" title="Internationalization" href="i18n.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -81,7 +101,6 @@
 <li class="toctree-l3"><a class="reference internal" href="urlconfig.html">Working with URLs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="i18n.html">Internationalization</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Settings storage</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#pretix.base.settings.SettingsSandbox"><code class="docutils literal notranslate"><span class="pre">SettingsSandbox</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#forms">Forms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#defaults-in-plugins">Defaults in plugins</a></li>
 </ul>
@@ -95,8 +114,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../translation/index.html">Translating pretix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/index.html">Plugin development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../structure.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../social_login.html">Social Login Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sso_with_talk.html">Single Sign-On (SSO) Implementation with JWT and OAuth2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin documentation</a></li>
@@ -174,10 +191,10 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="settings-storage">
-<h1>Settings storage<a class="headerlink" href="#settings-storage" title="Link to this heading">¶</a></h1>
+<h1>Settings storage<a class="headerlink" href="#settings-storage" title="Permalink to this heading">¶</a></h1>
 <p>pretix is highly configurable and therefore needs to store a lot of per-event and per-organizer settings.
 For this purpose, we use <a class="reference external" href="https://github.com/raphaelm/django-hierarkey">django-hierarkey</a> which started out as part of pretix and then got refactored into
 its own library. It has a comprehensive <a class="reference external" href="https://django-hierarkey.readthedocs.io/en/latest/">documentation</a> which you should read if you work with settings in pretix.</p>
@@ -201,7 +218,7 @@ or something unique, e.g. <code class="docutils literal notranslate"><span class
 another helper class:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pretix.base.settings.SettingsSandbox">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pretix.base.settings.</span></span><span class="sig-name descname"><span class="pre">SettingsSandbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">typestr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pretix.base.settings.SettingsSandbox" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pretix.base.settings.</span></span><span class="sig-name descname"><span class="pre">SettingsSandbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">typestr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pretix.base.settings.SettingsSandbox" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transparently proxied access to event settings, handling your prefixes for you.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -217,12 +234,12 @@ another helper class:</p>
 <p>When implementing e.g. a payment or export provider, you do not event need to create this sandbox yourself,
 you will just be passed a sandbox object with a prefix generated from your provider name.</p>
 <section id="forms">
-<h2>Forms<a class="headerlink" href="#forms" title="Link to this heading">¶</a></h2>
+<h2>Forms<a class="headerlink" href="#forms" title="Permalink to this heading">¶</a></h2>
 <p>Hierarkey also provides a base class for forms that allow the modification of settings. pretix contains a
 subclass that also adds support for internationalized fields:</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pretix.base.forms.SettingsForm">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pretix.base.forms.</span></span><span class="sig-name descname"><span class="pre">SettingsForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pretix.base.forms.SettingsForm" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pretix.base.forms.</span></span><span class="sig-name descname"><span class="pre">SettingsForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pretix.base.forms.SettingsForm" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <p>You can simply use it like this:</p>
@@ -241,7 +258,7 @@ subclass that also adds support for internationalized fields:</p>
 </div>
 </section>
 <section id="defaults-in-plugins">
-<h2>Defaults in plugins<a class="headerlink" href="#defaults-in-plugins" title="Link to this heading">¶</a></h2>
+<h2>Defaults in plugins<a class="headerlink" href="#defaults-in-plugins" title="Permalink to this heading">¶</a></h2>
 <p>Plugins can add custom hardcoded defaults in the following way:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pretix.base.settings</span><span class="w"> </span><span class="kn">import</span> <span class="n">settings_hierarkey</span>
 
@@ -303,11 +320,11 @@ subclass that also adds support for internationalized fields:</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

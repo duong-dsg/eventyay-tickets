@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Permissions &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Logging and notifications" href="logging.html" />
-    <link rel="prev" title="Sending Email" href="email.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Implementation and Utilities" href="index.html"/>
+        <link rel="next" title="Logging and notifications" href="logging.html"/>
+        <link rel="prev" title="Sending Email" href="email.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -96,8 +116,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../translation/index.html">Translating pretix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/index.html">Plugin development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../structure.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../social_login.html">Social Login Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sso_with_talk.html">Single Sign-On (SSO) Implementation with JWT and OAuth2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin documentation</a></li>
@@ -175,10 +193,10 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="permissions">
-<h1>Permissions<a class="headerlink" href="#permissions" title="Link to this heading">¶</a></h1>
+<h1>Permissions<a class="headerlink" href="#permissions" title="Permalink to this heading">¶</a></h1>
 <p>pretix uses a fine-grained permission system to control who is allowed to control what parts of the system.
 The central concept here is the concept of <em>Teams</em>. You can read more on <a class="reference external" href="user-teams">configuring teams and permissions</a>
 and the <a class="reference internal" href="models.html#pretix.base.models.Team" title="pretix.base.models.Team"><code class="xref py py-class docutils literal notranslate"><span class="pre">pretix.base.models.Team</span></code></a> model in the respective parts of the documentation. The basic digest is:
@@ -188,7 +206,7 @@ assigned a set of permissions and connected to some or all of the events of the 
 but not to a user. You can read more at <a class="reference internal" href="models.html#pretix.base.models.TeamAPIToken" title="pretix.base.models.TeamAPIToken"><code class="xref py py-class docutils literal notranslate"><span class="pre">pretix.base.models.TeamAPIToken</span></code></a>. This page will show you how to
 work with permissions in plugins and within the pretix code base.</p>
 <section id="requiring-permissions-for-a-view">
-<h2>Requiring permissions for a view<a class="headerlink" href="#requiring-permissions-for-a-view" title="Link to this heading">¶</a></h2>
+<h2>Requiring permissions for a view<a class="headerlink" href="#requiring-permissions-for-a-view" title="Permalink to this heading">¶</a></h2>
 <p>pretix provides a number of useful mixins and decorators that allow you to specify that a user needs a certain
 permission level to access a view:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pretix.control.permissions</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
@@ -280,7 +298,7 @@ necessarily have an active admin session:</p>
 </div>
 </section>
 <section id="requiring-permissions-in-the-rest-api">
-<h2>Requiring permissions in the REST API<a class="headerlink" href="#requiring-permissions-in-the-rest-api" title="Link to this heading">¶</a></h2>
+<h2>Requiring permissions in the REST API<a class="headerlink" href="#requiring-permissions-in-the-rest-api" title="Permalink to this heading">¶</a></h2>
 <p>When creating your own <code class="docutils literal notranslate"><span class="pre">viewset</span></code> using Django REST framework, you just need to set the <code class="docutils literal notranslate"><span class="pre">permission</span></code> attribute
 and pretix will check it automatically for you:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyModelViewSet</span><span class="p">(</span><span class="n">viewsets</span><span class="o">.</span><span class="n">ReadOnlyModelViewSet</span><span class="p">):</span>
@@ -289,7 +307,7 @@ and pretix will check it automatically for you:</p>
 </div>
 </section>
 <section id="checking-permission-in-code">
-<h2>Checking permission in code<a class="headerlink" href="#checking-permission-in-code" title="Link to this heading">¶</a></h2>
+<h2>Checking permission in code<a class="headerlink" href="#checking-permission-in-code" title="Permalink to this heading">¶</a></h2>
 <p>If you need to work with permissions manually, there are a couple of useful helper methods on the <a class="reference internal" href="models.html#pretix.base.models.Event" title="pretix.base.models.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">pretix.base.models.Event</span></code></a>,
 <a class="reference internal" href="models.html#pretix.base.models.User" title="pretix.base.models.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">pretix.base.models.User</span></code></a> and <a class="reference internal" href="models.html#pretix.base.models.TeamAPIToken" title="pretix.base.models.TeamAPIToken"><code class="xref py py-class docutils literal notranslate"><span class="pre">pretix.base.models.TeamAPIToken</span></code></a> classes. Here’s a quick overview.</p>
 <p>Return all users that are in any team that is connected to this event:</p>
@@ -344,7 +362,7 @@ and pretix will check it automatically for you:</p>
 <p>Most of these methods work identically on <a class="reference internal" href="models.html#pretix.base.models.TeamAPIToken" title="pretix.base.models.TeamAPIToken"><code class="xref py py-class docutils literal notranslate"><span class="pre">pretix.base.models.TeamAPIToken</span></code></a>.</p>
 </section>
 <section id="staff-sessions">
-<h2>Staff sessions<a class="headerlink" href="#staff-sessions" title="Link to this heading">¶</a></h2>
+<h2>Staff sessions<a class="headerlink" href="#staff-sessions" title="Permalink to this heading">¶</a></h2>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 1.14: </span>In 1.14, the <code class="docutils literal notranslate"><span class="pre">User.is_superuser</span></code> attribute has been deprecated and statically set to return <code class="docutils literal notranslate"><span class="pre">False</span></code>. Staff
 sessions have been newly introduced.</p>
@@ -414,11 +432,11 @@ intended to help compliance with data protection rules as imposed e.g. by GDPR.<
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

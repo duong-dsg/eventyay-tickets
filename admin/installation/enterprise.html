@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Installing pretix Enterprise plugins &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Configuration file" href="../config.html" />
-    <link rel="prev" title="Installing a development version" href="dev_version.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Installation guide" href="index.html"/>
+        <link rel="next" title="Configuration file" href="../config.html"/>
+        <link rel="prev" title="Installing a development version" href="dev_version.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -167,20 +187,20 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="installing-pretix-enterprise-plugins">
-<h1>Installing pretix Enterprise plugins<a class="headerlink" href="#installing-pretix-enterprise-plugins" title="Link to this heading">¶</a></h1>
+<h1>Installing pretix Enterprise plugins<a class="headerlink" href="#installing-pretix-enterprise-plugins" title="Permalink to this heading">¶</a></h1>
 <p>If you want to use a feature of pretix that is part of our commercial offering pretix Enterprise, you need to follow
 some extra steps. Installation works similar to normal pretix plugins, but involves a few extra steps.</p>
 <section id="buying-the-license">
-<h2>Buying the license<a class="headerlink" href="#buying-the-license" title="Link to this heading">¶</a></h2>
+<h2>Buying the license<a class="headerlink" href="#buying-the-license" title="Permalink to this heading">¶</a></h2>
 <p>To obtain a license, please get in touch at <a class="reference external" href="mailto:sales&#37;&#52;&#48;eventyay&#46;com">sales<span>&#64;</span>eventyay<span>&#46;</span>com</a>. Please let us know how many tickets you roughly intend
 to sell per year and how many servers you want to use the plugin on. We recommend having a look at our <a class="reference external" href="https://eventyay.com/about/en/pricing">price list</a>
 first.</p>
 </section>
 <section id="manual-installation">
-<h2>Manual installation<a class="headerlink" href="#manual-installation" title="Link to this heading">¶</a></h2>
+<h2>Manual installation<a class="headerlink" href="#manual-installation" title="Permalink to this heading">¶</a></h2>
 <p>First, generate an SSH key for the system user that you install pretix as. In our tutorial, that would be the user
 <code class="docutils literal notranslate"><span class="pre">pretix</span></code>. Choose an empty passphrase:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># su pretix
@@ -209,7 +229,7 @@ you, for example:</p>
 </div>
 </section>
 <section id="docker-installation">
-<h2>Docker installation<a class="headerlink" href="#docker-installation" title="Link to this heading">¶</a></h2>
+<h2>Docker installation<a class="headerlink" href="#docker-installation" title="Permalink to this heading">¶</a></h2>
 <p>To install a plugin, you need to build your own docker image. To do so, create a new directory to work in. As a first
 step, generate a new SSH key in that directory to use for authentication with us:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ cd /home/me/mypretixdocker
@@ -298,11 +318,11 @@ update to a new version of pretix.</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

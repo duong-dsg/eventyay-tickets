@@ -5,30 +5,43 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Social Login Setup &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Single Sign-On (SSO) Implementation with JWT and OAuth2" href="sso_with_talk.html" />
-    <link rel="prev" title="Directory structure" href="structure.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +57,13 @@
           
 
           
+            <a href="../index.html">
           
-          <a href="../index.html">
-              <img src="../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -68,32 +85,11 @@
               
             
             
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../user/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">REST API</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer documentation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="concepts.html">Concepts and Terminology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup.html">Development setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contribution/index.html">Contributing to pretix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="implementation/index.html">Implementation and Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="translation/index.html">Translating pretix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/index.html">Plugin development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure.html">Directory structure</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Social Login Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#i-google-oauth-application">I. Google OAuth Application</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ii-github-oauth-application">II. Github OAuth Application</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#iii-mediawiki-oauth-application">III. MediaWiki OAuth Application</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#important-notes">Important Notes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#registration-steps">Registration Steps</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#after-approval">After Approval</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="sso_with_talk.html">Single Sign-On (SSO) Implementation with JWT and OAuth2</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Developer documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">Plugin documentation</a></li>
 </ul>
 
@@ -148,8 +144,6 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">Developer documentation</a> &raquo;</li>
-        
       <li>Social Login Setup</li>
     
     
@@ -167,13 +161,14 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="social-login-setup">
-<h1>Social Login Setup<a class="headerlink" href="#social-login-setup" title="Link to this heading">¶</a></h1>
+<h1>Social Login Setup<a class="headerlink" href="#social-login-setup" title="Permalink to this heading">¶</a></h1>
 <p>To enable social login for providers, you first need to create an OAuth application on the provider’s website.</p>
+</section>
 <section id="i-google-oauth-application">
-<h2>I. Google OAuth Application<a class="headerlink" href="#i-google-oauth-application" title="Link to this heading">¶</a></h2>
+<h1>I. Google OAuth Application<a class="headerlink" href="#i-google-oauth-application" title="Permalink to this heading">¶</a></h1>
 <p>Create an OAuth application on <a class="reference external" href="https://console.developers.google.com/">https://console.developers.google.com/</a></p>
 <p>Instructions:</p>
 <ul class="simple">
@@ -183,7 +178,7 @@
 </ul>
 </section>
 <section id="ii-github-oauth-application">
-<h2>II. Github OAuth Application<a class="headerlink" href="#ii-github-oauth-application" title="Link to this heading">¶</a></h2>
+<h1>II. Github OAuth Application<a class="headerlink" href="#ii-github-oauth-application" title="Permalink to this heading">¶</a></h1>
 <p>Create an OAuth application on <a class="reference external" href="https://github.com/settings/applications/new">https://github.com/settings/applications/new</a></p>
 <p>Instructions:</p>
 <ul class="simple">
@@ -192,17 +187,17 @@
 </ul>
 </section>
 <section id="iii-mediawiki-oauth-application">
-<h2>III. MediaWiki OAuth Application<a class="headerlink" href="#iii-mediawiki-oauth-application" title="Link to this heading">¶</a></h2>
+<h1>III. MediaWiki OAuth Application<a class="headerlink" href="#iii-mediawiki-oauth-application" title="Permalink to this heading">¶</a></h1>
 <p>To enable MediaWiki social login for your Eventyay instance, you need to register an OAuth application with MediaWiki.</p>
 <section id="important-notes">
-<h3>Important Notes<a class="headerlink" href="#important-notes" title="Link to this heading">¶</a></h3>
+<h2>Important Notes<a class="headerlink" href="#important-notes" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>The OAuth application must be approved by a MediaWiki administrator</p></li>
 <li><p>Until approved, only the application owner can log in</p></li>
 </ul>
 </section>
 <section id="registration-steps">
-<h3>Registration Steps<a class="headerlink" href="#registration-steps" title="Link to this heading">¶</a></h3>
+<h2>Registration Steps<a class="headerlink" href="#registration-steps" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Register your OAuth application at:
 <a class="reference external" href="https://meta.wikimedia.org/wiki/Special:OAuthConsumerRegistration/propose">https://meta.wikimedia.org/wiki/Special:OAuthConsumerRegistration/propose</a></p></li>
@@ -223,9 +218,8 @@
 </ol>
 </section>
 <section id="after-approval">
-<h3>After Approval<a class="headerlink" href="#after-approval" title="Link to this heading">¶</a></h3>
+<h2>After Approval<a class="headerlink" href="#after-approval" title="Permalink to this heading">¶</a></h2>
 <p>Once approved, other users can log in to your Eventyay instance using their MediaWiki account.</p>
-</section>
 </section>
 </section>
 
@@ -236,15 +230,6 @@
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="sso_with_talk.html" class="btn btn-neutral float-right" title="Single Sign-On (SSO) Implementation with JWT and OAuth2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="structure.html" class="btn btn-neutral" title="Directory structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -280,11 +265,11 @@
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

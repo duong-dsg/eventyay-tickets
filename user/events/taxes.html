@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Configuring taxes &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Invoice settings" href="invoicing.html" />
-    <link rel="prev" title="E-mail settings" href="email.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Configuring an event" href="settings.html"/>
+        <link rel="next" title="Invoice settings" href="invoicing.html"/>
+        <link rel="prev" title="E-mail settings" href="email.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -174,10 +194,10 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="configuring-taxes">
-<span id="taxes"></span><h1>Configuring taxes<a class="headerlink" href="#configuring-taxes" title="Link to this heading">¶</a></h1>
+<span id="taxes"></span><h1>Configuring taxes<a class="headerlink" href="#configuring-taxes" title="Permalink to this heading">¶</a></h1>
 <p>In most countries, you will be required to pay some form of sales tax for your event tickets. If you don’t know about
 the exact rules, you should consult a professional tax consultant right now.</p>
 <p>To implement those taxes in pretix, you can create one or multiple “tax rules”. A tax rule specifies when and at what
@@ -186,7 +206,7 @@ details and on invoices.</p>
 <p>At the time of this writing, every product can be assigned exactly one tax rule. To view and change the tax rules of
 your event, go to the respective section in your event’s settings:</p>
 <a class="screenshot"
-               data-lightbox="group-da800a64-7b44-4959-9103-312cc660ca78"
+               data-lightbox="group-d131ed3e-3542-4f3e-baff-f17c83b7c12a"
                href="../../_images/tax_list1.png"
                title=""
                data-title=""
@@ -199,7 +219,7 @@ your event, go to the respective section in your event’s settings:</p>
                 </a><p>On this page, you can create, edit and delete your tax rules. Clicking on the name of a tax rule will take you to its
 detailed settings:</p>
 <a class="screenshot"
-               data-lightbox="group-580f02b0-00e5-464f-98ee-878a55540098"
+               data-lightbox="group-b6702f15-f19f-4e41-a35b-d2931be9b329"
                href="../../_images/tax_detail1.png"
                title=""
                data-title=""
@@ -228,7 +248,7 @@ located in. This is the place of taxation in the sense of EU reverse charge rule
 </dd>
 </dl>
 <section id="eu-reverse-charge">
-<h2>EU reverse charge<a class="headerlink" href="#eu-reverse-charge" title="Link to this heading">¶</a></h2>
+<h2>EU reverse charge<a class="headerlink" href="#eu-reverse-charge" title="Permalink to this heading">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Everything contained in this section is not legal advice. Please consult a tax consultant
@@ -284,7 +304,7 @@ flexible nature in which prices are being calculated.</p>
 </div>
 </section>
 <section id="custom-tax-rules">
-<h2>Custom tax rules<a class="headerlink" href="#custom-tax-rules" title="Link to this heading">¶</a></h2>
+<h2>Custom tax rules<a class="headerlink" href="#custom-tax-rules" title="Permalink to this heading">¶</a></h2>
 <p>If you have very special requirements for the conditions in which VAT will or will not be charged, you can use the
 “Custom tax rules” section instead of the options listed above. Here, you can create a set of rules consisting of
 conditions (i.e. a country or a type of customer) and actions (i.e. do or do not charge VAT).</p>
@@ -292,7 +312,7 @@ conditions (i.e. a country or a type of customer) and actions (i.e. do or do not
 charged to the user.</p>
 </section>
 <section id="taxation-of-payment-fees">
-<h2>Taxation of payment fees<a class="headerlink" href="#taxation-of-payment-fees" title="Link to this heading">¶</a></h2>
+<h2>Taxation of payment fees<a class="headerlink" href="#taxation-of-payment-fees" title="Permalink to this heading">¶</a></h2>
 <p>In the payment part of your event settings, you can choose the tax rule that needs to be applied for
 payment method fees. This works in the same way as product prices, with the small difference that the
 “configured product prices include the tax amount” settings is ignored and payment fees will always be
@@ -351,11 +371,11 @@ treated as gross values.</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

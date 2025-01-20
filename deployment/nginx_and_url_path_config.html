@@ -5,28 +5,43 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>NGINX and URL Path Configuration for Eventyay-Tickets &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../search.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -42,9 +57,13 @@
           
 
           
+            <a href="../index.html">
           
-          <a href="../index.html">
-              <img src="../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -142,13 +161,13 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="nginx-and-url-path-configuration-for-eventyay-tickets">
-<h1>NGINX and URL Path Configuration for Eventyay-Tickets<a class="headerlink" href="#nginx-and-url-path-configuration-for-eventyay-tickets" title="Link to this heading">¶</a></h1>
+<h1>NGINX and URL Path Configuration for Eventyay-Tickets<a class="headerlink" href="#nginx-and-url-path-configuration-for-eventyay-tickets" title="Permalink to this heading">¶</a></h1>
 <p>This document outlines the NGINX and URL path setup for the <code class="docutils literal notranslate"><span class="pre">eventyay-tickets</span></code> project hosted at <cite>https://github.com/fossasia/eventyay-tickets</cite>. This Django project utilizes <code class="docutils literal notranslate"><span class="pre">FORCE_SCRIPT_NAME</span></code> to configure a base path, allowing the application to run on a specified sub-path within the domain.</p>
 <section id="project-setup-in-django">
-<h2>Project Setup in Django<a class="headerlink" href="#project-setup-in-django" title="Link to this heading">¶</a></h2>
+<h2>Project Setup in Django<a class="headerlink" href="#project-setup-in-django" title="Permalink to this heading">¶</a></h2>
 <p>In <code class="docutils literal notranslate"><span class="pre">eventyay-tickets</span></code>, the following settings are used to configure the base path for the application:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Django Settings</span>
 <span class="n">BASE_PATH</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pretix&#39;</span><span class="p">,</span> <span class="s1">&#39;base_path&#39;</span><span class="p">,</span> <span class="n">fallback</span><span class="o">=</span><span class="s1">&#39;/tickets&#39;</span><span class="p">)</span>
@@ -162,11 +181,11 @@
 <p>This means that all URLs within Django are prefixed with <code class="docutils literal notranslate"><span class="pre">/tickets</span></code>, allowing users to access <code class="docutils literal notranslate"><span class="pre">eventyay-tickets</span></code> via URLs like <code class="docutils literal notranslate"><span class="pre">domain.com/tickets/</span></code>.</p>
 </section>
 <section id="nginx-configuration">
-<h2>NGINX Configuration<a class="headerlink" href="#nginx-configuration" title="Link to this heading">¶</a></h2>
+<h2>NGINX Configuration<a class="headerlink" href="#nginx-configuration" title="Permalink to this heading">¶</a></h2>
 <p>The following NGINX configuration serves the <code class="docutils literal notranslate"><span class="pre">eventyay-tickets</span></code> application along with other services such as <code class="docutils literal notranslate"><span class="pre">talk</span></code> and <code class="docutils literal notranslate"><span class="pre">video</span></code>. The configuration is hosted on server.</p>
 </section>
 <section id="key-sections-of-nginx-configuration">
-<h2>Key Sections of NGINX Configuration<a class="headerlink" href="#key-sections-of-nginx-configuration" title="Link to this heading">¶</a></h2>
+<h2>Key Sections of NGINX Configuration<a class="headerlink" href="#key-sections-of-nginx-configuration" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p><strong>Server Block for HTTPS</strong>:
 This block listens on port <code class="docutils literal notranslate"><span class="pre">443</span></code> for HTTPS traffic.
@@ -267,7 +286,7 @@ SSL certificates are configured here using Let’s Encrypt for secure communicat
 </ol>
 </section>
 <section id="accessing-eventyay-tickets">
-<h2>Accessing eventyay-tickets<a class="headerlink" href="#accessing-eventyay-tickets" title="Link to this heading">¶</a></h2>
+<h2>Accessing eventyay-tickets<a class="headerlink" href="#accessing-eventyay-tickets" title="Permalink to this heading">¶</a></h2>
 <p>With this setup:</p>
 <ul class="simple">
 <li><p>The URL for accessing the <code class="docutils literal notranslate"><span class="pre">eventyay-tickets</span></code> application control panel is <code class="docutils literal notranslate"><span class="pre">https://your-domain/tickets/control</span></code>.</p></li>
@@ -275,7 +294,7 @@ SSL certificates are configured here using Let’s Encrypt for secure communicat
 </ul>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">¶</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">¶</a></h2>
 <p>This configuration leverages <code class="docutils literal notranslate"><span class="pre">FORCE_SCRIPT_NAME</span></code> in Django to set <code class="docutils literal notranslate"><span class="pre">/tickets</span></code> as the base path, while NGINX routes requests to various services based on URL path prefixes. This setup provides a secure and organized way to access different components on the same domain.</p>
 </section>
 </section>
@@ -322,11 +341,11 @@ SSL certificates are configured here using Let’s Encrypt for secure communicat
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

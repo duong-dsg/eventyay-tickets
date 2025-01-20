@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Writing a data shredder &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Extending the order import process" href="import.html" />
-    <link rel="prev" title="Writing an invoice renderer plugin" href="invoice.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Plugin development" href="index.html"/>
+        <link rel="next" title="Extending the order import process" href="import.html"/>
+        <link rel="prev" title="Writing an invoice renderer plugin" href="invoice.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -101,8 +121,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../structure.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../social_login.html">Social Login Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sso_with_talk.html">Single Sign-On (SSO) Implementation with JWT and OAuth2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin documentation</a></li>
@@ -180,14 +198,14 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="writing-a-data-shredder">
-<span id="shredder"></span><h1>Writing a data shredder<a class="headerlink" href="#writing-a-data-shredder" title="Link to this heading">¶</a></h1>
+<span id="shredder"></span><h1>Writing a data shredder<a class="headerlink" href="#writing-a-data-shredder" title="Permalink to this heading">¶</a></h1>
 <p>If your plugin adds the ability to store personal data within pretix, you should also implement a “data shredder”
 to anonymize or pseudonymize the data later.</p>
 <section id="shredder-registration">
-<h2>Shredder registration<a class="headerlink" href="#shredder-registration" title="Link to this heading">¶</a></h2>
+<h2>Shredder registration<a class="headerlink" href="#shredder-registration" title="Permalink to this heading">¶</a></h2>
 <p>The data shredder API does not make a lot of usage from signals, however, it
 does use a signal to get a list of all available data shredders. Your plugin
 should listen for this signal and return the subclass of <code class="docutils literal notranslate"><span class="pre">pretix.base.shredder.BaseDataShredder</span></code>
@@ -206,21 +224,21 @@ that we’ll provide in this plugin:</p>
 </div>
 </section>
 <section id="the-shredder-class">
-<h2>The shredder class<a class="headerlink" href="#the-shredder-class" title="Link to this heading">¶</a></h2>
+<h2>The shredder class<a class="headerlink" href="#the-shredder-class" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pretix.base.shredder.BaseDataShredder">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pretix.base.shredder.</span></span><span class="sig-name descname"><span class="pre">BaseDataShredder</span></span><a class="headerlink" href="#pretix.base.shredder.BaseDataShredder" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pretix.base.shredder.</span></span><span class="sig-name descname"><span class="pre">BaseDataShredder</span></span><a class="headerlink" href="#pretix.base.shredder.BaseDataShredder" title="Permalink to this definition">¶</a></dt>
 <dd><p>The central object of each data shredder is the subclass of <code class="docutils literal notranslate"><span class="pre">BaseDataShredder</span></code>.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.shredder.BaseDataShredder.BaseDataShredder.event">
-<span class="sig-prename descclassname"><span class="pre">BaseDataShredder.</span></span><span class="sig-name descname"><span class="pre">event</span></span><a class="headerlink" href="#pretix.base.shredder.BaseDataShredder.BaseDataShredder.event" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseDataShredder.</span></span><span class="sig-name descname"><span class="pre">event</span></span><a class="headerlink" href="#pretix.base.shredder.BaseDataShredder.BaseDataShredder.event" title="Permalink to this definition">¶</a></dt>
 <dd><p>The default constructor sets this property to the event we are currently
 working for.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.shredder.pretix.base.shredder.BaseDataShredder.BaseDataShredder.identifier">
-<span class="sig-prename descclassname"><span class="pre">BaseDataShredder.</span></span><span class="sig-name descname"><span class="pre">identifier</span></span><a class="headerlink" href="#pretix.base.shredder.pretix.base.shredder.BaseDataShredder.BaseDataShredder.identifier" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseDataShredder.</span></span><span class="sig-name descname"><span class="pre">identifier</span></span><a class="headerlink" href="#pretix.base.shredder.pretix.base.shredder.BaseDataShredder.BaseDataShredder.identifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>A short and unique identifier for this shredder.
 This should only contain lowercase letters and in most
 cases will be the same as your package name.</p>
@@ -229,7 +247,7 @@ cases will be the same as your package name.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.shredder.pretix.base.shredder.BaseDataShredder.BaseDataShredder.verbose_name">
-<span class="sig-prename descclassname"><span class="pre">BaseDataShredder.</span></span><span class="sig-name descname"><span class="pre">verbose_name</span></span><a class="headerlink" href="#pretix.base.shredder.pretix.base.shredder.BaseDataShredder.BaseDataShredder.verbose_name" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseDataShredder.</span></span><span class="sig-name descname"><span class="pre">verbose_name</span></span><a class="headerlink" href="#pretix.base.shredder.pretix.base.shredder.BaseDataShredder.BaseDataShredder.verbose_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>A human-readable name for what this shredder removes. This should be short but self-explanatory.
 Good examples include ‘E-Mail addresses’ or ‘Invoices’.</p>
 <p>This is an abstract attribute, you <strong>must</strong> override this!</p>
@@ -237,14 +255,14 @@ Good examples include ‘E-Mail addresses’ or ‘Invoices’.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.shredder.pretix.base.shredder.BaseDataShredder.BaseDataShredder.description">
-<span class="sig-prename descclassname"><span class="pre">BaseDataShredder.</span></span><span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#pretix.base.shredder.pretix.base.shredder.BaseDataShredder.BaseDataShredder.description" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseDataShredder.</span></span><span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#pretix.base.shredder.pretix.base.shredder.BaseDataShredder.BaseDataShredder.description" title="Permalink to this definition">¶</a></dt>
 <dd><p>A more detailed description of what this shredder does. Can contain HTML.</p>
 <p>This is an abstract attribute, you <strong>must</strong> override this!</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pretix.base.shredder.pretix.base.shredder.BaseDataShredder.BaseDataShredder.generate_files">
-<span class="sig-prename descclassname"><span class="pre">BaseDataShredder.</span></span><span class="sig-name descname"><span class="pre">generate_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pretix.base.shredder.pretix.base.shredder.BaseDataShredder.BaseDataShredder.generate_files" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseDataShredder.</span></span><span class="sig-name descname"><span class="pre">generate_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pretix.base.shredder.pretix.base.shredder.BaseDataShredder.BaseDataShredder.generate_files" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method is called to export the data that is about to be shred and return a list of tuples consisting of a
 filename, a file type and file content.</p>
 <p>You can also implement this as a generator and <code class="docutils literal notranslate"><span class="pre">yield</span></code> those tuples instead of returning a list of them.</p>
@@ -252,7 +270,7 @@ filename, a file type and file content.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pretix.base.shredder.pretix.base.shredder.BaseDataShredder.BaseDataShredder.shred_data">
-<span class="sig-prename descclassname"><span class="pre">BaseDataShredder.</span></span><span class="sig-name descname"><span class="pre">shred_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pretix.base.shredder.pretix.base.shredder.BaseDataShredder.BaseDataShredder.shred_data" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseDataShredder.</span></span><span class="sig-name descname"><span class="pre">shred_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pretix.base.shredder.pretix.base.shredder.BaseDataShredder.BaseDataShredder.shred_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method is called to actually remove the data from the system. You should remove any database objects
 here.</p>
 <p>You should never delete <code class="docutils literal notranslate"><span class="pre">LogEntry</span></code> objects, but you might modify them to remove personal data. In this
@@ -263,7 +281,7 @@ case, set the <code class="docutils literal notranslate"><span class="pre">LogEn
 
 </section>
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Link to this heading">¶</a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h2>
 <p>For example, the core data shredder responsible for removing invoice address information including their history
 looks like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span><span class="w"> </span><span class="nc">InvoiceAddressShredder</span><span class="p">(</span><span class="n">BaseDataShredder</span><span class="p">):</span>
@@ -347,11 +365,11 @@ looks like this:</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

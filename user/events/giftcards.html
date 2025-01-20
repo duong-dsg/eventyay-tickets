@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Gift cards &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="FAQ and Troubleshooting" href="../faq.html" />
-    <link rel="prev" title="Embeddable Widget" href="widget.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="User Guide" href="../index.html"/>
+        <link rel="next" title="FAQ and Troubleshooting" href="../faq.html"/>
+        <link rel="prev" title="Embeddable Widget" href="widget.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -162,10 +182,10 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="gift-cards">
-<span id="giftcards"></span><h1>Gift cards<a class="headerlink" href="#gift-cards" title="Link to this heading">¶</a></h1>
+<span id="giftcards"></span><h1>Gift cards<a class="headerlink" href="#gift-cards" title="Permalink to this heading">¶</a></h1>
 <p>Gift cards, also known as “gift coupons” or “gift certificates” are a mechanism that allows you to sell tokens that
 can later be used to pay for tickets.</p>
 <p>Gift cards are very different feature than <strong>vouchers</strong>. The difference is:</p>
@@ -179,7 +199,7 @@ still a €20 ticket and will still count towards your revenue with €20. Gift 
 that they are worth. Gift cards in pretix can be used across events (and even organizers).</p></li>
 </ul>
 <section id="selling-gift-cards">
-<h2>Selling gift cards<a class="headerlink" href="#selling-gift-cards" title="Link to this heading">¶</a></h2>
+<h2>Selling gift cards<a class="headerlink" href="#selling-gift-cards" title="Permalink to this heading">¶</a></h2>
 <p>Selling gift cards works like selling every other type of product in pretix: Create a new product, then head to
 “Additional settings” and select the option “This product is a gift card”. Whenever someone buys this product and
 pays for it, a new gift card will be created.</p>
@@ -202,7 +222,7 @@ selling gift cards in events where tickets are issued before payments arrive.</p
 </div>
 </section>
 <section id="accepting-gift-cards">
-<h2>Accepting gift cards<a class="headerlink" href="#accepting-gift-cards" title="Link to this heading">¶</a></h2>
+<h2>Accepting gift cards<a class="headerlink" href="#accepting-gift-cards" title="Permalink to this heading">¶</a></h2>
 <p>All your events have have the payment provider “Gift card” enabled by default, but it will only show up in the ticket
 shop once the very first gift card has been issued on your organizer account. Of course, you can turn off gift card
 payments if you do not want them for a specific event.</p>
@@ -215,7 +235,7 @@ accounts. Then, you will see a configuration section at the bottom of the “Gif
 where you can specify which gift cards should be accepted.</p>
 </section>
 <section id="manually-issuing-or-using-gift-cards">
-<h2>Manually issuing or using gift cards<a class="headerlink" href="#manually-issuing-or-using-gift-cards" title="Link to this heading">¶</a></h2>
+<h2>Manually issuing or using gift cards<a class="headerlink" href="#manually-issuing-or-using-gift-cards" title="Permalink to this heading">¶</a></h2>
 <p>Of course, you can also issue or redeem gift cards manually through our backend using the “Gift cards” menu item in your
 organizer profile or using our API. These gift cards will be tracked by pretix, but do not correspond to any purchase
 within pretix. You will therefore need to account for them in your books separately.</p>
@@ -273,11 +293,11 @@ within pretix. You will therefore need to account for them in your books separat
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

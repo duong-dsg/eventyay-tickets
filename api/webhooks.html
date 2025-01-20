@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Webhooks &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="API Usage Guides" href="guides/index.html" />
-    <link rel="prev" title="Rate limiting" href="ratelimit.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../index.html"/>
+        <link rel="up" title="REST API" href="index.html"/>
+        <link rel="next" title="API Usage Guides" href="guides/index.html"/>
+        <link rel="prev" title="Rate limiting" href="ratelimit.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../index.html">
           
-          <a href="../index.html">
-              <img src="../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -160,20 +180,20 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="webhooks">
-<span id="id1"></span><h1>Webhooks<a class="headerlink" href="#webhooks" title="Link to this heading">¶</a></h1>
+<span id="id1"></span><h1>Webhooks<a class="headerlink" href="#webhooks" title="Permalink to this heading">¶</a></h1>
 <p>pretix can send webhook calls to notify your application of any changes that happen inside pretix. This is especially
 useful for everything triggered by an actual user, such as a new ticket sale or the arrival of a payment.</p>
 <p>You can register any number of webhook URLs that pretix will notify any time one of the supported events occurs inside
 your organizer account. A great example use case of webhooks would be to add the buyer to your mailing list every time
 a new order comes in.</p>
 <section id="configuring-webhooks">
-<h2>Configuring webhooks<a class="headerlink" href="#configuring-webhooks" title="Link to this heading">¶</a></h2>
+<h2>Configuring webhooks<a class="headerlink" href="#configuring-webhooks" title="Permalink to this heading">¶</a></h2>
 <p>You can find the list of your active webhooks in the “Webhook” section of your organizer account:</p>
 <a class="screenshot"
-               data-lightbox="group-c58f95bc-8b3a-4b7d-8e68-9bbe2378bef9"
+               data-lightbox="group-89940031-93a2-4e33-bbe6-f262d6252eec"
                href="../_images/webhook_list1.png"
                title=""
                data-title=""
@@ -187,7 +207,7 @@ a new order comes in.</p>
 notifications. You need to select any number of notification types that you want to receive and you can optionally
 filter the events you want to receive notifications for.</p>
 <a class="screenshot"
-               data-lightbox="group-cbaa034d-083e-4260-a46d-19bd4364972b"
+               data-lightbox="group-2026f9e1-8d8f-4c23-a052-f7a5ac8d1fc3"
                href="../_images/webhook_edit1.png"
                title=""
                data-title=""
@@ -200,7 +220,7 @@ filter the events you want to receive notifications for.</p>
                 </a><p>You can also configure webhooks <a class="reference internal" href="resources/webhooks.html#rest-webhooks"><span class="std std-ref">through the API itself</span></a>.</p>
 </section>
 <section id="receiving-webhooks">
-<h2>Receiving webhooks<a class="headerlink" href="#receiving-webhooks" title="Link to this heading">¶</a></h2>
+<h2>Receiving webhooks<a class="headerlink" href="#receiving-webhooks" title="Permalink to this heading">¶</a></h2>
 <p>Creating a webhook endpoint on your server is no different from creating any other page on your website. If your
 website is written in PHP, you might just create a new <code class="docutils literal notranslate"><span class="pre">.php</span></code> file on your server; if you use a web framework like
 Symfony or Django, you would just create a new route with the desired URL.</p>
@@ -256,7 +276,7 @@ Rails, you can pass an <code class="docutils literal notranslate"><span class="p
 </div>
 </section>
 <section id="responding-to-a-webhook">
-<h2>Responding to a webhook<a class="headerlink" href="#responding-to-a-webhook" title="Link to this heading">¶</a></h2>
+<h2>Responding to a webhook<a class="headerlink" href="#responding-to-a-webhook" title="Permalink to this heading">¶</a></h2>
 <p>If you successfully received a webhook call, your endpoint should return a HTTP status code between <code class="docutils literal notranslate"><span class="pre">200</span></code> and <code class="docutils literal notranslate"><span class="pre">299</span></code>.
 If any other status code is returned, we will assume you did not receive the call. This does mean that any redirection
 or <code class="docutils literal notranslate"><span class="pre">304</span> <span class="pre">Not</span> <span class="pre">Modified</span></code> response will be treated as a failure. pretix will not follow any <code class="docutils literal notranslate"><span class="pre">301</span></code> or <code class="docutils literal notranslate"><span class="pre">302</span></code> redirect
@@ -273,7 +293,7 @@ configure a background task queue, failed webhooks will not be retried.</p>
 </div>
 </section>
 <section id="debugging-webhooks">
-<h2>Debugging webhooks<a class="headerlink" href="#debugging-webhooks" title="Link to this heading">¶</a></h2>
+<h2>Debugging webhooks<a class="headerlink" href="#debugging-webhooks" title="Permalink to this heading">¶</a></h2>
 <p>If you want to debug your webhooks, you can view a log of all sent notifications and the responses of your server for
 30 days right next to your configuration.</p>
 </section>
@@ -330,11 +350,11 @@ configure a background task queue, failed webhooks will not be retried.</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

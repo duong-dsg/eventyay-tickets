@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Development setup &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Contributing to pretix" href="contribution/index.html" />
-    <link rel="prev" title="Concepts and Terminology" href="concepts.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../index.html"/>
+        <link rel="up" title="Developer documentation" href="index.html"/>
+        <link rel="next" title="Contributing to pretix" href="contribution/index.html"/>
+        <link rel="prev" title="Concepts and Terminology" href="concepts.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../index.html">
           
-          <a href="../index.html">
-              <img src="../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -93,8 +113,6 @@
 <li class="toctree-l2"><a class="reference internal" href="translation/index.html">Translating pretix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/index.html">Plugin development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structure.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="social_login.html">Social Login Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sso_with_talk.html">Single Sign-On (SSO) Implementation with JWT and OAuth2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">Plugin documentation</a></li>
@@ -170,15 +188,15 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="development-setup">
-<span id="devsetup"></span><h1>Development setup<a class="headerlink" href="#development-setup" title="Link to this heading">¶</a></h1>
+<span id="devsetup"></span><h1>Development setup<a class="headerlink" href="#development-setup" title="Permalink to this heading">¶</a></h1>
 <p>This tutorial helps you to get started hacking with pretix on your own computer. You need this to
 be able to contribute to pretix, but it might also be helpful if you want to write your own plugins.
 If you want to install pretix on a server for actual usage, go to the <a class="reference internal" href="../admin/index.html#admindocs"><span class="std std-ref">Administrator documentation</span></a> instead.</p>
 <section id="obtain-a-copy-of-the-source-code">
-<h2>Obtain a copy of the source code<a class="headerlink" href="#obtain-a-copy-of-the-source-code" title="Link to this heading">¶</a></h2>
+<h2>Obtain a copy of the source code<a class="headerlink" href="#obtain-a-copy-of-the-source-code" title="Permalink to this heading">¶</a></h2>
 <p>You can just clone our git repository:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pretix</span><span class="o">/</span><span class="n">pretix</span><span class="o">.</span><span class="n">git</span>
 <span class="n">cd</span> <span class="n">pretix</span><span class="o">/</span>
@@ -186,7 +204,7 @@ If you want to install pretix on a server for actual usage, go to the <a class="
 </div>
 </section>
 <section id="external-dependencies">
-<h2>External Dependencies<a class="headerlink" href="#external-dependencies" title="Link to this heading">¶</a></h2>
+<h2>External Dependencies<a class="headerlink" href="#external-dependencies" title="Permalink to this heading">¶</a></h2>
 <p>Your should install the following on your system:</p>
 <ul class="simple">
 <li><p>Python 3.5 or newer</p></li>
@@ -205,7 +223,7 @@ If you want to install pretix on a server for actual usage, go to the <a class="
 </ul>
 </section>
 <section id="your-local-python-environment">
-<h2>Your local python environment<a class="headerlink" href="#your-local-python-environment" title="Link to this heading">¶</a></h2>
+<h2>Your local python environment<a class="headerlink" href="#your-local-python-environment" title="Permalink to this heading">¶</a></h2>
 <p>Please execute <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-V</span></code> or <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-V</span></code> to make sure you have Python 3.4
 (or newer) installed. Also make sure you have pip for Python 3 installed, you can
 execute <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">-V</span></code> to check. Then use Python’s internal tools to create a virtual
@@ -224,7 +242,7 @@ the dependencies might fail:</p>
 </div>
 </section>
 <section id="working-with-the-code">
-<h2>Working with the code<a class="headerlink" href="#working-with-the-code" title="Link to this heading">¶</a></h2>
+<h2>Working with the code<a class="headerlink" href="#working-with-the-code" title="Permalink to this heading">¶</a></h2>
 <p>The first thing you need are all the main application’s dependencies:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;.[dev]&quot;</span>
 </pre></div>
@@ -250,7 +268,7 @@ files:</p>
 </pre></div>
 </div>
 <section id="run-the-development-server">
-<h3>Run the development server<a class="headerlink" href="#run-the-development-server" title="Link to this heading">¶</a></h3>
+<h3>Run the development server<a class="headerlink" href="#run-the-development-server" title="Permalink to this heading">¶</a></h3>
 <p>To run the local development webserver, execute:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">runserver</span>
 </pre></div>
@@ -266,7 +284,7 @@ port (for example because you develop on <a class="reference external" href="htt
 </div>
 </section>
 <section id="code-checks-and-unit-tests">
-<span id="checksandtests"></span><h3>Code checks and unit tests<a class="headerlink" href="#code-checks-and-unit-tests" title="Link to this heading">¶</a></h3>
+<span id="checksandtests"></span><h3>Code checks and unit tests<a class="headerlink" href="#code-checks-and-unit-tests" title="Permalink to this heading">¶</a></h3>
 <p>Before you check in your code into git, always run static checkers and linters. If any of these commands fail,
 your pull request will not be merged into pretix. If you have trouble figuring out <em>why</em> they fail, create your
 pull request nevertheless and ask us for help, we are happy to assist you.</p>
@@ -304,7 +322,7 @@ done
 <p>This keeps you from accidentally creating commits violating the style guide.</p>
 </section>
 <section id="working-with-mails">
-<h3>Working with mails<a class="headerlink" href="#working-with-mails" title="Link to this heading">¶</a></h3>
+<h3>Working with mails<a class="headerlink" href="#working-with-mails" title="Permalink to this heading">¶</a></h3>
 <p>If you want to test anything regarding emails in your development setup, we recommend
 starting Python’s debugging SMTP server in a separate shell and configuring pretix to use it.
 Every email will then be printed to the debugging SMTP server’s stdout.</p>
@@ -316,7 +334,7 @@ Every email will then be printed to the debugging SMTP server’s stdout.</p>
 <p>Then execute <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">smtpd</span> <span class="pre">-n</span> <span class="pre">-c</span> <span class="pre">DebuggingServer</span> <span class="pre">localhost:1025</span></code>.</p>
 </section>
 <section id="working-with-translations">
-<h3>Working with translations<a class="headerlink" href="#working-with-translations" title="Link to this heading">¶</a></h3>
+<h3>Working with translations<a class="headerlink" href="#working-with-translations" title="Permalink to this heading">¶</a></h3>
 <p>If you want to translate new strings that are not yet known to the translation system,
 you can use the following command to scan the source code for strings to be translated
 and update the <code class="docutils literal notranslate"><span class="pre">*.po</span></code> files accordingly:</p>
@@ -334,7 +352,7 @@ optimized binary <code class="docutils literal notranslate"><span class="pre">*.
 </section>
 </section>
 <section id="working-with-the-documentation">
-<h2>Working with the documentation<a class="headerlink" href="#working-with-the-documentation" title="Link to this heading">¶</a></h2>
+<h2>Working with the documentation<a class="headerlink" href="#working-with-the-documentation" title="Permalink to this heading">¶</a></h2>
 <p>First, you should install the requirements necessary for building the documentation.
 Make sure you have your virtual python environment activated (see above). Then, install the
 packages by executing:</p>
@@ -408,11 +426,11 @@ whenever you change a source file.</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

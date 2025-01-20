@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Installing a development version &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Installing pretix Enterprise plugins" href="enterprise.html" />
-    <link rel="prev" title="Small-scale manual deployment" href="manual_smallscale.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Installation guide" href="index.html"/>
+        <link rel="next" title="Installing pretix Enterprise plugins" href="enterprise.html"/>
+        <link rel="prev" title="Small-scale manual deployment" href="manual_smallscale.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -166,10 +186,10 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="installing-a-development-version">
-<h1>Installing a development version<a class="headerlink" href="#installing-a-development-version" title="Link to this heading">¶</a></h1>
+<h1>Installing a development version<a class="headerlink" href="#installing-a-development-version" title="Permalink to this heading">¶</a></h1>
 <p>If you want to use a feature of pretix that is not yet contained in the last monthly release, you can also
 install a development version with pretix.</p>
 <div class="admonition warning">
@@ -178,7 +198,7 @@ install a development version with pretix.</p>
 be broken, incompatible to plugins, or in rare cases incompatible to upgrade later on.</p>
 </div>
 <section id="manual-installation">
-<h2>Manual installation<a class="headerlink" href="#manual-installation" title="Link to this heading">¶</a></h2>
+<h2>Manual installation<a class="headerlink" href="#manual-installation" title="Permalink to this heading">¶</a></h2>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">pip</span></code> to update pretix directly to the development branch. Then, upgrade as usual:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ source /var/pretix/venv/bin/activate
 (venv)$ pip3 install -U &quot;git+https://github.com/pretix/pretix.git#egg=pretix&amp;subdirectory=src&quot;
@@ -190,7 +210,7 @@ be broken, incompatible to plugins, or in rare cases incompatible to upgrade lat
 </div>
 </section>
 <section id="docker-installation">
-<h2>Docker installation<a class="headerlink" href="#docker-installation" title="Link to this heading">¶</a></h2>
+<h2>Docker installation<a class="headerlink" href="#docker-installation" title="Permalink to this heading">¶</a></h2>
 <p>To use the latest development version with Docker, first pull it from Docker Hub:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ docker pull pretix/standalone:latest
 </pre></div>
@@ -255,11 +275,11 @@ $ docker exec -it pretix.service pretix upgrade
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

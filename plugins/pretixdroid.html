@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>pretixdroid HTTP API &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bank transfer HTTP API" href="banktransfer.html" />
-    <link rel="prev" title="List of plugins" href="list.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../index.html"/>
+        <link rel="up" title="Plugin documentation" href="index.html"/>
+        <link rel="next" title="Bank transfer HTTP API" href="banktransfer.html"/>
+        <link rel="prev" title="List of plugins" href="list.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../index.html">
           
-          <a href="../index.html">
-              <img src="../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -156,10 +176,10 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="pretixdroid-http-api">
-<h1>pretixdroid HTTP API<a class="headerlink" href="#pretixdroid-http-api" title="Link to this heading">¶</a></h1>
+<h1>pretixdroid HTTP API<a class="headerlink" href="#pretixdroid-http-api" title="Permalink to this heading">¶</a></h1>
 <p>The pretixdroid plugin provides a HTTP API that the <a class="reference external" href="https://github.com/pretix/pretixdroid">pretixdroid Android app</a>
 uses to communicate with the pretix server.</p>
 <div class="admonition warning">
@@ -179,7 +199,7 @@ has not been increased and is still set to 3.</p>
 </div>
 <dl class="http post">
 <dt class="sig sig-object http" id="post--pretixdroid-api-(organizer)-(event)-redeem-">
-<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/pretixdroid/api/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/redeem/</span></span><a class="headerlink" href="#post--pretixdroid-api-(organizer)-(event)-redeem-" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/pretixdroid/api/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/redeem/</span></span><a class="headerlink" href="#post--pretixdroid-api-(organizer)-(event)-redeem-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Redeems a ticket, i.e. checks the user in.</p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/pretixdroid/api/demoorga/democon/redeem/?key=ABCDEF</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -337,7 +357,7 @@ the form <code class="docutils literal notranslate"><span class="pre">answer_&lt
 
 <dl class="http get">
 <dt class="sig sig-object http" id="get--pretixdroid-api-(organizer)-(event)-search-">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/pretixdroid/api/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/search/</span></span><a class="headerlink" href="#get--pretixdroid-api-(organizer)-(event)-search-" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/pretixdroid/api/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/search/</span></span><a class="headerlink" href="#get--pretixdroid-api-(organizer)-(event)-search-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Searches for a ticket.
 At most 25 results will be returned. <strong>Queries with less than 4 characters will always return an empty result set.</strong></p>
 <p><strong>Example request</strong>:</p>
@@ -389,7 +409,7 @@ At most 25 results will be returned. <strong>Queries with less than 4 characters
 
 <dl class="http get">
 <dt class="sig sig-object http" id="get--pretixdroid-api-(organizer)-(event)-download-">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/pretixdroid/api/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/download/</span></span><a class="headerlink" href="#get--pretixdroid-api-(organizer)-(event)-download-" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/pretixdroid/api/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/download/</span></span><a class="headerlink" href="#get--pretixdroid-api-(organizer)-(event)-download-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Download data for all tickets.</p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/pretixdroid/api/demoorga/democon/download/?key=ABCDEF</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -458,7 +478,7 @@ At most 25 results will be returned. <strong>Queries with less than 4 characters
 
 <dl class="http get">
 <dt class="sig sig-object http" id="get--pretixdroid-api-(organizer)-(event)-status-">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/pretixdroid/api/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/status/</span></span><a class="headerlink" href="#get--pretixdroid-api-(organizer)-(event)-status-" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/pretixdroid/api/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">event</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/status/</span></span><a class="headerlink" href="#get--pretixdroid-api-(organizer)-(event)-status-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns status information, such as the total number of tickets and the
 number of performed check-ins.</p>
 <p><strong>Example request</strong>:</p>
@@ -590,11 +610,11 @@ number of performed check-ins.</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

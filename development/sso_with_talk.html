@@ -5,30 +5,43 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Single Sign-On (SSO) Implementation with JWT and OAuth2 &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Plugin documentation" href="../plugins/index.html" />
-    <link rel="prev" title="Social Login Setup" href="social_login.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +57,13 @@
           
 
           
+            <a href="../index.html">
           
-          <a href="../index.html">
-              <img src="../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -68,31 +85,11 @@
               
             
             
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../user/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/index.html">REST API</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer documentation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="concepts.html">Concepts and Terminology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup.html">Development setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contribution/index.html">Contributing to pretix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="implementation/index.html">Implementation and Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="translation/index.html">Translating pretix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/index.html">Plugin development</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="social_login.html">Social Login Setup</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Single Sign-On (SSO) Implementation with JWT and OAuth2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pre-requisites">Pre-requisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#step-1-customize-authorization-view">Step 1: Customize Authorization View</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#step-2-update-url-configuration">Step 2: Update URL Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#step-3-modify-login-view-to-set-jwt-cookie">Step 3: Modify Login View to Set JWT Cookie</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#step-4-security-and-configuration">Step 4: Security and Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Developer documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">Plugin documentation</a></li>
 </ul>
 
@@ -147,8 +144,6 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">Developer documentation</a> &raquo;</li>
-        
       <li>Single Sign-On (SSO) Implementation with JWT and OAuth2</li>
     
     
@@ -166,16 +161,16 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="single-sign-on-sso-implementation-with-jwt-and-oauth2">
-<h1>Single Sign-On (SSO) Implementation with JWT and OAuth2<a class="headerlink" href="#single-sign-on-sso-implementation-with-jwt-and-oauth2" title="Link to this heading">¶</a></h1>
+<h1>Single Sign-On (SSO) Implementation with JWT and OAuth2<a class="headerlink" href="#single-sign-on-sso-implementation-with-jwt-and-oauth2" title="Permalink to this heading">¶</a></h1>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
 <p>This document provides a step-by-step guide to implementing Single Sign-On (SSO) between the <cite>ticket</cite> and <cite>talk</cite> applications using JWT tokens and Django OAuth Toolkit. The configuration involves customizing the OAuth2 <cite>AuthorizationView</cite>, handling login processes to set JWT cookies, and ensuring a seamless SSO experience across applications.</p>
 </section>
 <section id="pre-requisites">
-<h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Link to this heading">¶</a></h2>
+<h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Django &gt;= 3.11</p></li>
 <li><p>Django OAuth Toolkit</p></li>
@@ -184,29 +179,29 @@
 </ul>
 </section>
 <section id="step-1-customize-authorization-view">
-<h2>Step 1: Customize Authorization View<a class="headerlink" href="#step-1-customize-authorization-view" title="Link to this heading">¶</a></h2>
+<h2>Step 1: Customize Authorization View<a class="headerlink" href="#step-1-customize-authorization-view" title="Permalink to this heading">¶</a></h2>
 <p>To bypass the OAuth2 consent screen for trusted applications and automatically set a JWT cookie upon successful authorization, we override the <cite>AuthorizationView</cite>.</p>
 <p>src/pretix/control/views/auth.py</p>
 </section>
 <section id="step-2-update-url-configuration">
-<h2>Step 2: Update URL Configuration<a class="headerlink" href="#step-2-update-url-configuration" title="Link to this heading">¶</a></h2>
+<h2>Step 2: Update URL Configuration<a class="headerlink" href="#step-2-update-url-configuration" title="Permalink to this heading">¶</a></h2>
 <p>Update the URL configuration to use the <cite>CustomAuthorizationView</cite>:</p>
 <p>src/pretix/control/urls.py</p>
 </section>
 <section id="step-3-modify-login-view-to-set-jwt-cookie">
-<h2>Step 3: Modify Login View to Set JWT Cookie<a class="headerlink" href="#step-3-modify-login-view-to-set-jwt-cookie" title="Link to this heading">¶</a></h2>
+<h2>Step 3: Modify Login View to Set JWT Cookie<a class="headerlink" href="#step-3-modify-login-view-to-set-jwt-cookie" title="Permalink to this heading">¶</a></h2>
 <p>In the <cite>ticket</cite> application, modify the <cite>login</cite> view to set a JWT cookie after successful authentication.</p>
 <p>Update <cite>login</cite> view in <cite>src/pretix/control/views/auth.py</cite>:</p>
 </section>
 <section id="step-4-security-and-configuration">
-<h2>Step 4: Security and Configuration<a class="headerlink" href="#step-4-security-and-configuration" title="Link to this heading">¶</a></h2>
+<h2>Step 4: Security and Configuration<a class="headerlink" href="#step-4-security-and-configuration" title="Permalink to this heading">¶</a></h2>
 <p>Ensure that all configurations are secure and appropriate for your environment:</p>
 <ul class="simple">
 <li><p>Use <cite>SECRET_KEY</cite> in <cite>settings.py</cite> for JWT signing.</p></li>
 </ul>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">¶</a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">¶</a></h2>
 <p>By following these steps, you can implement SSO using JWT and Django OAuth Toolkit between the <cite>ticket</cite> and <cite>talk</cite> applications. This configuration allows for seamless user authentication while maintaining a secure environment. Ensure to review and follow security best practices to protect user data and session integrity.</p>
 </section>
 </section>
@@ -218,15 +213,6 @@
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../plugins/index.html" class="btn btn-neutral float-right" title="Plugin documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="social_login.html" class="btn btn-neutral" title="Social Login Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -262,11 +248,11 @@
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Writing an HTML e-mail renderer plugin &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Writing an e-mail placeholder plugin" href="placeholder.html" />
-    <link rel="prev" title="Porting a payment provider from pretix 1.x to pretix 2.x" href="payment_2.0.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Plugin development" href="index.html"/>
+        <link rel="next" title="Writing an e-mail placeholder plugin" href="placeholder.html"/>
+        <link rel="prev" title="Porting a payment provider from pretix 1.x to pretix 2.x" href="payment_2.0.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -101,8 +121,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../structure.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../social_login.html">Social Login Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sso_with_talk.html">Single Sign-On (SSO) Implementation with JWT and OAuth2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin documentation</a></li>
@@ -180,15 +198,15 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="writing-an-html-e-mail-renderer-plugin">
-<h1>Writing an HTML e-mail renderer plugin<a class="headerlink" href="#writing-an-html-e-mail-renderer-plugin" title="Link to this heading">¶</a></h1>
+<h1>Writing an HTML e-mail renderer plugin<a class="headerlink" href="#writing-an-html-e-mail-renderer-plugin" title="Permalink to this heading">¶</a></h1>
 <p>An email renderer class controls how the HTML part of e-mails sent by pretix is built.
 The creation of such a plugin is very similar to creating an export output.</p>
 <p>Please read <a class="reference internal" href="plugins.html#pluginsetup"><span class="std std-ref">Creating a plugin</span></a> first, if you haven’t already.</p>
 <section id="output-registration">
-<h2>Output registration<a class="headerlink" href="#output-registration" title="Link to this heading">¶</a></h2>
+<h2>Output registration<a class="headerlink" href="#output-registration" title="Permalink to this heading">¶</a></h2>
 <p>The email HTML renderer API does not make a lot of usage from signals, however, it
 does use a signal to get a list of all available email renderers. Your plugin
 should listen for this signal and return the subclass of <code class="docutils literal notranslate"><span class="pre">pretix.base.email.BaseHTMLMailRenderer</span></code>
@@ -206,21 +224,21 @@ that we’ll provide in this plugin:</p>
 </div>
 </section>
 <section id="the-renderer-class">
-<h2>The renderer class<a class="headerlink" href="#the-renderer-class" title="Link to this heading">¶</a></h2>
+<h2>The renderer class<a class="headerlink" href="#the-renderer-class" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pretix.base.email.BaseHTMLMailRenderer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pretix.base.email.</span></span><span class="sig-name descname"><span class="pre">BaseHTMLMailRenderer</span></span><a class="headerlink" href="#pretix.base.email.BaseHTMLMailRenderer" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pretix.base.email.</span></span><span class="sig-name descname"><span class="pre">BaseHTMLMailRenderer</span></span><a class="headerlink" href="#pretix.base.email.BaseHTMLMailRenderer" title="Permalink to this definition">¶</a></dt>
 <dd><p>The central object of each email renderer is the subclass of <code class="docutils literal notranslate"><span class="pre">BaseHTMLMailRenderer</span></code>.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.event">
-<span class="sig-prename descclassname"><span class="pre">BaseHTMLMailRenderer.</span></span><span class="sig-name descname"><span class="pre">event</span></span><a class="headerlink" href="#pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.event" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseHTMLMailRenderer.</span></span><span class="sig-name descname"><span class="pre">event</span></span><a class="headerlink" href="#pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.event" title="Permalink to this definition">¶</a></dt>
 <dd><p>The default constructor sets this property to the event we are currently
 working for.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.email.pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.identifier">
-<span class="sig-prename descclassname"><span class="pre">BaseHTMLMailRenderer.</span></span><span class="sig-name descname"><span class="pre">identifier</span></span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.identifier" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseHTMLMailRenderer.</span></span><span class="sig-name descname"><span class="pre">identifier</span></span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.identifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>A short and unique identifier for this renderer.
 This should only contain lowercase letters and in most cases will be the same as your package name or prefixed
 with your package name.</p>
@@ -229,14 +247,14 @@ with your package name.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.email.pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.verbose_name">
-<span class="sig-prename descclassname"><span class="pre">BaseHTMLMailRenderer.</span></span><span class="sig-name descname"><span class="pre">verbose_name</span></span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.verbose_name" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseHTMLMailRenderer.</span></span><span class="sig-name descname"><span class="pre">verbose_name</span></span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.verbose_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>A human-readable name for this renderer. This should be short but self-explanatory.</p>
 <p>This is an abstract attribute, you <strong>must</strong> override this!</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.email.pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.thumbnail_filename">
-<span class="sig-prename descclassname"><span class="pre">BaseHTMLMailRenderer.</span></span><span class="sig-name descname"><span class="pre">thumbnail_filename</span></span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.thumbnail_filename" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseHTMLMailRenderer.</span></span><span class="sig-name descname"><span class="pre">thumbnail_filename</span></span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.thumbnail_filename" title="Permalink to this definition">¶</a></dt>
 <dd><p>A file name discoverable in the static file storage that contains a preview of your renderer. This should
 be with aspect resolution 4:3.</p>
 <p>This is an abstract attribute, you <strong>must</strong> override this!</p>
@@ -244,14 +262,14 @@ be with aspect resolution 4:3.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pretix.base.email.pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.is_available">
-<span class="sig-prename descclassname"><span class="pre">BaseHTMLMailRenderer.</span></span><span class="sig-name descname"><span class="pre">is_available</span></span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.is_available" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseHTMLMailRenderer.</span></span><span class="sig-name descname"><span class="pre">is_available</span></span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.is_available" title="Permalink to this definition">¶</a></dt>
 <dd><p>This renderer will only be available if this returns <code class="docutils literal notranslate"><span class="pre">True</span></code>. You can use this to limit this renderer
 to certain events. Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pretix.base.email.pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.render">
-<span class="sig-prename descclassname"><span class="pre">BaseHTMLMailRenderer.</span></span><span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plain_body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plain_signature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.render" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">BaseHTMLMailRenderer.</span></span><span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plain_body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plain_signature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#pretix.base.email.pretix.base.email.BaseHTMLMailRenderer.BaseHTMLMailRenderer.render" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method should generate the HTML part of the email.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -274,7 +292,7 @@ to certain events. Defaults to <code class="docutils literal notranslate"><span 
 
 </section>
 <section id="helper-class-for-template-base-renderers">
-<h2>Helper class for template-base renderers<a class="headerlink" href="#helper-class-for-template-base-renderers" title="Link to this heading">¶</a></h2>
+<h2>Helper class for template-base renderers<a class="headerlink" href="#helper-class-for-template-base-renderers" title="Permalink to this heading">¶</a></h2>
 <p>The email renderer that ships with pretix is based on Django templates to generate HTML.
 In case you also want to render emails based on a template, we provided a ready-made base
 class <code class="docutils literal notranslate"><span class="pre">TemplateBasedMailRenderer</span></code> that you can re-use to perform the following steps:</p>
@@ -367,11 +385,11 @@ attributes for better compatibility</p></li>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

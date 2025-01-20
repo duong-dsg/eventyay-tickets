@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Internationalization &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Settings storage" href="settings.html" />
-    <link rel="prev" title="Working with URLs" href="urlconfig.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Implementation and Utilities" href="index.html"/>
+        <link rel="next" title="Settings storage" href="settings.html"/>
+        <link rel="prev" title="Working with URLs" href="urlconfig.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -94,8 +114,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../translation/index.html">Translating pretix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/index.html">Plugin development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../structure.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../social_login.html">Social Login Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sso_with_talk.html">Single Sign-On (SSO) Implementation with JWT and OAuth2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin documentation</a></li>
@@ -173,10 +191,10 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="internationalization">
-<h1>Internationalization<a class="headerlink" href="#internationalization" title="Link to this heading">¶</a></h1>
+<h1>Internationalization<a class="headerlink" href="#internationalization" title="Permalink to this heading">¶</a></h1>
 <p>One of pretix’s major selling points is its multi-language capability. We make heavy use of Django’s
 <a class="reference external" href="https://docs.djangoproject.com/en/1.9/topics/i18n/translation/">translation features</a> that are built upon <a class="reference external" href="https://www.gnu.org/software/gettext/">GNU gettext</a>. However, Django does not provide a standard
 way to translate <em>user-generated content</em>. In our case, we need to translate strings like product names
@@ -185,14 +203,14 @@ or event descriptions, so we need event organizers to be able to fill in all fie
 its own library. It has comprehensive documentation on how to work with its <a class="reference external" href="https://django-i18nfield.readthedocs.io/en/latest/strings.html">strings</a>, <a class="reference external" href="https://django-i18nfield.readthedocs.io/en/latest/quickstart.html">database fields</a> and
 <a class="reference external" href="https://django-i18nfield.readthedocs.io/en/latest/forms.html">forms</a>.</p>
 <section id="forms">
-<h2>Forms<a class="headerlink" href="#forms" title="Link to this heading">¶</a></h2>
+<h2>Forms<a class="headerlink" href="#forms" title="Permalink to this heading">¶</a></h2>
 <p>For backwards-compatibility with older parts of pretix’ code base and older plugins, <code class="docutils literal notranslate"><span class="pre">pretix.base.forms</span></code> still
 contains a number of forms that are equivalent in name and usage to their counterparts in <code class="docutils literal notranslate"><span class="pre">i18nfield.forms</span></code> with
 the difference that they take an <code class="docutils literal notranslate"><span class="pre">event</span></code> keyword argument and then set the <code class="docutils literal notranslate"><span class="pre">locales</span></code> argument based on
 <code class="docutils literal notranslate"><span class="pre">event.settings.get('locales')</span></code>.</p>
 </section>
 <section id="useful-utilities">
-<h2>Useful utilities<a class="headerlink" href="#useful-utilities" title="Link to this heading">¶</a></h2>
+<h2>Useful utilities<a class="headerlink" href="#useful-utilities" title="Permalink to this heading">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">i18n</span></code> module contains a few more useful utilities, starting with simple lazy-evaluation wrappers for formatted
 numbers and dates, <code class="docutils literal notranslate"><span class="pre">LazyDate</span></code> and <code class="docutils literal notranslate"><span class="pre">LazyNumber</span></code>. There also is a <code class="docutils literal notranslate"><span class="pre">LazyLocaleException</span></code> base class that provides
 exceptions with gettext-localized exception messages.</p>
@@ -258,11 +276,11 @@ action that causes the mail to be sent.</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

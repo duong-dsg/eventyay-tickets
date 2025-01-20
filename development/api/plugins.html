@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Creating a plugin &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Writing an exporter plugin" href="exporter.html" />
-    <link rel="prev" title="Plugin development" href="index.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Plugin development" href="index.html"/>
+        <link rel="next" title="Writing an exporter plugin" href="exporter.html"/>
+        <link rel="prev" title="Plugin development" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -102,8 +122,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../structure.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../social_login.html">Social Login Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sso_with_talk.html">Single Sign-On (SSO) Implementation with JWT and OAuth2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin documentation</a></li>
@@ -181,10 +199,10 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="creating-a-plugin">
-<span id="pluginsetup"></span><h1>Creating a plugin<a class="headerlink" href="#creating-a-plugin" title="Link to this heading">¶</a></h1>
+<span id="pluginsetup"></span><h1>Creating a plugin<a class="headerlink" href="#creating-a-plugin" title="Permalink to this heading">¶</a></h1>
 <p>It is possible to extend pretix with custom Python code using the official plugin
 API. Every plugin has to be implemented as an independent Django ‘app’ living
 in its own python package installed like any other python module. There are also some
@@ -197,8 +215,8 @@ on the next pages.</p>
 and must contain plugin metadata, as described below.
 There is some boilerplate that you will need for every plugin to get started. To save your
 time, we created a <a class="reference external" href="https://cookiecutter.readthedocs.io/en/latest/">cookiecutter</a> template that you can use like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">cookiecutter</span>
-<span class="err">$</span> <span class="n">cookiecutter</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pretix</span><span class="o">/</span><span class="n">pretix</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">cookiecutter</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>$ pip install cookiecutter
+$ cookiecutter https://github.com/pretix/pretix-plugin-cookiecutter
 </pre></div>
 </div>
 <p>This will ask you some questions and then create a project folder for your plugin.</p>
@@ -207,7 +225,7 @@ supported. While these instructions don’t assume that you know a lot about pre
 they do assume that you have prior knowledge about Django (e.g. its view layer,
 how its ORM works, etc.).</p>
 <section id="plugin-metadata">
-<h2>Plugin metadata<a class="headerlink" href="#plugin-metadata" title="Link to this heading">¶</a></h2>
+<h2>Plugin metadata<a class="headerlink" href="#plugin-metadata" title="Permalink to this heading">¶</a></h2>
 <p>The plugin metadata lives inside a <code class="docutils literal notranslate"><span class="pre">PretixPluginMeta</span></code> class inside your app’s
 configuration class. The metadata class must define the following attributes:</p>
 <table class="rest-resource-table docutils align-default">
@@ -291,7 +309,7 @@ those will be displayed but not block the plugin execution.</p>
 is available for a specific event. If not, it will not be shown in the plugin list of that event.</p>
 </section>
 <section id="plugin-registration">
-<h2>Plugin registration<a class="headerlink" href="#plugin-registration" title="Link to this heading">¶</a></h2>
+<h2>Plugin registration<a class="headerlink" href="#plugin-registration" title="Permalink to this heading">¶</a></h2>
 <p>Somehow, pretix needs to know that your plugin exists at all. For this purpose, we
 make use of the <a class="reference external" href="https://setuptools.readthedocs.io/en/latest/pkg_resources.html#locating-plugins">entry point</a> feature of setuptools. To register a plugin that lives
 in a separate python package, your <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> should contain something like this:</p>
@@ -309,33 +327,33 @@ through <code class="docutils literal notranslate"><span class="pre">pip</span><
 your plugin source directory to make it discoverable.</p>
 </section>
 <section id="signals">
-<h2>Signals<a class="headerlink" href="#signals" title="Link to this heading">¶</a></h2>
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this heading">¶</a></h2>
 <p>The various components of pretix define a number of signals which your plugin can
 listen for. We will go into the details of the different signals in the following
 pages. We suggest that you put your signal receivers into a <code class="docutils literal notranslate"><span class="pre">signals</span></code> submodule
 of your plugin. You should extend your <code class="docutils literal notranslate"><span class="pre">AppConfig</span></code> (see above) by the following
 method to make your receivers available:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">class</span><span class="w"> </span><span class="nc">PaypalApp</span><span class="p">(</span><span class="n">AppConfig</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="err">…</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>class PaypalApp(AppConfig):
+<span class="linenos">2</span>    …
 <span class="linenos">3</span>
-<span class="linenos">4</span>    <span class="k">def</span><span class="w"> </span><span class="nf">ready</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos">5</span>        <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">signals</span>  <span class="c1"># NOQA</span>
+<span class="linenos">4</span>    def ready(self):
+<span class="linenos">5</span>        from . import signals  # NOQA
 </pre></div>
 </div>
 <p>You can optionally specify code that is executed when your plugin is activated for an event
 in the <code class="docutils literal notranslate"><span class="pre">installed</span></code> method:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">class</span><span class="w"> </span><span class="nc">PaypalApp</span><span class="p">(</span><span class="n">AppConfig</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="err">…</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>class PaypalApp(AppConfig):
+<span class="linenos">2</span>    …
 <span class="linenos">3</span>
-<span class="linenos">4</span>    <span class="k">def</span><span class="w"> </span><span class="nf">installed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-<span class="linenos">5</span>        <span class="k">pass</span>  <span class="c1"># Your code here</span>
+<span class="linenos">4</span>    def installed(self, event):
+<span class="linenos">5</span>        pass  # Your code here
 </pre></div>
 </div>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">installed</span></code> will <em>not</em> be called if the plugin is indirectly activated for an event
 because the event is created with settings copied from another event.</p>
 </section>
 <section id="views">
-<h2>Views<a class="headerlink" href="#views" title="Link to this heading">¶</a></h2>
+<h2>Views<a class="headerlink" href="#views" title="Permalink to this heading">¶</a></h2>
 <p>Your plugin may define custom views. If you put an <code class="docutils literal notranslate"><span class="pre">urls</span></code> submodule into your
 plugin module, pretix will automatically import it and include it into the root
 URL configuration with the namespace <code class="docutils literal notranslate"><span class="pre">plugins:&lt;label&gt;:</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> is
@@ -400,11 +418,11 @@ etc. We plan on providing native support for this in a later version.</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

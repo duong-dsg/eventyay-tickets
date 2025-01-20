@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Organizers &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Events" href="events.html" />
-    <link rel="prev" title="Resources and endpoints" href="index.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Resources and endpoints" href="index.html"/>
+        <link rel="next" title="Events" href="events.html"/>
+        <link rel="prev" title="Resources and endpoints" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -189,12 +209,12 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="organizers">
-<h1>Organizers<a class="headerlink" href="#organizers" title="Link to this heading">¶</a></h1>
+<h1>Organizers<a class="headerlink" href="#organizers" title="Permalink to this heading">¶</a></h1>
 <section id="resource-description">
-<h2>Resource description<a class="headerlink" href="#resource-description" title="Link to this heading">¶</a></h2>
+<h2>Resource description<a class="headerlink" href="#resource-description" title="Permalink to this heading">¶</a></h2>
 <p>An organizers is an entity running any number of events. In pretix, every event belongs to one
 organizer and various settings, such as teams and permissions, are managed on organizer level.</p>
 <p>The organizer resource contains the following public fields:</p>
@@ -219,10 +239,10 @@ organization or company.</p></td>
 </table>
 </section>
 <section id="endpoints">
-<h2>Endpoints<a class="headerlink" href="#endpoints" title="Link to this heading">¶</a></h2>
+<h2>Endpoints<a class="headerlink" href="#endpoints" title="Permalink to this heading">¶</a></h2>
 <dl class="http get">
 <dt class="sig sig-object http" id="get--api-v1-organizers-">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><a class="headerlink" href="#get--api-v1-organizers-" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><a class="headerlink" href="#get--api-v1-organizers-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of all organizers the authenticated user/token has access to.</p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/organizers/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -267,7 +287,7 @@ organization or company.</p></td>
 
 <dl class="http get">
 <dt class="sig sig-object http" id="get--api-v1-organizers-(organizer)-">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/</span></span><a class="headerlink" href="#get--api-v1-organizers-(organizer)-" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/</span></span><a class="headerlink" href="#get--api-v1-organizers-(organizer)-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns information on one organizer account, identified by its slug.</p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/api/v1/organizers/bigevents/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -304,7 +324,7 @@ organization or company.</p></td>
 
 </section>
 <section id="organizer-settings">
-<h2>Organizer settings<a class="headerlink" href="#organizer-settings" title="Link to this heading">¶</a></h2>
+<h2>Organizer settings<a class="headerlink" href="#organizer-settings" title="Permalink to this heading">¶</a></h2>
 <p>pretix organizers and events have lots and lots of parameters of different types that are stored in a key-value store on our system.
 Since many of these settings depend on each other in complex ways, we can not give direct access to all of these
 settings through the API. However, we do expose many of the simple and useful flags through the API.</p>
@@ -327,7 +347,7 @@ able to break your shops using this API by creating situations of conflicting se
 </div>
 <dl class="http get">
 <dt class="sig sig-object http" id="get--api-v1-organizers-(organizer)-settings-">
-<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/settings/</span></span><a class="headerlink" href="#get--api-v1-organizers-(organizer)-settings-" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/settings/</span></span><a class="headerlink" href="#get--api-v1-organizers-(organizer)-settings-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get current values of organizer settings.</p>
 <p>Permission required: “Can change organizer settings”</p>
 <p><strong>Example request</strong>:</p>
@@ -337,31 +357,31 @@ able to break your shops using this API by creating situations of conflicting se
 </pre></div>
 </div>
 <p><strong>Example standard response</strong>:</p>
-<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
-<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span>HTTP/1.1 200 OK
+Vary: Accept
+Content-Type: application/json
 
-<span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;event_list_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;calendar&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="err">…</span>
-<span class="p">}</span>
+{
+  &quot;event_list_type&quot;: &quot;calendar&quot;,
+  …
+}
 </pre></div>
 </div>
 <p><strong>Example verbose response</strong>:</p>
-<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
-<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span>HTTP/1.1 200 OK
+Vary: Accept
+Content-Type: application/json
 
-<span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;event_list_type&quot;</span><span class="p">:</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;calendar&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Default overview style&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;help_text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;If your event series has more than 50 dates in the future, only the month or week calendar can be used.&quot;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="err">…</span>
-<span class="p">}</span>
+{
+  &quot;event_list_type&quot;:
+    {
+      &quot;value&quot;: &quot;calendar&quot;,
+      &quot;label&quot;: &quot;Default overview style&quot;,
+      &quot;help_text&quot;: &quot;If your event series has more than 50 dates in the future, only the month or week calendar can be used.&quot;
+    }
+  },
+  …
+}
 </pre></div>
 </div>
 <dl class="field-list simple">
@@ -387,7 +407,7 @@ able to break your shops using this API by creating situations of conflicting se
 
 <dl class="http patch">
 <dt class="sig sig-object http" id="patch--api-v1-organizers-(organizer)-settings-">
-<span class="sig-name descname"><span class="pre">PATCH</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/settings/</span></span><a class="headerlink" href="#patch--api-v1-organizers-(organizer)-settings-" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">PATCH</span> </span><span class="sig-name descname"><span class="pre">/api/v1/organizers/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">organizer</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/settings/</span></span><a class="headerlink" href="#patch--api-v1-organizers-(organizer)-settings-" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates organizer settings. Note that <code class="docutils literal notranslate"><span class="pre">PUT</span></code> is not allowed here, only <code class="docutils literal notranslate"><span class="pre">PATCH</span></code>.</p>
 <blockquote>
 <div><div class="admonition warning">
@@ -410,14 +430,14 @@ explicitly want to set on organizer level. To unset a settings, pass <code class
 </pre></div>
 </div>
 <p><strong>Example response</strong>:</p>
-<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
-<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span>HTTP/1.1 200 OK
+Vary: Accept
+Content-Type: application/json
 
-<span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;event_list_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;calendar&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="err">…</span>
-<span class="p">}</span>
+{
+  &quot;event_list_type&quot;: &quot;calendar&quot;,
+  …
+}
 </pre></div>
 </div>
 <dl class="field-list simple">
@@ -491,11 +511,11 @@ explicitly want to set on organizer level. To unset a settings, pass <code class
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 

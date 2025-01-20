@@ -5,30 +5,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Porting a payment provider from pretix 1.x to pretix 2.x &mdash; pretix 3.18.0.dev0 documentation</title>
   
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=9319d125"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Writing an HTML e-mail renderer plugin" href="email.html" />
-    <link rel="prev" title="Writing a payment provider plugin" href="payment.html" /> 
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/pretix.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  
+
+  
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="pretix 3.18.0.dev0 documentation" href="../../index.html"/>
+        <link rel="up" title="Plugin development" href="index.html"/>
+        <link rel="next" title="Writing an HTML e-mail renderer plugin" href="email.html"/>
+        <link rel="prev" title="Writing a payment provider plugin" href="payment.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,9 +60,13 @@
           
 
           
+            <a href="../../index.html">
           
-          <a href="../../index.html">
-              <img src="../../_static/logo-white.svg" class="logo" alt="Logo"/>
+
+          
+            
+            <img src="../../_static/logo-white.svg" class="logo" />
+          
           </a>
 
           
@@ -100,8 +120,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../structure.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../social_login.html">Social Login Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sso_with_talk.html">Single Sign-On (SSO) Implementation with JWT and OAuth2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin documentation</a></li>
@@ -179,14 +197,14 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="section">
+           <div itemprop="articleBody">
             
   <section id="porting-a-payment-provider-from-pretix-1-x-to-pretix-2-x">
-<span id="payment2-0"></span><h1>Porting a payment provider from pretix 1.x to pretix 2.x<a class="headerlink" href="#porting-a-payment-provider-from-pretix-1-x-to-pretix-2-x" title="Link to this heading">¶</a></h1>
+<span id="payment2-0"></span><h1>Porting a payment provider from pretix 1.x to pretix 2.x<a class="headerlink" href="#porting-a-payment-provider-from-pretix-1-x-to-pretix-2-x" title="Permalink to this heading">¶</a></h1>
 <p>In pretix 2.x, we changed large parts of the payment provider API. This documentation details the changes we made
 and shows you how you can make an existing pretix 1.x payment provider compatible with pretix 2.x</p>
 <section id="conceptual-overview">
-<h2>Conceptual overview<a class="headerlink" href="#conceptual-overview" title="Link to this heading">¶</a></h2>
+<h2>Conceptual overview<a class="headerlink" href="#conceptual-overview" title="Permalink to this heading">¶</a></h2>
 <p>In pretix 1.x, an order was always directly connected to a payment provider for the full life of an order. As long as
 an order was unpaid, this could still be changed in some cases, but once an order was paid, no changes to the payment
 provider were possible any more. Additionally, the internal state of orders allowed orders only to be fully paid or
@@ -226,9 +244,9 @@ the cases listed above and notify the user.</p></li>
 <p>Payment providers now interact with those payment and refund objects more than with orders.</p>
 </section>
 <section id="your-to-do-list">
-<h2>Your to-do list<a class="headerlink" href="#your-to-do-list" title="Link to this heading">¶</a></h2>
+<h2>Your to-do list<a class="headerlink" href="#your-to-do-list" title="Permalink to this heading">¶</a></h2>
 <section id="payment-processing">
-<h3>Payment processing<a class="headerlink" href="#payment-processing" title="Link to this heading">¶</a></h3>
+<h3>Payment processing<a class="headerlink" href="#payment-processing" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>The method <code class="docutils literal notranslate"><span class="pre">BasePaymentProvider.order_pending_render</span></code> has been removed and replaced by a new
 <code class="docutils literal notranslate"><span class="pre">BasePaymentProvider.payment_pending_render(request,</span> <span class="pre">payment)</span></code> method that is passed an <code class="docutils literal notranslate"><span class="pre">OrderPayment</span></code>
@@ -258,7 +276,7 @@ methods to the correct state will do the job.</p></li>
 </ul>
 </section>
 <section id="creating-refunds">
-<h3>Creating refunds<a class="headerlink" href="#creating-refunds" title="Link to this heading">¶</a></h3>
+<h3>Creating refunds<a class="headerlink" href="#creating-refunds" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>The methods <code class="docutils literal notranslate"><span class="pre">BasePaymentProvider.order_control_refund_render</span></code> and <code class="docutils literal notranslate"><span class="pre">BasePaymentProvider.order_control_refund_perform</span></code>
 have been removed.</p></li>
@@ -272,7 +290,7 @@ or <code class="docutils literal notranslate"><span class="pre">BasePaymentProvi
 </ul>
 </section>
 <section id="processing-external-refunds">
-<h3>Processing external refunds<a class="headerlink" href="#processing-external-refunds" title="Link to this heading">¶</a></h3>
+<h3>Processing external refunds<a class="headerlink" href="#processing-external-refunds" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>If e.g. a webhook API notifies you that a payment has been disputed or refunded with the external API, you are
 expected to call <code class="docutils literal notranslate"><span class="pre">OrderPayment.create_external_refund(self,</span> <span class="pre">amount,</span> <span class="pre">execution_date,</span> <span class="pre">info='{}')</span></code> on this payment.
@@ -281,7 +299,7 @@ mark the order as refunded, but will ask the event organizer for a decision.</p>
 </ul>
 </section>
 <section id="data-shredders">
-<h3>Data shredders<a class="headerlink" href="#data-shredders" title="Link to this heading">¶</a></h3>
+<h3>Data shredders<a class="headerlink" href="#data-shredders" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>The method <code class="docutils literal notranslate"><span class="pre">BasePaymentProvider.shred_payment_info</span></code> is no longer passed an order, but instead <strong>either</strong>
 an <code class="docutils literal notranslate"><span class="pre">OrderPayment</span></code> <strong>or</strong> an <code class="docutils literal notranslate"><span class="pre">OrderRefund</span></code>.</p></li>
@@ -341,11 +359,11 @@ an <code class="docutils literal notranslate"><span class="pre">OrderPayment</sp
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
       <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
 
